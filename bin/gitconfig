@@ -1,0 +1,11 @@
+#! /bin/sh
+
+git config --global user.name "Donghua.Lau"
+git config --global user.email "me@liudonghua.net"
+
+git config color.diff "auto" 
+git config color.status "auto" 
+git config color.branch "auto" 
+git config color.interactive "auto" 
+git config color.grep "auto"
+

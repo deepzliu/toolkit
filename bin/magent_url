@@ -1,0 +1,8 @@
+#! /bin/sh
+
+if [ "SS$1" == "SS" ]; then
+	echo "Usage: $0 <id>"
+	exit
+fi
+
+echo "magnet:?xt=urn:btih:$1"

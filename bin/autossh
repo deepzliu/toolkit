@@ -1,0 +1,134 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+# settings
+settings = {
+	 'name': 		''
+	,'rssh_user': 	''
+	,'mail_passwd': ''
+	,'essh_host': 	''
+	,'essh_passwd': ''
+	,'pop3_mail': 	''
+	,'src_addr': 	''
+}
+
+import os
+os.path.join(os.path.dirname(__file__))
+import pexpect
+import sys
+import poplib
+import email
+import string
+import time
+import fcntl
+import termios
+import struct
+
+def check_settings():
+	for k, v in settings.items():
+		if(len(v) <= 0):
+			return False
+	return True
+
+def get_passcode(name, mail_passwd):
+    passcode = ''
+    mc = poplib.POP3(settings['pop3_mail'])
+    mc.user(name)
+    mc.pass_(mail_passwd)
+    num = mc.stat()[0]
+    for i in range(num):
+        hdr, msg, octet = mc.retr(num-i)
+        mail = email.message_from_string(string.join(msg, '\n'))
+        srcaddr = email.utils.parseaddr(mail.get('from'))[1]
+        if srcaddr == settings['src_addr']:
+            content = mail.get_payload(decode = True)
+            passcode = content.strip().split(' ')[-1]
+            break
+    mc.quit()
+    return passcode
+
+def myssh(host, name, mail_passwd, essh_passwd, rssh_user):
+	child = pexpect.spawn('ssh %s@%s' % (name, settings['essh_host']))
+	
+	s = struct.pack('HHHH', 0, 0, 0, 0)
+	a = struct.unpack('HHHH', fcntl.ioctl(sys.stdout.fileno(), termios.TIOCGWINSZ, s))
+	if a[0] != 0 and a[1] != 0:
+		child.setwinsize(a[0], a[1])
+
+	expect_strings = [
+				  'Password:'
+				, '\$'
+				, 'Please Enter Your Essh Password:'
+				, '#'
+				, 'Permission deny.'
+				, 'passcode:'
+				, 'UNIX password:'
+				, 'Permission denied, please try again.'
+				, 'Enter passcode:'
+				, pexpect.EOF
+				, pexpect.TIMEOUT
+	]
+
+	no_permission = False
+
+	while True:
+		i = child.expect(expect_strings)
+		print '[expect] %s' % expect_strings[i]
+		if i == 0:
+			child.sendline(essh_passwd)
+		elif i == 1:
+			if host == 'essh':
+				break
+			child.sendline('rssh %s@%s' % (rssh_user, host))
+		elif i == 2:
+			child.sendline(essh_passwd)
+		elif i == 3:
+			break
+		elif i == 4:
+			if no_permission:
+				break
+			no_permission = True
+			child.sendline('rssh %s@%s' % (rssh_user, host))
+		elif i == 5:
+			time.sleep(6)
+			child.sendline(get_passcode(name, mail_passwd))
+		elif i == 6:
+			print "Password has expired."
+			break
+		elif i == 7:
+			print "Permission denied, please try again."
+			break
+		elif i == 8:
+			time.sleep(6)
+			child.sendline(get_passcode(name, mail_passwd))
+		else:
+			break
+
+	child.sendline('echo -ne \"\\033]2;$HOSTNAME\\007\"')
+	child.sendline('LANG=en_US.utf-8')
+
+	try:
+		child.interact()
+	except:
+		pass
+
+if __name__ == '__main__':
+
+	print "Welcome autossh!"
+
+	if check_settings() == False:
+		print "settings not correct!"
+		sys.exit(1)
+
+	argc = len(sys.argv)
+	if not (argc == 2 or argc == 3):
+		print "Usage: %s <machine> [user]" % sys.argv[0]
+		sys.exit(1)
+
+	host = sys.argv[1]
+	if argc == 3:
+		settings['rssh_user'] = sys.argv[2]
+
+	myssh(host, settings['name'], settings['mail_passwd'], settings['essh_passwd'], settings['rssh_user'])
+	os.system('echo -ne "\e]2;my vm\a"')
+

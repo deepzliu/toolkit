@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# curl -X PURGE -v -H "Host: jv.liudonghua.net" http://127.0.0.1/myapp/
+
+if [ $# != 1 ]; then
+	echo "Usage: $0 <URL>"
+	exit
+fi
+
+url="$1"
+
+allow_host="127.0.0.1"
+
+domain=`echo "${url}" | awk -F'/' '{print $3}' | awk -F':' '{print $1}'`
+purge_url=`echo "${url}" | sed -e "s/${domain}/${allow_host}/"`
+
+curl -v -X PURGE -H "Host: ${domain}" "${purge_url}"
+

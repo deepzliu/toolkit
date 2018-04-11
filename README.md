@@ -1,2 +1,2 @@
-# linux-custom
-Linux custom configration and scripts.
+# linux-ammo
+Linux configration, scripts ...

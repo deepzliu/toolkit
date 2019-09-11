@@ -1,0 +1,76 @@
+#!/bin/sh
+
+function usage()
+{
+	echo "Usage: $0 <start|stop|restart|status|cli>"
+}
+
+if [ $# != 1 ];then
+	usage
+	exit
+fi
+
+oper=$1
+
+FPATH=/usr/local/redis-4.0.8/
+SERVER=${FPATH}/bin/redis-server
+CLIENT=${FPATH}/bin/redis-cli
+CONF=${FPATH}/conf/6379.conf
+
+function start()
+{
+	pid=`ps auxf | grep ${SERVER} | grep -v grep | awk '{print $2}'`
+	if [ "SS${pid}" != "SS" ]; then
+		echo "redis is running, pid: ${pid}"
+		return
+	fi
+
+	nohup ${SERVER} ${CONF} > /dev/null &
+	pid=`ps auxf | grep ${SERVER} | grep -v grep | awk '{print $2}'`
+	echo "redis start, pid: ${pid}"
+}
+
+function stop()
+{
+	pid=`ps auxf | grep ${SERVER} | grep -v grep | awk '{print $2}'`
+	if [ "SS${pid}" == "SS" ]; then
+		echo "redis is not running"
+		return
+	fi
+
+	pid=`ps auxf | grep ${SERVER} | grep -v grep | awk '{print $2}'`
+	echo "redis stop, pid: ${pid}"
+	kill -9 ${pid}
+}
+
+function status()
+{
+	pid=`ps auxf | grep ${SERVER} | grep -v grep | awk '{print $2}'`
+	if [ "SS${pid}" == "SS" ]; then
+		echo "redis is not running"
+		return
+	fi
+
+	echo "info" | ${CLIENT}
+}
+
+function client()
+{
+	${CLIENT}
+}
+
+if [ "${oper}" == "start" ]; then
+	start
+elif [ "${oper}" == "stop" ]; then 
+	stop
+elif [ "${oper}" == "restart" ]; then 
+	stop
+	sleep 1
+	start
+elif [ "${oper}" == "status" ]; then 
+	status
+elif [ "${oper}" == "cli" ]; then 
+	client
+else
+	usage
+fi

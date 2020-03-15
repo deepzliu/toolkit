@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+	echo "Usage: $0 <host> [user]"
+	exit
+fi
+
+host=$1
+user=user_00
+
+if [ $# -gt 1 ];then
+	user=$2
+fi
+
+cmd="ssh ${host} -l${user}"
+echo ${cmd}
+${cmd}

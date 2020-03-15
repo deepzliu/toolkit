@@ -1,0 +1,5406 @@
+
+ceph=/root/projects/ceph-13.2.8/src CD=. filter="*" {
+ CMakeLists.txt
+ README
+ TODO
+ btrfs_ioc_test.c
+ ceph-clsinfo
+ ceph-coverage.in
+ ceph-crash.in
+ ceph-create-keys
+ ceph-debugpack.in
+ ceph-osd-prestart.sh
+ ceph-post-file.in
+ ceph-rbdnamer
+ ceph-run
+ ceph.conf.twoosds
+ ceph.in
+ ceph_common.sh
+ ceph_fuse.cc
+ ceph_mds.cc
+ ceph_mgr.cc
+ ceph_mon.cc
+ ceph_osd.cc
+ ceph_release
+ ceph_syn.cc
+ ceph_ver.c
+ ceph_ver.h.in.cmake
+ cls_acl.cc
+ cls_crypto.cc
+ cmonctl
+ etc-rbdmap
+ init-ceph.in
+ init-radosgw
+ init-rbdmap
+ krbd.cc
+ libcephfs.cc
+ librados-config.cc
+ loadclass.sh
+ logrotate.conf
+ mount.fuse.ceph
+ mrgw.sh
+ mrun
+ mstart.sh
+ mstop.sh
+ multi-dump.sh
+ ps-ceph.pl
+ push_to_qemu.pl
+ rbd-replay-many
+ rbdmap
+ sample.ceph.conf
+ stop.sh
+ tags
+ unittest_bufferlist.sh
+ vstart.sh
+ yasm-wrapper
+ perf_histogram.h
+ arch=arch {
+  arm.c
+  intel.c
+  ppc.c
+  probe.cc
+  arm.h
+  intel.h
+  ppc.h
+  probe.h
+ }
+ auth=auth {
+  AuthAuthorizeHandler.cc
+  AuthClientHandler.cc
+  AuthMethodList.cc
+  AuthServiceHandler.cc
+  AuthSessionHandler.cc
+  Crypto.cc
+  KeyRing.cc
+  RotatingKeyRing.cc
+  scheme.txt
+  Auth.h
+  AuthAuthorizeHandler.h
+  AuthClientHandler.h
+  AuthMethodList.h
+  AuthServiceHandler.h
+  AuthSessionHandler.h
+  Crypto.h
+  KeyRing.h
+  RotatingKeyRing.h
+  cephx=cephx {
+   CephxAuthorizeHandler.cc
+   CephxClientHandler.cc
+   CephxKeyServer.cc
+   CephxProtocol.cc
+   CephxServiceHandler.cc
+   CephxSessionHandler.cc
+   CephxAuthorizeHandler.h
+   CephxClientHandler.h
+   CephxKeyServer.h
+   CephxProtocol.h
+   CephxServiceHandler.h
+   CephxSessionHandler.h
+  }
+  none=none {
+   AuthNoneAuthorizeHandler.cc
+   AuthNoneAuthorizeHandler.h
+   AuthNoneClientHandler.h
+   AuthNoneProtocol.h
+   AuthNoneServiceHandler.h
+   AuthNoneSessionHandler.h
+  }
+  unknown=unknown {
+   AuthUnknownAuthorizeHandler.cc
+   AuthUnknownAuthorizeHandler.h
+   AuthUnknownClientHandler.h
+   AuthUnknownProtocol.h
+   AuthUnknownServiceHandler.h
+   AuthUnknownSessionHandler.h
+  }
+ }
+ bash_completion=bash_completion {
+  CMakeLists.txt
+  ceph
+  rados
+  radosgw-admin
+  rbd
+ }
+ blkin=blkin {
+ }
+ ceph-detect-init=ceph-detect-init {
+  AUTHORS.rst
+  CMakeLists.txt
+  MANIFEST.in
+  README.rst
+  requirements.txt
+  run-tox.sh
+  setup.py
+  test-requirements.txt
+  tox.ini
+  ceph_detect_init=ceph_detect_init {
+   __init__.py
+   exc.py
+   main.py
+   alpine=alpine {
+    __init__.py
+   }
+   alt=alt {
+    __init__.py
+   }
+   arch=arch {
+    __init__.py
+   }
+   centos=centos {
+    __init__.py
+   }
+   debian=debian {
+    __init__.py
+   }
+   docker=docker {
+    __init__.py
+   }
+   fedora=fedora {
+    __init__.py
+   }
+   freebsd=freebsd {
+    __init__.py
+   }
+   gentoo=gentoo {
+    __init__.py
+   }
+   oraclevms=oraclevms {
+    __init__.py
+   }
+   rhel=rhel {
+    __init__.py
+   }
+   suse=suse {
+    __init__.py
+   }
+  }
+  integration=integration {
+   alpine-3.4.dockerfile
+   centos-6.dockerfile
+   centos-7.dockerfile
+   debian-jessie.dockerfile
+   debian-sid.dockerfile
+   debian-squeeze.dockerfile
+   debian-wheezy.dockerfile
+   fedora-21.dockerfile
+   opensuse-13.1.dockerfile
+   opensuse-13.2.dockerfile
+   test_main.py
+   ubuntu-12.04.dockerfile
+   ubuntu-14.04.dockerfile
+   ubuntu-15.04.dockerfile
+  }
+  tests=tests {
+   test_all.py
+  }
+ }
+ ceph-disk=ceph-disk {
+  AUTHORS.rst
+  CMakeLists.txt
+  MANIFEST.in
+  README.rst
+  requirements.txt
+  run-tox.sh
+  setup.py
+  test-requirements.txt
+  tox.ini
+  ceph_disk=ceph_disk {
+   __init__.py
+   main.py
+  }
+  tests=tests {
+   ceph-disk.sh
+   test_main.py
+   test_prepare.py
+  }
+ }
+ ceph-volume=ceph-volume {
+  CMakeLists.txt
+  MANIFEST.in
+  setup.py
+  shell_tox.ini
+  tox.ini
+  ceph_volume=ceph_volume {
+   __init__.py
+   configuration.py
+   decorators.py
+   exceptions.py
+   log.py
+   main.py
+   process.py
+   terminal.py
+   api=api {
+    __init__.py
+    lvm.py
+   }
+   devices=devices {
+    __init__.py
+    lvm=lvm {
+     __init__.py
+     activate.py
+     batch.py
+     common.py
+     create.py
+     listing.py
+     main.py
+     prepare.py
+     trigger.py
+     zap.py
+     strategies=strategies {
+      __init__.py
+      bluestore.py
+      filestore.py
+      strategies.py
+      validators.py
+     }
+    }
+    simple=simple {
+     __init__.py
+     activate.py
+     main.py
+     scan.py
+     trigger.py
+    }
+   }
+   inventory=inventory {
+    __init__.py
+    main.py
+   }
+   systemd=systemd {
+    __init__.py
+    main.py
+    systemctl.py
+   }
+   tests=tests {
+    __init__.py
+    conftest.py
+    test_configuration.py
+    test_decorators.py
+    test_inventory.py
+    test_main.py
+    test_process.py
+    test_terminal.py
+    api=api {
+     test_lvm.py
+    }
+    devices=devices {
+     __init__.py
+     test_zap.py
+     lvm=lvm {
+      __init__.py
+      test_activate.py
+      test_batch.py
+      test_create.py
+      test_listing.py
+      test_prepare.py
+      test_trigger.py
+      test_zap.py
+      strategies=strategies {
+       __init__.py
+       test_bluestore.py
+       test_filestore.py
+       test_validate.py
+      }
+     }
+     simple=simple {
+      test_activate.py
+      test_scan.py
+      test_trigger.py
+     }
+    }
+    functional=functional {
+     README.md
+     Vagrantfile
+     batch=batch {
+      tox.ini
+      centos7=centos7 {
+       bluestore=bluestore {
+        mixed-type=mixed-type {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        mixed-type-dmcrypt=mixed-type-dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        mixed-type-dmcrypt-explicit=mixed-type-dmcrypt-explicit {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        mixed-type-explicit=mixed-type-explicit {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        single-type=single-type {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        single-type-dmcrypt=single-type-dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+       filestore=filestore {
+        mixed-type=mixed-type {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        mixed-type-dmcrypt=mixed-type-dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        mixed-type-dmcrypt-explicit=mixed-type-dmcrypt-explicit {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        mixed-type-explicit=mixed-type-explicit {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        single-type=single-type {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        single-type-dmcrypt=single-type-dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+      }
+      playbooks=playbooks {
+       noop.yml
+       setup_mixed_type.yml
+       test.yml
+       test_explicit.yml
+       test_zap.yml
+      }
+      xenial=xenial {
+       bluestore=bluestore {
+        single-type=single-type {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        single-type-dmcrypt=single-type-dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+       filestore=filestore {
+        single-type=single-type {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        single-type-dmcrypt=single-type-dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         test_zap.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+      }
+     }
+     lvm=lvm {
+      tox.ini
+      centos7=centos7 {
+       bluestore=bluestore {
+        create=create {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        dmcrypt=dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+       filestore=filestore {
+        create=create {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        dmcrypt=dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+      }
+      playbooks=playbooks {
+       setup_partitions.yml
+       test_bluestore.yml
+       test_filestore.yml
+      }
+      xenial=xenial {
+       bluestore=bluestore {
+        create=create {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        dmcrypt=dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+       filestore=filestore {
+        create=create {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+        dmcrypt=dmcrypt {
+         Vagrantfile
+         hosts
+         setup.yml
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+        }
+       }
+      }
+     }
+     playbooks=playbooks {
+      deploy.yml
+     }
+     scripts=scripts {
+      generate_ssh_config.sh
+      output.py
+      test_unicode.sh
+      vagrant_reload.sh
+      vagrant_up.sh
+     }
+     simple=simple {
+      tox.ini
+      centos7=centos7 {
+       bluestore=bluestore {
+        activate=activate {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-luks=dmcrypt-luks {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-plain=dmcrypt-plain {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+       }
+       filestore=filestore {
+        activate=activate {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-luks=dmcrypt-luks {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-plain=dmcrypt-plain {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+       }
+      }
+      xenial=xenial {
+       bluestore=bluestore {
+        activate=activate {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-luks=dmcrypt-luks {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-plain=dmcrypt-plain {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+       }
+       filestore=filestore {
+        activate=activate {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-luks=dmcrypt-luks {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+        dmcrypt-plain=dmcrypt-plain {
+         Vagrantfile
+         hosts
+         test.yml
+         vagrant_variables.yml
+         group_vars=group_vars {
+          all
+         }
+         host_vars=host_vars {
+          osd0.yml
+          osd1.yml
+         }
+        }
+       }
+      }
+     }
+     tests=tests {
+      __init__.py
+      conftest.py
+      osd=osd {
+       __init__.py
+       test_osds.py
+      }
+     }
+    }
+    systemd=systemd {
+     test_main.py
+     test_systemctl.py
+    }
+    util=util {
+     test_arg_validators.py
+     test_device.py
+     test_disk.py
+     test_encryption.py
+     test_prepare.py
+     test_system.py
+     test_util.py
+    }
+   }
+   util=util {
+    __init__.py
+    arg_validators.py
+    constants.py
+    device.py
+    disk.py
+    encryption.py
+    prepare.py
+    system.py
+    templates.py
+   }
+  }
+ }
+ civetweb=civetweb {
+ }
+ client=client {
+  CMakeLists.txt
+  Client.cc
+  ClientSnapRealm.cc
+  Delegation.cc
+  Dentry.cc
+  Fh.cc
+  Inode.cc
+  MetaRequest.cc
+  MetaSession.cc
+  SyntheticClient.cc
+  Trace.cc
+  barrier.cc
+  fuse_ll.cc
+  posix_acl.cc
+  test_ioctls.c
+  Client.h
+  ClientSnapRealm.h
+  Delegation.h
+  Dentry.h
+  Dir.h
+  Fh.h
+  Inode.h
+  InodeRef.h
+  MetaRequest.h
+  MetaSession.h
+  ObjecterWriteback.h
+  SyntheticClient.h
+  Trace.h
+  UserPerm.h
+  barrier.h
+  fuse_ll.h
+  ioctl.h
+  posix_acl.h
+  hypertable=hypertable {
+   CephBroker.cc
+   CephBroker.h
+  }
+ }
+ cls=cls {
+  CMakeLists.txt
+  cephfs=cephfs {
+   cls_cephfs.cc
+   cls_cephfs_client.cc
+   cls_cephfs.h
+   cls_cephfs_client.h
+  }
+  hello=hello {
+   cls_hello.cc
+  }
+  journal=journal {
+   cls_journal.cc
+   cls_journal_client.cc
+   cls_journal_types.cc
+   cls_journal_client.h
+   cls_journal_types.h
+  }
+  lock=lock {
+   cls_lock.cc
+   cls_lock_client.cc
+   cls_lock_ops.cc
+   cls_lock_types.cc
+   cls_lock_client.h
+   cls_lock_ops.h
+   cls_lock_types.h
+  }
+  log=log {
+   cls_log.cc
+   cls_log_client.cc
+   cls_log_client.h
+   cls_log_ops.h
+   cls_log_types.h
+  }
+  lua=lua {
+   cls_lua.cc
+   cls_lua_client.cc
+   lua_bufferlist.cc
+   cls_lua.h
+   cls_lua_client.h
+   cls_lua_ops.h
+  }
+  numops=numops {
+   cls_numops.cc
+   cls_numops_client.cc
+   cls_numops_client.h
+  }
+  otp=otp {
+   cls_otp.cc
+   cls_otp_client.cc
+   cls_otp_types.cc
+   cls_otp_client.h
+   cls_otp_ops.h
+   cls_otp_types.h
+  }
+  rbd=rbd {
+   cls_rbd.cc
+   cls_rbd_client.cc
+   cls_rbd_types.cc
+   cls_rbd.h
+   cls_rbd_client.h
+   cls_rbd_types.h
+  }
+  refcount=refcount {
+   cls_refcount.cc
+   cls_refcount_client.cc
+   cls_refcount_ops.cc
+   cls_refcount_client.h
+   cls_refcount_ops.h
+  }
+  replica_log=replica_log {
+   cls_replica_log.cc
+   cls_replica_log_client.cc
+   cls_replica_log_ops.cc
+   cls_replica_log_types.cc
+   cls_replica_log_client.h
+   cls_replica_log_ops.h
+   cls_replica_log_types.h
+  }
+  rgw=rgw {
+   cls_rgw.cc
+   cls_rgw_client.cc
+   cls_rgw_ops.cc
+   cls_rgw_types.cc
+   cls_rgw_client.h
+   cls_rgw_const.h
+   cls_rgw_ops.h
+   cls_rgw_types.h
+  }
+  sdk=sdk {
+   cls_sdk.cc
+  }
+  statelog=statelog {
+   cls_statelog.cc
+   cls_statelog_client.cc
+   cls_statelog_client.h
+   cls_statelog_ops.h
+   cls_statelog_types.h
+  }
+  timeindex=timeindex {
+   cls_timeindex.cc
+   cls_timeindex_client.cc
+   cls_timeindex_client.h
+   cls_timeindex_ops.h
+   cls_timeindex_types.h
+  }
+  user=user {
+   cls_user.cc
+   cls_user_client.cc
+   cls_user_ops.cc
+   cls_user_types.cc
+   cls_user_client.h
+   cls_user_ops.h
+   cls_user_types.h
+  }
+  version=version {
+   cls_version.cc
+   cls_version_client.cc
+   cls_version_types.cc
+   cls_version_client.h
+   cls_version_ops.h
+   cls_version_types.h
+  }
+ }
+ common=common {
+  AsyncOpTracker.cc
+  BackTrace.cc
+  CachedPrebufferedStreambuf.cc
+  ConfUtils.cc
+  ContextCompletion.cc
+  Cycles.cc
+  DecayCounter.cc
+  EventTrace.cc
+  Finisher.cc
+  Formatter.cc
+  Graylog.cc
+  HTMLFormatter.cc
+  HeartbeatMap.cc
+  LogClient.cc
+  LogEntry.cc
+  MemoryModel.cc
+  Mutex.cc
+  OutputDataSocket.cc
+  PluginRegistry.cc
+  PrebufferedStreambuf.cc
+  PriorityCache.cc
+  Readahead.cc
+  RefCountedObj.cc
+  SloppyCRCMap.cc
+  TextTable.cc
+  Thread.cc
+  Throttle.cc
+  Timer.cc
+  TracepointProvider.cc
+  TrackedOp.cc
+  WorkQueue.cc
+  addr_parsing.c
+  address_helper.cc
+  admin_socket.cc
+  admin_socket_client.cc
+  aix_errno.cc
+  armor.c
+  assert.cc
+  bit_str.cc
+  bit_vector.hpp
+  blkdev.cc
+  bloom_filter.cc
+  bloom_filter.hpp
+  buffer.cc
+  ceph_argparse.cc
+  ceph_context.cc
+  ceph_crypto.cc
+  ceph_crypto_cms.cc
+  ceph_frag.cc
+  ceph_fs.cc
+  ceph_hash.cc
+  ceph_json.cc
+  ceph_strings.cc
+  ceph_time.cc
+  cmdparse.cc
+  code_environment.cc
+  common_init.cc
+  compat.cc
+  config.cc
+  crc32c.cc
+  crc32c_aarch64.c
+  crc32c_intel_baseline.c
+  crc32c_intel_fast.c
+  crc32c_intel_fast_asm.s
+  crc32c_intel_fast_zero_asm.s
+  crc32c_ppc.c
+  crc32c_ppc_asm.S
+  crc32c_ppc_fast_zero_asm.S
+  darwin_errno.cc
+  dns_resolve.cc
+  dout.cc
+  dummy.cc
+  entity_name.cc
+  environment.cc
+  errno.cc
+  escape.cc
+  fd.cc
+  freebsd_errno.cc
+  fs_types.cc
+  hex.cc
+  histogram.cc
+  hobject.cc
+  hostname.cc
+  io_priority.cc
+  ipaddr.cc
+  iso_8601.cc
+  linux_version.c
+  lockdep.cc
+  map_cacher.hpp
+  mempool.cc
+  mime.c
+  module.c
+  mutex_debug.cc
+  obj_bencher.cc
+  options.cc
+  page.cc
+  perf_counters.cc
+  perf_histogram.cc
+  pick_address.cc
+  random_cache.hpp
+  reverse.c
+  run_cmd.cc
+  safe_io.c
+  scrub_types.cc
+  sctp_crc32.c
+  secret.c
+  shared_cache.hpp
+  sharedptr_registry.hpp
+  signal.cc
+  simple_cache.hpp
+  snap_types.cc
+  solaris_errno.cc
+  sstring.hh
+  str_list.cc
+  str_map.cc
+  strtol.cc
+  tracked_int_ptr.hpp
+  types.cc
+  url_escape.cc
+  utf8.c
+  util.cc
+  version.cc
+  xattr.c
+  AsyncOpTracker.h
+  AsyncReserver.h
+  BackTrace.h
+  CachedPrebufferedStreambuf.h
+  Checksummer.h
+  Clock.h
+  CommandTable.h
+  Cond.h
+  ConfUtils.h
+  ContextCompletion.h
+  Continuation.h
+  Cycles.h
+  DecayCounter.h
+  EventTrace.h
+  Finisher.h
+  Formatter.h
+  Graylog.h
+  HTMLFormatter.h
+  HeartbeatMap.h
+  Initialize.h
+  LogClient.h
+  LogEntry.h
+  MemoryModel.h
+  Mutex.h
+  OpQueue.h
+  OutputDataSocket.h
+  PluginRegistry.h
+  PrebufferedStreambuf.h
+  Preforker.h
+  PrioritizedQueue.h
+  PriorityCache.h
+  QueueRing.h
+  RWLock.h
+  Readahead.h
+  RefCountedObj.h
+  Semaphore.h
+  SloppyCRCMap.h
+  SubProcess.h
+  TextTable.h
+  Thread.h
+  Throttle.h
+  Timer.h
+  TracepointProvider.h
+  TrackedOp.h
+  Tub.h
+  WeightedPriorityQueue.h
+  WorkQueue.h
+  address_helper.h
+  admin_socket.h
+  admin_socket_client.h
+  align.h
+  arch.h
+  armor.h
+  autovector.h
+  bit_str.h
+  blkdev.h
+  bounded_key_counter.h
+  ceph_argparse.h
+  ceph_context.h
+  ceph_crypto.h
+  ceph_crypto_cms.h
+  ceph_json.h
+  ceph_time.h
+  ceph_timer.h
+  cmdparse.h
+  code_environment.h
+  cohort_lru.h
+  common_init.h
+  compiler_extensions.h
+  config.h
+  config_cacher.h
+  config_obs.h
+  convenience.h
+  crc32c_aarch64.h
+  crc32c_intel_baseline.h
+  crc32c_intel_fast.h
+  crc32c_ppc.h
+  crc32c_ppc_constants.h
+  debug.h
+  deleter.h
+  dns_resolve.h
+  dout.h
+  entity_name.h
+  environment.h
+  errno.h
+  escape.h
+  event_socket.h
+  fd.h
+  fork_function.h
+  function_signature.h
+  hex.h
+  histogram.h
+  hobject.h
+  hostname.h
+  inline_variant.h
+  interval_map.h
+  io_priority.h
+  iso_8601.h
+  legacy_config_opts.h
+  likely.h
+  linux_version.h
+  lockdep.h
+  lru_map.h
+  mClockPriorityQueue.h
+  mime.h
+  module.h
+  mutex_debug.h
+  obj_bencher.h
+  options.h
+  perf_counters.h
+  perf_histogram.h
+  pick_address.h
+  ppc-opcode.h
+  reverse.h
+  run_cmd.h
+  safe_io.h
+  scrub_types.h
+  sctp_crc32.h
+  secret.h
+  shunique_lock.h
+  signal.h
+  snap_types.h
+  static_assert.h
+  static_ptr.h
+  strtol.h
+  subsys.h
+  subsys_types.h
+  sync_filesystem.h
+  url_escape.h
+  utf8.h
+  valgrind.h
+  version.h
+  xattr.h
+  zipkin_trace.h
+ }
+ compressor=compressor {
+  CMakeLists.txt
+  Compressor.cc
+  CompressionPlugin.h
+  Compressor.h
+  brotli=brotli {
+   BrotliCompressor.cc
+   CMakeLists.txt
+   CompressionPluginBrotli.cc
+   BrotliCompressor.h
+   CompressionPluginBrotli.h
+  }
+  lz4=lz4 {
+   CMakeLists.txt
+   CompressionPluginLZ4.cc
+   CompressionPluginLZ4.h
+   LZ4Compressor.h
+  }
+  snappy=snappy {
+   CMakeLists.txt
+   CompressionPluginSnappy.cc
+   CompressionPluginSnappy.h
+   SnappyCompressor.h
+  }
+  zlib=zlib {
+   CMakeLists.txt
+   CompressionPluginZlib.cc
+   ZlibCompressor.cc
+   CompressionPluginZlib.h
+   ZlibCompressor.h
+  }
+  zstd=zstd {
+   CMakeLists.txt
+   CompressionPluginZstd.cc
+   CompressionPluginZstd.h
+   ZstdCompressor.h
+  }
+ }
+ crush=crush {
+  CrushCompiler.cc
+  CrushLocation.cc
+  CrushTester.cc
+  CrushWrapper.cc
+  CrushWrapper.i
+  builder.c
+  crush.c
+  hash.c
+  mapper.c
+  old_sample.txt
+  sample.txt
+  CrushCompiler.h
+  CrushLocation.h
+  CrushTester.h
+  CrushTreeDumper.h
+  CrushWrapper.h
+  builder.h
+  crush.h
+  crush_compat.h
+  crush_ln_table.h
+  grammar.h
+  hash.h
+  mapper.h
+  types.h
+ }
+ crypto=crypto {
+  CMakeLists.txt
+  crypto_accel.h
+  crypto_plugin.h
+  isa-l=isa-l {
+   CMakeLists.txt
+   isal_crypto_accel.cc
+   isal_crypto_plugin.cc
+   isal_crypto_accel.h
+   isal_crypto_plugin.h
+   isa-l_crypto=isa-l_crypto {
+   }
+  }
+ }
+ dmclock=dmclock {
+  CMakeLists.txt
+  COPYING
+  COPYING-LGPL2.1
+  README.before-modifying-files-here-or-below
+  README.md
+  dmclock-config.cmake.in
+  dmclock-targets.cmake
+  benchmark=benchmark {
+   README.md
+   data_gen.sh
+   data_parser.py
+   plot_gen.sh
+   run.sh
+   configs=configs {
+    dmc_sim_100_100.conf
+    dmc_sim_8_6.conf
+   }
+  }
+  cmake=cmake {
+   modules=modules {
+    BuildGTest.cmake
+   }
+  }
+  sim=sim {
+   CMakeLists.txt
+   dmc_sim_100th.conf
+   dmc_sim_example.conf
+   src=src {
+    CMakeLists.txt
+    ConfUtils.cc
+    config.cc
+    str_list.cc
+    test_dmclock.cc
+    test_dmclock_main.cc
+    test_ssched.cc
+    test_ssched_main.cc
+    ConfUtils.h
+    config.h
+    sim_client.h
+    sim_recs.h
+    sim_server.h
+    simulate.h
+    str_list.h
+    test_dmclock.h
+    test_ssched.h
+    ssched=ssched {
+     ssched_client.h
+     ssched_recs.h
+     ssched_server.h
+    }
+   }
+  }
+  src=src {
+   CMakeLists.txt
+   dmclock_util.cc
+   dmclock_client.h
+   dmclock_recs.h
+   dmclock_server.h
+   dmclock_util.h
+  }
+  support=support {
+   src=src {
+    run_every.cc
+    debug.h
+    heap.h
+    indirect_intrusive_heap.h
+    intrusive_heap.h
+    profile.h
+    run_every.h
+   }
+   test=test {
+    CMakeLists.txt
+    test_ind_intru_heap.cc
+    test_indirect_intrusive_heap.cc
+    test_intrusive_heap.cc
+   }
+  }
+  test=test {
+   CMakeLists.txt
+   dmtest-config.h.in
+   test_dmclock_client.cc
+   test_dmclock_server.cc
+   test_test_client.cc
+   dmcPrCtl.h
+  }
+ }
+ doc=doc {
+  Commitdir.txt
+  caching.txt
+  dynamic-throttle.txt
+  header.txt
+  inos.txt
+  killpoints.txt
+  lazy_posix.txt
+  mds_locks.txt
+  modeline.txt
+  mon-janitorial-queue.txt
+  mon-wishlist.txt
+  rgw.txt
+ }
+ erasure-code=erasure-code {
+  CMakeLists.txt
+  ErasureCode.cc
+  ErasureCodePlugin.cc
+  ErasureCode.h
+  ErasureCodeInterface.h
+  ErasureCodePlugin.h
+  isa=isa {
+   CMakeLists.txt
+   ErasureCodeIsa.cc
+   ErasureCodeIsaTableCache.cc
+   ErasureCodePluginIsa.cc
+   README
+   xor_op.cc
+   ErasureCodeIsa.h
+   ErasureCodeIsaTableCache.h
+   ErasureCodePluginIsa.h
+   xor_op.h
+  }
+  jerasure=jerasure {
+   CMakeLists.txt
+   ErasureCodeJerasure.cc
+   ErasureCodePluginJerasure.cc
+   jerasure_init.cc
+   ErasureCodeJerasure.h
+   ErasureCodePluginJerasure.h
+   jerasure_init.h
+   gf-complete=gf-complete {
+   }
+   jerasure=jerasure {
+   }
+  }
+  lrc=lrc {
+   CMakeLists.txt
+   ErasureCodeLrc.cc
+   ErasureCodePluginLrc.cc
+   ErasureCodeLrc.h
+   ErasureCodePluginLrc.h
+  }
+  shec=shec {
+   CMakeLists.txt
+   ErasureCodePluginShec.cc
+   ErasureCodeShec.cc
+   ErasureCodeShecTableCache.cc
+   determinant.c
+   ErasureCodePluginShec.h
+   ErasureCodeShec.h
+   ErasureCodeShecTableCache.h
+  }
+ }
+ global=global {
+  CMakeLists.txt
+  global_context.cc
+  global_init.cc
+  pidfile.cc
+  signal_handler.cc
+  global_context.h
+  global_init.h
+  pidfile.h
+  signal_handler.h
+ }
+ googletest=googletest {
+ }
+ include=include {
+  CMakeLists.txt
+  config-h.in.cmake
+  CompatSet.h
+  Context.h
+  Distribution.h
+  addr_parsing.h
+  alloc_ptr.h
+  any.h
+  assert.h
+  bitmapper.h
+  blobhash.h
+  btree_map.h
+  buffer.h
+  buffer_fwd.h
+  byteorder.h
+  ceph_features.h
+  ceph_frag.h
+  ceph_fs.h
+  ceph_hash.h
+  cmp.h
+  color.h
+  compact_map.h
+  compact_set.h
+  compat.h
+  coredumpctl.h
+  counter.h
+  crc32c.h
+  demangle.h
+  denc.h
+  elist.h
+  encoding.h
+  err.h
+  error.h
+  event_type.h
+  filepath.h
+  frag.h
+  fs_types.h
+  hash.h
+  health.h
+  inline_memory.h
+  int_types.h
+  intarith.h
+  interval_set.h
+  ipaddr.h
+  krbd.h
+  linux_fiemap.h
+  lru.h
+  memory.h
+  mempool.h
+  msgr.h
+  object.h
+  on_exit.h
+  page.h
+  rados.h
+  random.h
+  rangeset.h
+  rbd_types.h
+  scope_guard.h
+  sock_compat.h
+  spinlock.h
+  stat.h
+  statlite.h
+  str_list.h
+  str_map.h
+  stringify.h
+  timegm.h
+  types.h
+  unordered_map.h
+  unordered_set.h
+  util.h
+  utime.h
+  uuid.h
+  xlist.h
+  cephfs=cephfs {
+   ceph_statx.h
+   libcephfs.h
+  }
+  cpp-btree=cpp-btree {
+   btree.h
+   btree_container.h
+   btree_map.h
+   btree_set.h
+  }
+  rados=rados {
+   librados.hpp
+   rados_types.hpp
+   buffer.h
+   buffer_fwd.h
+   crc32c.h
+   inline_memory.h
+   librados.h
+   librgw.h
+   memory.h
+   objclass.h
+   page.h
+   rados_types.h
+   rgw_file.h
+  }
+  radosstriper=radosstriper {
+   libradosstriper.hpp
+   libradosstriper.h
+  }
+  rbd=rbd {
+   librbd.hpp
+   features.h
+   librbd.h
+   object_map_types.h
+  }
+ }
+ isa-l=isa-l {
+ }
+ java=java {
+  CMakeLists.txt
+  README
+  build.xml
+  java=java {
+   com=com {
+    ceph=ceph {
+     crush=crush {
+      Bucket.java
+     }
+     fs=fs {
+      CephAlreadyMountedException.java
+      CephFileAlreadyExistsException.java
+      CephFileExtent.java
+      CephMount.java
+      CephNativeLoader.java
+      CephNotDirectoryException.java
+      CephNotMountedException.java
+      CephPoolException.java
+      CephStat.java
+      CephStatVFS.java
+     }
+    }
+   }
+  }
+  native=native {
+   CMakeLists.txt
+   JniConstants.cpp
+   libcephfs_jni.cc
+   JniConstants.h
+   ScopedLocalRef.h
+  }
+  test=test {
+   com=com {
+    ceph=ceph {
+     fs=fs {
+      CephAllTests.java
+      CephDoubleMountTest.java
+      CephMountCreateTest.java
+      CephMountTest.java
+      CephUnmountedTest.java
+     }
+    }
+   }
+  }
+ }
+ journal=journal {
+  CMakeLists.txt
+  Entry.cc
+  Future.cc
+  FutureImpl.cc
+  JournalMetadata.cc
+  JournalPlayer.cc
+  JournalRecorder.cc
+  JournalTrimmer.cc
+  Journaler.cc
+  ObjectPlayer.cc
+  ObjectRecorder.cc
+  Utils.cc
+  Entry.h
+  Future.h
+  FutureImpl.h
+  JournalMetadata.h
+  JournalMetadataListener.h
+  JournalPlayer.h
+  JournalRecorder.h
+  JournalTrimmer.h
+  Journaler.h
+  ObjectPlayer.h
+  ObjectRecorder.h
+  ReplayEntry.h
+  ReplayHandler.h
+  Settings.h
+  Utils.h
+ }
+ json_spirit=json_spirit {
+  CMakeLists.txt
+  json_spirit_reader.cpp
+  json_spirit_value.cpp
+  json_spirit_writer.cpp
+  json_spirit.h
+  json_spirit_error_position.h
+  json_spirit_reader.h
+  json_spirit_reader_template.h
+  json_spirit_stream_reader.h
+  json_spirit_utils.h
+  json_spirit_value.h
+  json_spirit_writer.h
+  json_spirit_writer_options.h
+  json_spirit_writer_template.h
+ }
+ key_value_store=key_value_store {
+  CMakeLists.txt
+  cls_kvs.cc
+  kv_flat_btree_async.cc
+  key_value_structure.h
+  kv_flat_btree_async.h
+  kvs_arg_types.h
+ }
+ kv=kv {
+  CMakeLists.txt
+  KeyValueDB.cc
+  KineticStore.cc
+  LevelDBStore.cc
+  MemDB.cc
+  RocksDBStore.cc
+  KeyValueDB.h
+  KineticStore.h
+  LevelDBStore.h
+  MemDB.h
+  RocksDBStore.h
+  rocksdb_cache=rocksdb_cache {
+   BinnedLRUCache.cc
+   ShardedCache.cc
+   BinnedLRUCache.h
+   ShardedCache.h
+  }
+ }
+ librados=librados {
+  CMakeLists.txt
+  IoCtxImpl.cc
+  RadosClient.cc
+  RadosXattrIter.cc
+  librados.cc
+  snap_set_diff.cc
+  AioCompletionImpl.h
+  IoCtxImpl.h
+  ListObjectImpl.h
+  PoolAsyncCompletionImpl.h
+  RadosClient.h
+  RadosXattrIter.h
+  librados_asio.h
+  snap_set_diff.h
+ }
+ libradosstriper=libradosstriper {
+  CMakeLists.txt
+  MultiAioCompletionImpl.cc
+  RadosStriperImpl.cc
+  libradosstriper.cc
+  MultiAioCompletionImpl.h
+  RadosStriperImpl.h
+ }
+ librbd=librbd {
+  AsyncObjectThrottle.cc
+  AsyncRequest.cc
+  CMakeLists.txt
+  DeepCopyRequest.cc
+  ExclusiveLock.cc
+  Features.cc
+  ImageCtx.cc
+  ImageState.cc
+  ImageWatcher.cc
+  Journal.cc
+  LibrbdAdminSocketHook.cc
+  LibrbdWriteback.cc
+  ManagedLock.cc
+  MirroringWatcher.cc
+  ObjectMap.cc
+  Operations.cc
+  TrashWatcher.cc
+  Utils.cc
+  WatchNotifyTypes.cc
+  Watcher.cc
+  internal.cc
+  librbd.cc
+  AsyncObjectThrottle.h
+  AsyncRequest.h
+  BlockGuard.h
+  DeepCopyRequest.h
+  ExclusiveLock.h
+  Features.h
+  ImageCtx.h
+  ImageState.h
+  ImageWatcher.h
+  Journal.h
+  LibrbdAdminSocketHook.h
+  LibrbdWriteback.h
+  ManagedLock.h
+  MirroringWatcher.h
+  ObjectMap.h
+  Operations.h
+  TaskFinisher.h
+  TrashWatcher.h
+  Types.h
+  Utils.h
+  WatchNotifyTypes.h
+  Watcher.h
+  internal.h
+  api=api {
+   DiffIterate.cc
+   Group.cc
+   Image.cc
+   Mirror.cc
+   Snapshot.cc
+   DiffIterate.h
+   Group.h
+   Image.h
+   Mirror.h
+   Snapshot.h
+  }
+  cache=cache {
+   ImageWriteback.cc
+   ObjectCacherObjectDispatch.cc
+   PassthroughImageCache.cc
+   ImageCache.h
+   ImageWriteback.h
+   ObjectCacherObjectDispatch.h
+   PassthroughImageCache.h
+  }
+  deep_copy=deep_copy {
+   ImageCopyRequest.cc
+   MetadataCopyRequest.cc
+   ObjectCopyRequest.cc
+   SetHeadRequest.cc
+   SnapshotCopyRequest.cc
+   SnapshotCreateRequest.cc
+   Utils.cc
+   ImageCopyRequest.h
+   MetadataCopyRequest.h
+   ObjectCopyRequest.h
+   SetHeadRequest.h
+   SnapshotCopyRequest.h
+   SnapshotCreateRequest.h
+   Types.h
+   Utils.h
+  }
+  exclusive_lock=exclusive_lock {
+   AutomaticPolicy.cc
+   PostAcquireRequest.cc
+   PreAcquireRequest.cc
+   PreReleaseRequest.cc
+   StandardPolicy.cc
+   AutomaticPolicy.h
+   Policy.h
+   PostAcquireRequest.h
+   PreAcquireRequest.h
+   PreReleaseRequest.h
+   StandardPolicy.h
+  }
+  image=image {
+   CloneRequest.cc
+   CloseRequest.cc
+   CreateRequest.cc
+   DetachChildRequest.cc
+   OpenRequest.cc
+   RefreshParentRequest.cc
+   RefreshRequest.cc
+   RemoveRequest.cc
+   SetFlagsRequest.cc
+   SetSnapRequest.cc
+   ValidatePoolRequest.cc
+   CloneRequest.h
+   CloseRequest.h
+   CreateRequest.h
+   DetachChildRequest.h
+   OpenRequest.h
+   RefreshParentRequest.h
+   RefreshRequest.h
+   RemoveRequest.h
+   SetFlagsRequest.h
+   SetSnapRequest.h
+   TypeTraits.h
+   ValidatePoolRequest.h
+  }
+  image_watcher=image_watcher {
+   NotifyLockOwner.cc
+   NotifyLockOwner.h
+  }
+  io=io {
+   AioCompletion.cc
+   AsyncOperation.cc
+   CopyupRequest.cc
+   ImageDispatchSpec.cc
+   ImageRequest.cc
+   ImageRequestWQ.cc
+   ObjectDispatch.cc
+   ObjectDispatchSpec.cc
+   ObjectDispatcher.cc
+   ObjectRequest.cc
+   ReadResult.cc
+   Utils.cc
+   AioCompletion.h
+   AsyncOperation.h
+   CopyupRequest.h
+   ImageDispatchSpec.h
+   ImageRequest.h
+   ImageRequestWQ.h
+   ObjectDispatch.h
+   ObjectDispatchInterface.h
+   ObjectDispatchSpec.h
+   ObjectDispatcher.h
+   ObjectRequest.h
+   ReadResult.h
+   Types.h
+   Utils.h
+  }
+  journal=journal {
+   CreateRequest.cc
+   DemoteRequest.cc
+   ObjectDispatch.cc
+   OpenRequest.cc
+   PromoteRequest.cc
+   RemoveRequest.cc
+   Replay.cc
+   ResetRequest.cc
+   StandardPolicy.cc
+   Types.cc
+   Utils.cc
+   CreateRequest.h
+   DemoteRequest.h
+   DisabledPolicy.h
+   ObjectDispatch.h
+   OpenRequest.h
+   Policy.h
+   PromoteRequest.h
+   RemoveRequest.h
+   Replay.h
+   ResetRequest.h
+   StandardPolicy.h
+   TypeTraits.h
+   Types.h
+   Utils.h
+  }
+  managed_lock=managed_lock {
+   AcquireRequest.cc
+   BreakRequest.cc
+   GetLockerRequest.cc
+   ReacquireRequest.cc
+   ReleaseRequest.cc
+   Utils.cc
+   AcquireRequest.h
+   BreakRequest.h
+   GetLockerRequest.h
+   ReacquireRequest.h
+   ReleaseRequest.h
+   Types.h
+   Utils.h
+  }
+  mirror=mirror {
+   DemoteRequest.cc
+   DisableRequest.cc
+   EnableRequest.cc
+   GetInfoRequest.cc
+   GetStatusRequest.cc
+   PromoteRequest.cc
+   DemoteRequest.h
+   DisableRequest.h
+   EnableRequest.h
+   GetInfoRequest.h
+   GetStatusRequest.h
+   PromoteRequest.h
+   Types.h
+  }
+  mirroring_watcher=mirroring_watcher {
+   Types.cc
+   Types.h
+  }
+  object_map=object_map {
+   CreateRequest.cc
+   InvalidateRequest.cc
+   LockRequest.cc
+   RefreshRequest.cc
+   RemoveRequest.cc
+   Request.cc
+   ResizeRequest.cc
+   SnapshotCreateRequest.cc
+   SnapshotRemoveRequest.cc
+   SnapshotRollbackRequest.cc
+   UnlockRequest.cc
+   UpdateRequest.cc
+   CreateRequest.h
+   InvalidateRequest.h
+   LockRequest.h
+   RefreshRequest.h
+   RemoveRequest.h
+   Request.h
+   ResizeRequest.h
+   SnapshotCreateRequest.h
+   SnapshotRemoveRequest.h
+   SnapshotRollbackRequest.h
+   UnlockRequest.h
+   UpdateRequest.h
+  }
+  operation=operation {
+   DisableFeaturesRequest.cc
+   EnableFeaturesRequest.cc
+   FlattenRequest.cc
+   MetadataRemoveRequest.cc
+   MetadataSetRequest.cc
+   ObjectMapIterate.cc
+   RebuildObjectMapRequest.cc
+   RenameRequest.cc
+   Request.cc
+   ResizeRequest.cc
+   SnapshotCreateRequest.cc
+   SnapshotLimitRequest.cc
+   SnapshotProtectRequest.cc
+   SnapshotRemoveRequest.cc
+   SnapshotRenameRequest.cc
+   SnapshotRollbackRequest.cc
+   SnapshotUnprotectRequest.cc
+   TrimRequest.cc
+   DisableFeaturesRequest.h
+   EnableFeaturesRequest.h
+   FlattenRequest.h
+   MetadataRemoveRequest.h
+   MetadataSetRequest.h
+   ObjectMapIterate.h
+   RebuildObjectMapRequest.h
+   RenameRequest.h
+   Request.h
+   ResizeRequest.h
+   SnapshotCreateRequest.h
+   SnapshotLimitRequest.h
+   SnapshotProtectRequest.h
+   SnapshotRemoveRequest.h
+   SnapshotRenameRequest.h
+   SnapshotRollbackRequest.h
+   SnapshotUnprotectRequest.h
+   TrimRequest.h
+  }
+  trash=trash {
+   MoveRequest.cc
+   RemoveRequest.cc
+   MoveRequest.h
+   RemoveRequest.h
+  }
+  trash_watcher=trash_watcher {
+   Types.cc
+   Types.h
+  }
+  watcher=watcher {
+   Notifier.cc
+   RewatchRequest.cc
+   Types.cc
+   Notifier.h
+   RewatchRequest.h
+   Types.h
+   Utils.h
+  }
+ }
+ log=log {
+  Log.cc
+  test.cc
+  Entry.h
+  EntryQueue.h
+  Log.h
+  LogClock.h
+  SubsystemMap.h
+ }
+ lua=lua {
+ }
+ mds=mds {
+  Anchor.cc
+  Beacon.cc
+  CDentry.cc
+  CDir.cc
+  CInode.cc
+  CMakeLists.txt
+  Capability.cc
+  DamageTable.cc
+  FSMap.cc
+  FSMapUser.cc
+  InoTable.cc
+  JournalPointer.cc
+  Locker.cc
+  LogEvent.cc
+  MDBalancer.cc
+  MDCache.cc
+  MDLog.cc
+  MDSAuthCaps.cc
+  MDSCacheObject.cc
+  MDSContext.cc
+  MDSDaemon.cc
+  MDSMap.cc
+  MDSRank.cc
+  MDSTable.cc
+  MDSTableClient.cc
+  MDSTableServer.cc
+  Mantle.cc
+  Migrator.cc
+  Mutation.cc
+  OpenFileTable.cc
+  PurgeQueue.cc
+  RecoveryQueue.cc
+  ScrubStack.cc
+  Server.cc
+  SessionMap.cc
+  SimpleLock.cc
+  SnapClient.cc
+  SnapRealm.cc
+  SnapServer.cc
+  StrayManager.cc
+  flock.cc
+  inode_backtrace.cc
+  journal.cc
+  locks.c
+  mdstypes.cc
+  snap.cc
+  Anchor.h
+  Beacon.h
+  CDentry.h
+  CDir.h
+  CInode.h
+  Capability.h
+  DamageTable.h
+  FSMap.h
+  FSMapUser.h
+  InoTable.h
+  JournalPointer.h
+  LocalLock.h
+  Locker.h
+  LogEvent.h
+  LogSegment.h
+  MDBalancer.h
+  MDCache.h
+  MDLog.h
+  MDSAuthCaps.h
+  MDSCacheObject.h
+  MDSContext.h
+  MDSContinuation.h
+  MDSDaemon.h
+  MDSMap.h
+  MDSRank.h
+  MDSTable.h
+  MDSTableClient.h
+  MDSTableServer.h
+  Mantle.h
+  Migrator.h
+  Mutation.h
+  OpenFileTable.h
+  PurgeQueue.h
+  RecoveryQueue.h
+  ScatterLock.h
+  ScrubHeader.h
+  ScrubStack.h
+  Server.h
+  SessionMap.h
+  SimpleLock.h
+  SnapClient.h
+  SnapRealm.h
+  SnapServer.h
+  StrayManager.h
+  cephfs_features.h
+  flock.h
+  inode_backtrace.h
+  locks.h
+  mds_table_types.h
+  mdstypes.h
+  snap.h
+  balancers=balancers {
+   greedyspill.lua
+  }
+  events=events {
+   ECommitted.h
+   EExport.h
+   EFragment.h
+   EImportFinish.h
+   EImportStart.h
+   EMetaBlob.h
+   ENoOp.h
+   EOpen.h
+   EResetJournal.h
+   ESession.h
+   ESessions.h
+   ESlaveUpdate.h
+   ESubtreeMap.h
+   ETableClient.h
+   ETableServer.h
+   EUpdate.h
+  }
+ }
+ messages=messages {
+  MAuth.h
+  MAuthReply.h
+  MBackfillReserve.h
+  MCacheExpire.h
+  MClientCapRelease.h
+  MClientCaps.h
+  MClientLease.h
+  MClientQuota.h
+  MClientReconnect.h
+  MClientReply.h
+  MClientRequest.h
+  MClientRequestForward.h
+  MClientSession.h
+  MClientSnap.h
+  MCommand.h
+  MCommandReply.h
+  MConfig.h
+  MDataPing.h
+  MDentryLink.h
+  MDentryUnlink.h
+  MDirUpdate.h
+  MDiscover.h
+  MDiscoverReply.h
+  MExportCaps.h
+  MExportCapsAck.h
+  MExportDir.h
+  MExportDirAck.h
+  MExportDirCancel.h
+  MExportDirDiscover.h
+  MExportDirDiscoverAck.h
+  MExportDirFinish.h
+  MExportDirNotify.h
+  MExportDirNotifyAck.h
+  MExportDirPrep.h
+  MExportDirPrepAck.h
+  MFSMap.h
+  MFSMapUser.h
+  MForward.h
+  MGatherCaps.h
+  MGenericMessage.h
+  MGetConfig.h
+  MGetPoolStats.h
+  MGetPoolStatsReply.h
+  MHeartbeat.h
+  MInodeFileCaps.h
+  MLock.h
+  MLog.h
+  MLogAck.h
+  MMDSBeacon.h
+  MMDSCacheRejoin.h
+  MMDSFindIno.h
+  MMDSFindInoReply.h
+  MMDSFragmentNotify.h
+  MMDSFragmentNotifyAck.h
+  MMDSLoadTargets.h
+  MMDSMap.h
+  MMDSOpenIno.h
+  MMDSOpenInoReply.h
+  MMDSResolve.h
+  MMDSResolveAck.h
+  MMDSSlaveRequest.h
+  MMDSSnapUpdate.h
+  MMDSTableRequest.h
+  MMgrBeacon.h
+  MMgrClose.h
+  MMgrConfigure.h
+  MMgrDigest.h
+  MMgrMap.h
+  MMgrOpen.h
+  MMgrReport.h
+  MMonCommand.h
+  MMonCommandAck.h
+  MMonElection.h
+  MMonGetMap.h
+  MMonGetOSDMap.h
+  MMonGetVersion.h
+  MMonGetVersionReply.h
+  MMonGlobalID.h
+  MMonHealth.h
+  MMonHealthChecks.h
+  MMonJoin.h
+  MMonMap.h
+  MMonMetadata.h
+  MMonMgrReport.h
+  MMonPaxos.h
+  MMonProbe.h
+  MMonQuorumService.h
+  MMonScrub.h
+  MMonSubscribe.h
+  MMonSubscribeAck.h
+  MMonSync.h
+  MNop.h
+  MOSDAlive.h
+  MOSDBackoff.h
+  MOSDBeacon.h
+  MOSDBoot.h
+  MOSDECSubOpRead.h
+  MOSDECSubOpReadReply.h
+  MOSDECSubOpWrite.h
+  MOSDECSubOpWriteReply.h
+  MOSDFailure.h
+  MOSDFastDispatchOp.h
+  MOSDForceRecovery.h
+  MOSDFull.h
+  MOSDMap.h
+  MOSDMarkMeDown.h
+  MOSDOp.h
+  MOSDOpReply.h
+  MOSDPGBackfill.h
+  MOSDPGBackfillRemove.h
+  MOSDPGCreate.h
+  MOSDPGCreate2.h
+  MOSDPGCreated.h
+  MOSDPGInfo.h
+  MOSDPGLog.h
+  MOSDPGNotify.h
+  MOSDPGPull.h
+  MOSDPGPush.h
+  MOSDPGPushReply.h
+  MOSDPGQuery.h
+  MOSDPGRecoveryDelete.h
+  MOSDPGRecoveryDeleteReply.h
+  MOSDPGRemove.h
+  MOSDPGScan.h
+  MOSDPGTemp.h
+  MOSDPGTrim.h
+  MOSDPGUpdateLogMissing.h
+  MOSDPGUpdateLogMissingReply.h
+  MOSDPeeringOp.h
+  MOSDPing.h
+  MOSDRepOp.h
+  MOSDRepOpReply.h
+  MOSDRepScrub.h
+  MOSDRepScrubMap.h
+  MOSDScrub.h
+  MOSDScrub2.h
+  MOSDScrubReserve.h
+  MPGStats.h
+  MPGStatsAck.h
+  MPing.h
+  MPoolOp.h
+  MPoolOpReply.h
+  MRecoveryReserve.h
+  MRemoveSnaps.h
+  MRoute.h
+  MServiceMap.h
+  MStatfs.h
+  MStatfsReply.h
+  MTimeCheck.h
+  MWatchNotify.h
+  PaxosServiceMessage.h
+ }
+ mgr=mgr {
+  ActivePyModule.cc
+  ActivePyModules.cc
+  BaseMgrModule.cc
+  BaseMgrStandbyModule.cc
+  ClusterState.cc
+  DaemonHealthMetricCollector.cc
+  DaemonServer.cc
+  DaemonState.cc
+  Gil.cc
+  Mgr.cc
+  MgrClient.cc
+  MgrStandby.cc
+  PyFormatter.cc
+  PyModule.cc
+  PyModuleRegistry.cc
+  PyModuleRunner.cc
+  PyOSDMap.cc
+  ServiceMap.cc
+  StandbyPyModules.cc
+  mgr_commands.cc
+  ActivePyModule.h
+  ActivePyModules.h
+  BaseMgrModule.h
+  BaseMgrStandbyModule.h
+  ClusterState.h
+  DaemonHealthMetric.h
+  DaemonHealthMetricCollector.h
+  DaemonServer.h
+  DaemonState.h
+  Gil.h
+  Mgr.h
+  MgrClient.h
+  MgrCommands.h
+  MgrContext.h
+  MgrSession.h
+  MgrStandby.h
+  PyFormatter.h
+  PyModule.h
+  PyModuleRegistry.h
+  PyModuleRunner.h
+  PyOSDMap.h
+  PythonCompat.h
+  ServiceMap.h
+  StandbyPyModules.h
+  mgr_commands.h
+ }
+ mon=mon {
+  AuthMonitor.cc
+  CMakeLists.txt
+  ConfigKeyService.cc
+  ConfigMap.cc
+  ConfigMonitor.cc
+  Elector.cc
+  FSCommands.cc
+  HealthMonitor.cc
+  LogMonitor.cc
+  MDSMonitor.cc
+  MgrMonitor.cc
+  MgrStatMonitor.cc
+  MonCap.cc
+  MonClient.cc
+  MonMap.cc
+  Monitor.cc
+  MonmapMonitor.cc
+  OSDMonitor.cc
+  PGMap.cc
+  Paxos.cc
+  PaxosService.cc
+  AuthMonitor.h
+  ConfigKeyService.h
+  ConfigMap.h
+  ConfigMonitor.h
+  CreatingPGs.h
+  Elector.h
+  FSCommands.h
+  HealthMonitor.h
+  LogMonitor.h
+  MDSMonitor.h
+  MgrMap.h
+  MgrMonitor.h
+  MgrStatMonitor.h
+  MonCap.h
+  MonClient.h
+  MonCommand.h
+  MonCommands.h
+  MonMap.h
+  MonOpRequest.h
+  Monitor.h
+  MonitorDBStore.h
+  MonmapMonitor.h
+  OSDMonitor.h
+  PGMap.h
+  Paxos.h
+  PaxosFSMap.h
+  PaxosService.h
+  QuorumService.h
+  Session.h
+  health_check.h
+  mon_types.h
+ }
+ mount=mount {
+  canonicalize.c
+  mount.ceph.c
+  mtab.c
+ }
+ msg=msg {
+  DispatchQueue.cc
+  Message.cc
+  Messenger.cc
+  QueueStrategy.cc
+  msg_types.cc
+  Connection.h
+  DispatchQueue.h
+  DispatchStrategy.h
+  Dispatcher.h
+  FastStrategy.h
+  Message.h
+  Messenger.h
+  QueueStrategy.h
+  SimplePolicyMessenger.h
+  msg_types.h
+  async=async {
+   AsyncConnection.cc
+   AsyncMessenger.cc
+   Event.cc
+   EventEpoll.cc
+   EventKqueue.cc
+   EventSelect.cc
+   PosixStack.cc
+   Stack.cc
+   net_handler.cc
+   AsyncConnection.h
+   AsyncMessenger.h
+   Event.h
+   EventEpoll.h
+   EventKqueue.h
+   EventSelect.h
+   PosixStack.h
+   Stack.h
+   net_handler.h
+   dpdk=dpdk {
+    ARP.cc
+    DPDK.cc
+    DPDKStack.cc
+    EventDPDK.cc
+    IP.cc
+    IPChecksum.cc
+    Packet.cc
+    TCP.cc
+    UserspaceEvent.cc
+    dpdk_rte.cc
+    ethernet.cc
+    net.cc
+    ARP.h
+    DPDK.h
+    DPDKStack.h
+    EventDPDK.h
+    IP.h
+    IPChecksum.h
+    Packet.h
+    PacketUtil.h
+    TCP-Stack.h
+    TCP.h
+    UserspaceEvent.h
+    align.h
+    array_map.h
+    byteorder.h
+    capture.h
+    circular_buffer.h
+    const.h
+    dpdk_rte.h
+    ethernet.h
+    ip_types.h
+    net.h
+    queue.h
+    shared_ptr.h
+    stream.h
+    toeplitz.h
+    transfer.h
+   }
+   rdma=rdma {
+    Infiniband.cc
+    RDMAConnectedSocketImpl.cc
+    RDMAServerSocketImpl.cc
+    RDMAStack.cc
+    Infiniband.h
+    RDMAStack.h
+   }
+  }
+  simple=simple {
+   Accepter.cc
+   Pipe.cc
+   PipeConnection.cc
+   SimpleMessenger.cc
+   Accepter.h
+   Pipe.h
+   PipeConnection.h
+   SimpleMessenger.h
+  }
+  xio=xio {
+   XioConnection.cc
+   XioMessenger.cc
+   XioMsg.cc
+   XioPool.cc
+   XioPortal.cc
+   XioConnection.h
+   XioInSeq.h
+   XioMessenger.h
+   XioMsg.h
+   XioPool.h
+   XioPortal.h
+   XioSubmit.h
+  }
+ }
+ objclass=objclass {
+  class_api.cc
+  objclass.h
+ }
+ objsync=objsync {
+  boto_del.py
+ }
+ ocf=ocf {
+  CMakeLists.txt
+  rbd.in
+ }
+ os=os {
+  CMakeLists.txt
+  FuseStore.cc
+  ObjectStore.cc
+  Transaction.cc
+  FuseStore.h
+  ObjectMap.h
+  ObjectStore.h
+  kv.h
+  bluestore=bluestore {
+   Allocator.cc
+   BitmapAllocator.cc
+   BitmapFreelistManager.cc
+   BlockDevice.cc
+   BlueFS.cc
+   BlueRocksEnv.cc
+   BlueStore.cc
+   FreelistManager.cc
+   KernelDevice.cc
+   NVMEDevice.cc
+   PMEMDevice.cc
+   StupidAllocator.cc
+   aio.cc
+   bluefs_types.cc
+   bluestore_tool.cc
+   bluestore_types.cc
+   fastbmap_allocator_impl.cc
+   Allocator.h
+   BitmapAllocator.h
+   BitmapFreelistManager.h
+   BlockDevice.h
+   BlueFS.h
+   BlueRocksEnv.h
+   BlueStore.h
+   FreelistManager.h
+   KernelDevice.h
+   NVMEDevice.h
+   PMEMDevice.h
+   StupidAllocator.h
+   aio.h
+   bluefs_types.h
+   bluestore_types.h
+   fastbmap_allocator_impl.h
+  }
+  filestore=filestore {
+   BtrfsFileStoreBackend.cc
+   DBObjectMap.cc
+   FileJournal.cc
+   FileStore.cc
+   GenericFileStoreBackend.cc
+   HashIndex.cc
+   IndexManager.cc
+   JournalThrottle.cc
+   JournalingObjectStore.cc
+   LFNIndex.cc
+   WBThrottle.cc
+   XfsFileStoreBackend.cc
+   ZFSFileStoreBackend.cc
+   chain_xattr.cc
+   BtrfsFileStoreBackend.h
+   CollectionIndex.h
+   DBObjectMap.h
+   FDCache.h
+   FileJournal.h
+   FileStore.h
+   GenericFileStoreBackend.h
+   HashIndex.h
+   IndexManager.h
+   Journal.h
+   JournalThrottle.h
+   JournalingObjectStore.h
+   LFNIndex.h
+   SequencerPosition.h
+   WBThrottle.h
+   XfsFileStoreBackend.h
+   ZFSFileStoreBackend.h
+   chain_xattr.h
+  }
+  fs=fs {
+   FS.cc
+   XFS.cc
+   ZFS.cc
+   FS.h
+   XFS.h
+   ZFS.h
+   btrfs_ioctl.h
+  }
+  kstore=kstore {
+   KStore.cc
+   kstore_types.cc
+   KStore.h
+   kstore_types.h
+  }
+  memstore=memstore {
+   MemStore.cc
+   MemStore.h
+   PageSet.h
+  }
+ }
+ osd=osd {
+  CMakeLists.txt
+  ClassHandler.cc
+  ECBackend.cc
+  ECMsgTypes.cc
+  ECTransaction.cc
+  ECUtil.cc
+  ExtentCache.cc
+  HitSet.cc
+  OSD.cc
+  OSDCap.cc
+  OSDMap.cc
+  OSDMapMapping.cc
+  OpQueueItem.cc
+  OpRequest.cc
+  PG.cc
+  PGBackend.cc
+  PGLog.cc
+  PGPeeringEvent.cc
+  PrimaryLogPG.cc
+  ReplicatedBackend.cc
+  ScrubStore.cc
+  Session.cc
+  SnapMapper.cc
+  Watch.cc
+  mClockClientQueue.cc
+  mClockOpClassQueue.cc
+  mClockOpClassSupport.cc
+  osd_types.cc
+  ClassHandler.h
+  ECBackend.h
+  ECMsgTypes.h
+  ECTransaction.h
+  ECUtil.h
+  ExtentCache.h
+  HitSet.h
+  OSD.h
+  OSDCap.h
+  OSDMap.h
+  OSDMapMapping.h
+  ObjectVersioner.h
+  OpQueueItem.h
+  OpRequest.h
+  PG.h
+  PGBackend.h
+  PGLog.h
+  PGPeeringEvent.h
+  PGTransaction.h
+  PrimaryLogPG.h
+  ReplicatedBackend.h
+  ScrubStore.h
+  Session.h
+  SnapMapper.h
+  TierAgentState.h
+  Watch.h
+  mClockClientQueue.h
+  mClockOpClassQueue.h
+  mClockOpClassSupport.h
+  osd_internal_types.h
+  osd_types.h
+ }
+ osdc=osdc {
+  CMakeLists.txt
+  Filer.cc
+  Journaler.cc
+  ObjectCacher.cc
+  Objecter.cc
+  Striper.cc
+  Filer.h
+  Journaler.h
+  ObjectCacher.h
+  Objecter.h
+  Striper.h
+  WritebackHandler.h
+ }
+ perfglue=perfglue {
+  cpu_profiler.cc
+  disabled_heap_profiler.cc
+  disabled_stubs.cc
+  heap_profiler.cc
+  cpu_profiler.h
+  heap_profiler.h
+ }
+ powerdns=powerdns {
+  README.md
+  pdns-backend-rgw.py
+  rgw-pdns.conf.in
+ }
+ pybind=pybind {
+  CMakeLists.txt
+  ceph_argparse.py
+  ceph_daemon.py
+  ceph_volume_client.py
+  tox.ini
+  cephfs=cephfs {
+   CMakeLists.txt
+   MANIFEST.in
+   cephfs.pyx
+   setup.py
+  }
+  mgr=mgr {
+   CMakeLists.txt
+   mgr_module.py
+   balancer=balancer {
+    __init__.py
+    module.py
+   }
+   crash=crash {
+    __init__.py
+    module.py
+   }
+   dashboard=dashboard {
+    CMakeLists.txt
+    HACKING.rst
+    README.rst
+    __init__.py
+    awsauth.py
+    exceptions.py
+    module.py
+    requirements.txt
+    rest_client.py
+    run-backend-api-request.sh
+    run-backend-api-tests.sh
+    run-frontend-e2e-tests.sh
+    run-frontend-unittests.sh
+    run-tox.sh
+    settings.py
+    tools.py
+    tox.ini
+    controllers=controllers {
+     __init__.py
+     auth.py
+     cephfs.py
+     cluster_configuration.py
+     dashboard.py
+     erasure_code_profile.py
+     host.py
+     monitor.py
+     osd.py
+     perf_counters.py
+     pool.py
+     rbd.py
+     rbd_mirroring.py
+     rgw.py
+     summary.py
+     task.py
+     tcmu_iscsi.py
+    }
+    frontend=frontend {
+     angular.json
+     karma.conf.js
+     package-lock.json
+     package.json
+     protractor.conf.js
+     proxy.conf.json.sample
+     tsconfig.json
+     tslint.json
+     e2e=e2e {
+      helper.po.ts
+      tsconfig.e2e.json
+      cluster=cluster {
+       monitors.e2e-spec.ts
+       monitors.po.ts
+       osds.e2e-spec.ts
+       osds.po.ts
+      }
+     }
+     src=src {
+      defaults.scss
+      favicon.ico
+      index.html
+      main.ts
+      openattic-theme.scss
+      polyfills.ts
+      styles.scss
+      test.ts
+      tsconfig.app.json
+      tsconfig.spec.json
+      typings.d.ts
+      app=app {
+       app-routing.module.ts
+       app.component.html
+       app.component.scss
+       app.component.spec.ts
+       app.component.ts
+       app.module.ts
+       ceph=ceph {
+        ceph.module.ts
+        block=block {
+         block.module.ts
+         mirror-health-color.pipe.spec.ts
+         mirror-health-color.pipe.ts
+         flatten-confirmation-modal=flatten-confirmation-modal {
+          flatten-confimation-modal.component.html
+          flatten-confimation-modal.component.scss
+          flatten-confimation-modal.component.spec.ts
+          flatten-confimation-modal.component.ts
+         }
+         iscsi=iscsi {
+          iscsi.component.html
+          iscsi.component.scss
+          iscsi.component.spec.ts
+          iscsi.component.ts
+         }
+         mirroring=mirroring {
+          mirroring.component.html
+          mirroring.component.scss
+          mirroring.component.spec.ts
+          mirroring.component.ts
+         }
+         rbd-details=rbd-details {
+          rbd-details.component.html
+          rbd-details.component.scss
+          rbd-details.component.spec.ts
+          rbd-details.component.ts
+         }
+         rbd-form=rbd-form {
+          rbd-form-clone-request.model.ts
+          rbd-form-copy-request.model.ts
+          rbd-form-create-request.model.ts
+          rbd-form-edit-request.model.ts
+          rbd-form-mode.enum.ts
+          rbd-form-response.model.ts
+          rbd-form.component.html
+          rbd-form.component.scss
+          rbd-form.component.spec.ts
+          rbd-form.component.ts
+          rbd-form.model.ts
+          rbd-parent.model.ts
+         }
+         rbd-list=rbd-list {
+          rbd-list.component.html
+          rbd-list.component.scss
+          rbd-list.component.spec.ts
+          rbd-list.component.ts
+          rbd-model.ts
+         }
+         rbd-snapshot-form=rbd-snapshot-form {
+          rbd-snapshot-form.component.html
+          rbd-snapshot-form.component.scss
+          rbd-snapshot-form.component.spec.ts
+          rbd-snapshot-form.component.ts
+         }
+         rbd-snapshot-list=rbd-snapshot-list {
+          rbd-snapshot-list.component.html
+          rbd-snapshot-list.component.scss
+          rbd-snapshot-list.component.spec.ts
+          rbd-snapshot-list.component.ts
+          rbd-snapshot.model.ts
+         }
+         rollback-confirmation-modal=rollback-confirmation-modal {
+          rollback-confimation-modal.component.html
+          rollback-confimation-modal.component.scss
+          rollback-confimation-modal.component.spec.ts
+          rollback-confimation-modal.component.ts
+         }
+        }
+        cephfs=cephfs {
+         cephfs.module.ts
+         cephfs=cephfs {
+          cephfs.component.html
+          cephfs.component.scss
+          cephfs.component.spec.ts
+          cephfs.component.ts
+         }
+         cephfs-chart=cephfs-chart {
+          cephfs-chart.component.html
+          cephfs-chart.component.scss
+          cephfs-chart.component.spec.ts
+          cephfs-chart.component.ts
+         }
+         clients=clients {
+          clients.component.html
+          clients.component.scss
+          clients.component.spec.ts
+          clients.component.ts
+         }
+        }
+        cluster=cluster {
+         cluster.module.ts
+         configuration=configuration {
+          configuration.component.html
+          configuration.component.scss
+          configuration.component.spec.ts
+          configuration.component.ts
+         }
+         hosts=hosts {
+          hosts.component.html
+          hosts.component.scss
+          hosts.component.spec.ts
+          hosts.component.ts
+         }
+         monitor=monitor {
+          monitor.component.html
+          monitor.component.scss
+          monitor.component.spec.ts
+          monitor.component.ts
+         }
+         osd=osd {
+          osd-details=osd-details {
+           osd-details.component.html
+           osd-details.component.scss
+           osd-details.component.spec.ts
+           osd-details.component.ts
+          }
+          osd-list=osd-list {
+           osd-list.component.html
+           osd-list.component.scss
+           osd-list.component.spec.ts
+           osd-list.component.ts
+          }
+          osd-performance-histogram=osd-performance-histogram {
+           osd-performance-histogram.component.html
+           osd-performance-histogram.component.scss
+           osd-performance-histogram.component.spec.ts
+           osd-performance-histogram.component.ts
+          }
+         }
+        }
+        dashboard=dashboard {
+         dashboard.module.ts
+         log-color.pipe.spec.ts
+         log-color.pipe.ts
+         mds-summary.pipe.spec.ts
+         mds-summary.pipe.ts
+         mgr-summary.pipe.spec.ts
+         mgr-summary.pipe.ts
+         mon-summary.pipe.spec.ts
+         mon-summary.pipe.ts
+         osd-summary.pipe.spec.ts
+         osd-summary.pipe.ts
+         pg-status-style.pipe.spec.ts
+         pg-status-style.pipe.ts
+         pg-status.pipe.spec.ts
+         pg-status.pipe.ts
+         dashboard=dashboard {
+          dashboard.component.html
+          dashboard.component.scss
+          dashboard.component.spec.ts
+          dashboard.component.ts
+         }
+         health=health {
+          health.component.html
+          health.component.scss
+          health.component.spec.ts
+          health.component.ts
+         }
+         health-pie=health-pie {
+          health-pie.component.html
+          health-pie.component.scss
+          health-pie.component.spec.ts
+          health-pie.component.ts
+         }
+        }
+        performance-counter=performance-counter {
+         performance-counter.module.ts
+         performance-counter=performance-counter {
+          performance-counter.component.html
+          performance-counter.component.scss
+          performance-counter.component.spec.ts
+          performance-counter.component.ts
+         }
+         table-performance-counter=table-performance-counter {
+          table-performance-counter.component.html
+          table-performance-counter.component.scss
+          table-performance-counter.component.spec.ts
+          table-performance-counter.component.ts
+         }
+        }
+        pool=pool {
+         pool.module.ts
+         pool-list=pool-list {
+          pool-list.component.html
+          pool-list.component.scss
+          pool-list.component.spec.ts
+          pool-list.component.ts
+         }
+        }
+        rgw=rgw {
+         rgw.module.ts
+         models=models {
+          rgw-user-capability.ts
+          rgw-user-s3-key.ts
+          rgw-user-subuser.ts
+          rgw-user-swift-key.ts
+         }
+         rgw-501=rgw-501 {
+          rgw-501.component.html
+          rgw-501.component.scss
+          rgw-501.component.spec.ts
+          rgw-501.component.ts
+         }
+         rgw-bucket-details=rgw-bucket-details {
+          rgw-bucket-details.component.html
+          rgw-bucket-details.component.scss
+          rgw-bucket-details.component.spec.ts
+          rgw-bucket-details.component.ts
+         }
+         rgw-bucket-form=rgw-bucket-form {
+          rgw-bucket-form.component.html
+          rgw-bucket-form.component.scss
+          rgw-bucket-form.component.spec.ts
+          rgw-bucket-form.component.ts
+         }
+         rgw-bucket-list=rgw-bucket-list {
+          rgw-bucket-list.component.html
+          rgw-bucket-list.component.scss
+          rgw-bucket-list.component.spec.ts
+          rgw-bucket-list.component.ts
+         }
+         rgw-daemon-details=rgw-daemon-details {
+          rgw-daemon-details.component.html
+          rgw-daemon-details.component.scss
+          rgw-daemon-details.component.spec.ts
+          rgw-daemon-details.component.ts
+         }
+         rgw-daemon-list=rgw-daemon-list {
+          rgw-daemon-list.component.html
+          rgw-daemon-list.component.scss
+          rgw-daemon-list.component.spec.ts
+          rgw-daemon-list.component.ts
+         }
+         rgw-user-capability-modal=rgw-user-capability-modal {
+          rgw-user-capability-modal.component.html
+          rgw-user-capability-modal.component.scss
+          rgw-user-capability-modal.component.spec.ts
+          rgw-user-capability-modal.component.ts
+         }
+         rgw-user-details=rgw-user-details {
+          rgw-user-details.component.html
+          rgw-user-details.component.scss
+          rgw-user-details.component.spec.ts
+          rgw-user-details.component.ts
+         }
+         rgw-user-form=rgw-user-form {
+          rgw-user-form.component.html
+          rgw-user-form.component.scss
+          rgw-user-form.component.spec.ts
+          rgw-user-form.component.ts
+         }
+         rgw-user-list=rgw-user-list {
+          rgw-user-list.component.html
+          rgw-user-list.component.scss
+          rgw-user-list.component.spec.ts
+          rgw-user-list.component.ts
+         }
+         rgw-user-s3-key-modal=rgw-user-s3-key-modal {
+          rgw-user-s3-key-modal.component.html
+          rgw-user-s3-key-modal.component.scss
+          rgw-user-s3-key-modal.component.spec.ts
+          rgw-user-s3-key-modal.component.ts
+         }
+         rgw-user-subuser-modal=rgw-user-subuser-modal {
+          rgw-user-subuser-modal.component.html
+          rgw-user-subuser-modal.component.scss
+          rgw-user-subuser-modal.component.spec.ts
+          rgw-user-subuser-modal.component.ts
+         }
+         rgw-user-swift-key-modal=rgw-user-swift-key-modal {
+          rgw-user-swift-key-modal.component.html
+          rgw-user-swift-key-modal.component.scss
+          rgw-user-swift-key-modal.component.spec.ts
+          rgw-user-swift-key-modal.component.ts
+         }
+        }
+       }
+       core=core {
+        core.module.ts
+        auth=auth {
+         auth.module.ts
+         login=login {
+          login.component.html
+          login.component.scss
+          login.component.spec.ts
+          login.component.ts
+         }
+         logout=logout {
+          logout.component.html
+          logout.component.scss
+          logout.component.spec.ts
+          logout.component.ts
+         }
+        }
+        navigation=navigation {
+         navigation.module.ts
+         navigation=navigation {
+          navigation.component.html
+          navigation.component.scss
+          navigation.component.spec.ts
+          navigation.component.ts
+         }
+         notifications=notifications {
+          notifications.component.html
+          notifications.component.scss
+          notifications.component.spec.ts
+          notifications.component.ts
+         }
+         task-manager=task-manager {
+          task-manager.component.html
+          task-manager.component.scss
+          task-manager.component.spec.ts
+          task-manager.component.ts
+         }
+        }
+        not-found=not-found {
+         not-found.component.html
+         not-found.component.scss
+         not-found.component.spec.ts
+         not-found.component.ts
+        }
+       }
+       shared=shared {
+        empty.pipe.spec.ts
+        empty.pipe.ts
+        shared.module.ts
+        api=api {
+         api.module.ts
+         auth.service.ts
+         cephfs.service.spec.ts
+         cephfs.service.ts
+         configuration.service.spec.ts
+         configuration.service.ts
+         dashboard.service.spec.ts
+         dashboard.service.ts
+         host.service.ts
+         monitor.service.spec.ts
+         monitor.service.ts
+         osd.service.spec.ts
+         osd.service.ts
+         pool.service.ts
+         rbd-mirroring.service.spec.ts
+         rbd-mirroring.service.ts
+         rbd.service.ts
+         rgw-bucket.service.spec.ts
+         rgw-bucket.service.ts
+         rgw-daemon.service.spec.ts
+         rgw-daemon.service.ts
+         rgw-user.service.spec.ts
+         rgw-user.service.ts
+         table-performance-counter.service.spec.ts
+         table-performance-counter.service.ts
+         tcmu-iscsi.service.ts
+        }
+        components=components {
+         components.module.ts
+         deletion-modal=deletion-modal {
+          deletion-modal.component.html
+          deletion-modal.component.scss
+          deletion-modal.component.spec.ts
+          deletion-modal.component.ts
+         }
+         error-panel=error-panel {
+          error-panel.component.html
+          error-panel.component.scss
+          error-panel.component.spec.ts
+          error-panel.component.ts
+         }
+         helper=helper {
+          helper.component.html
+          helper.component.scss
+          helper.component.spec.ts
+          helper.component.ts
+         }
+         info-panel=info-panel {
+          info-panel.component.html
+          info-panel.component.scss
+          info-panel.component.spec.ts
+          info-panel.component.ts
+         }
+         loading-panel=loading-panel {
+          loading-panel.component.html
+          loading-panel.component.scss
+          loading-panel.component.spec.ts
+          loading-panel.component.ts
+         }
+         modal=modal {
+          modal.component.html
+          modal.component.scss
+          modal.component.spec.ts
+          modal.component.ts
+         }
+         sparkline=sparkline {
+          sparkline.component.html
+          sparkline.component.scss
+          sparkline.component.spec.ts
+          sparkline.component.ts
+         }
+         submit-button=submit-button {
+          submit-button.component.html
+          submit-button.component.scss
+          submit-button.component.spec.ts
+          submit-button.component.ts
+         }
+         usage-bar=usage-bar {
+          usage-bar.component.html
+          usage-bar.component.scss
+          usage-bar.component.spec.ts
+          usage-bar.component.ts
+         }
+         view-cache=view-cache {
+          view-cache.component.html
+          view-cache.component.scss
+          view-cache.component.spec.ts
+          view-cache.component.ts
+         }
+        }
+        datatable=datatable {
+         datatable.module.ts
+         table=table {
+          table.component.html
+          table.component.scss
+          table.component.spec.ts
+          table.component.ts
+         }
+         table-key-value=table-key-value {
+          table-key-value.component.html
+          table-key-value.component.scss
+          table-key-value.component.spec.ts
+          table-key-value.component.ts
+         }
+        }
+        decorators=decorators {
+         cd-encode.spec.ts
+         cd-encode.ts
+        }
+        directives=directives {
+         autofocus.directive.spec.ts
+         autofocus.directive.ts
+         copy2clipboard-button.directive.spec.ts
+         copy2clipboard-button.directive.ts
+         dimless-binary.directive.spec.ts
+         dimless-binary.directive.ts
+         password-button.directive.spec.ts
+         password-button.directive.ts
+        }
+        enum=enum {
+         cell-template.enum.ts
+         notification-type.enum.ts
+         unix_errno.enum.ts
+         view-cache-status.enum.ts
+        }
+        models=models {
+         cd-notification.ts
+         cd-table-column.ts
+         cd-table-selection.ts
+         chart-tooltip.ts
+         credentials.ts
+         executing-task.ts
+         finished-task.ts
+         task-exception.ts
+         task.ts
+        }
+        pipes=pipes {
+         cd-date.pipe.spec.ts
+         cd-date.pipe.ts
+         ceph-short-version.pipe.spec.ts
+         ceph-short-version.pipe.ts
+         dimless-binary.pipe.spec.ts
+         dimless-binary.pipe.ts
+         dimless.pipe.spec.ts
+         dimless.pipe.ts
+         encode-uri.pipe.spec.ts
+         encode-uri.pipe.ts
+         filter.pipe.spec.ts
+         filter.pipe.ts
+         health-color.pipe.spec.ts
+         health-color.pipe.ts
+         list.pipe.spec.ts
+         list.pipe.ts
+         pipes.module.ts
+         relative-date.pipe.spec.ts
+         relative-date.pipe.ts
+        }
+        services=services {
+         api-interceptor.service.ts
+         auth-guard.service.ts
+         auth-storage.service.ts
+         formatter.service.spec.ts
+         formatter.service.ts
+         module-status-guard.service.ts
+         notification.service.spec.ts
+         notification.service.ts
+         services.module.ts
+         summary.service.spec.ts
+         summary.service.ts
+         task-manager-message.service.ts
+         task-manager.service.ts
+        }
+        validators=validators {
+         cd-validators.spec.ts
+         cd-validators.ts
+        }
+       }
+      }
+      assets=assets {
+       1280px-Mimic_Octopus2.jpg
+       Ceph_Logo_Stacked_RGB_White_120411_fa_256x256.png
+       Ceph_Logo_Standard_RGB_White_120411_fa.png
+       loading.gif
+       logo-mini.png
+       notification-icons.png
+      }
+      environments=environments {
+       environment.prod.ts
+       environment.ts
+      }
+      styles=styles {
+       chart-tooltip.scss
+       popover.scss
+      }
+     }
+    }
+    services=services {
+     __init__.py
+     ceph_service.py
+     rgw_client.py
+    }
+    tests=tests {
+     __init__.py
+     helper.py
+     test_notification.py
+     test_rbd_mirroring.py
+     test_rest_client.py
+     test_rest_tasks.py
+     test_rgw_client.py
+     test_settings.py
+     test_task.py
+     test_tcmu_iscsi.py
+     test_tools.py
+    }
+   }
+   hello=hello {
+    __init__.py
+    module.py
+   }
+   influx=influx {
+    __init__.py
+    module.py
+   }
+   iostat=iostat {
+    __init__.py
+    module.py
+   }
+   localpool=localpool {
+    __init__.py
+    module.py
+   }
+   prometheus=prometheus {
+    __init__.py
+    module.py
+   }
+   restful=restful {
+    __init__.py
+    common.py
+    context.py
+    decorators.py
+    hooks.py
+    module.py
+    api=api {
+     __init__.py
+     config.py
+     crush.py
+     doc.py
+     mon.py
+     osd.py
+     pool.py
+     request.py
+     server.py
+    }
+   }
+   selftest=selftest {
+    __init__.py
+    module.py
+   }
+   smart=smart {
+    __init__.py
+    module.py
+   }
+   status=status {
+    __init__.py
+    module.py
+   }
+   telegraf=telegraf {
+    __init__.py
+    basesocket.py
+    module.py
+    protocol.py
+    utils.py
+   }
+   telemetry=telemetry {
+    __init__.py
+    module.py
+   }
+   zabbix=zabbix {
+    __init__.py
+    module.py
+    zabbix_template.xml
+   }
+  }
+  rados=rados {
+   CMakeLists.txt
+   MANIFEST.in
+   rados.pxd
+   rados.pyx
+   setup.py
+  }
+  rbd=rbd {
+   CMakeLists.txt
+   MANIFEST.in
+   rbd.pyx
+   setup.py
+  }
+  rgw=rgw {
+   CMakeLists.txt
+   MANIFEST.in
+   rgw.pyx
+   setup.py
+  }
+ }
+ rapidjson=rapidjson {
+ }
+ rbd_fuse=rbd_fuse {
+  CMakeLists.txt
+  rbd-fuse.cc
+ }
+ rbd_replay=rbd_replay {
+  ActionTypes.cc
+  BoundedBuffer.hpp
+  BufferReader.cc
+  CMakeLists.txt
+  ImageNameMap.cc
+  ImageNameMap.hpp
+  PendingIO.cc
+  PendingIO.hpp
+  Replayer.cc
+  Replayer.hpp
+  actions.cc
+  actions.hpp
+  ios.cc
+  ios.hpp
+  rbd-replay-prep.cc
+  rbd-replay.cc
+  rbd_loc.cc
+  rbd_loc.hpp
+  rbd_replay_debug.hpp
+  ActionTypes.h
+  BufferReader.h
+ }
+ rgw=rgw {
+  CMakeLists.txt
+  librgw.cc
+  rgw_acl.cc
+  rgw_acl_s3.cc
+  rgw_acl_swift.cc
+  rgw_aclparser.cc
+  rgw_admin.cc
+  rgw_asio_client.cc
+  rgw_asio_frontend.cc
+  rgw_auth.cc
+  rgw_auth_keystone.cc
+  rgw_auth_s3.cc
+  rgw_basic_types.cc
+  rgw_bucket.cc
+  rgw_cache.cc
+  rgw_civetweb.cc
+  rgw_civetweb_frontend.cc
+  rgw_civetweb_log.cc
+  rgw_client_io.cc
+  rgw_common.cc
+  rgw_compression.cc
+  rgw_coroutine.cc
+  rgw_cors.cc
+  rgw_cors_s3.cc
+  rgw_cr_rados.cc
+  rgw_cr_rest.cc
+  rgw_crypt.cc
+  rgw_crypt_sanitize.cc
+  rgw_data_sync.cc
+  rgw_dencoder.cc
+  rgw_env.cc
+  rgw_es_main.cc
+  rgw_es_query.cc
+  rgw_fcgi.cc
+  rgw_fcgi_process.cc
+  rgw_file.cc
+  rgw_formats.cc
+  rgw_frontend.cc
+  rgw_gc.cc
+  rgw_http_client.cc
+  rgw_http_client_curl.cc
+  rgw_iam_policy.cc
+  rgw_iam_policy_keywords.gperf
+  rgw_json_enc.cc
+  rgw_jsonparser.cc
+  rgw_keystone.cc
+  rgw_lc.cc
+  rgw_lc_s3.cc
+  rgw_ldap.cc
+  rgw_loadgen.cc
+  rgw_loadgen_process.cc
+  rgw_log.cc
+  rgw_main.cc
+  rgw_metadata.cc
+  rgw_multi.cc
+  rgw_multi_del.cc
+  rgw_multiparser.cc
+  rgw_object_expirer.cc
+  rgw_object_expirer_core.cc
+  rgw_op.cc
+  rgw_orphan.cc
+  rgw_os_lib.cc
+  rgw_otp.cc
+  rgw_period_history.cc
+  rgw_period_puller.cc
+  rgw_period_pusher.cc
+  rgw_policy_s3.cc
+  rgw_process.cc
+  rgw_quota.cc
+  rgw_rados.cc
+  rgw_realm_reloader.cc
+  rgw_realm_watcher.cc
+  rgw_replica_log.cc
+  rgw_request.cc
+  rgw_reshard.cc
+  rgw_resolve.cc
+  rgw_rest.cc
+  rgw_rest_bucket.cc
+  rgw_rest_client.cc
+  rgw_rest_config.cc
+  rgw_rest_conn.cc
+  rgw_rest_log.cc
+  rgw_rest_metadata.cc
+  rgw_rest_opstate.cc
+  rgw_rest_realm.cc
+  rgw_rest_replica_log.cc
+  rgw_rest_role.cc
+  rgw_rest_s3.cc
+  rgw_rest_swift.cc
+  rgw_rest_usage.cc
+  rgw_rest_user.cc
+  rgw_role.cc
+  rgw_string.cc
+  rgw_swift_auth.cc
+  rgw_sync.cc
+  rgw_sync_log_trim.cc
+  rgw_sync_module.cc
+  rgw_sync_module_aws.cc
+  rgw_sync_module_es.cc
+  rgw_sync_module_es_rest.cc
+  rgw_sync_module_log.cc
+  rgw_sync_trace.cc
+  rgw_tag.cc
+  rgw_tag_s3.cc
+  rgw_token.cc
+  rgw_tools.cc
+  rgw_torrent.cc
+  rgw_usage.cc
+  rgw_user.cc
+  rgw_website.cc
+  rgw_xml.cc
+  rgw_xml_enc.cc
+  rgw_acl.h
+  rgw_acl_s3.h
+  rgw_acl_swift.h
+  rgw_asio_client.h
+  rgw_asio_frontend.h
+  rgw_auth.h
+  rgw_auth_filters.h
+  rgw_auth_keystone.h
+  rgw_auth_registry.h
+  rgw_auth_s3.h
+  rgw_b64.h
+  rgw_basic_types.h
+  rgw_bucket.h
+  rgw_cache.h
+  rgw_civetweb.h
+  rgw_civetweb_log.h
+  rgw_client_io.h
+  rgw_client_io_filters.h
+  rgw_common.h
+  rgw_compression.h
+  rgw_coroutine.h
+  rgw_cors.h
+  rgw_cors_s3.h
+  rgw_cors_swift.h
+  rgw_cr_rados.h
+  rgw_cr_rest.h
+  rgw_crypt.h
+  rgw_crypt_sanitize.h
+  rgw_data_sync.h
+  rgw_es_query.h
+  rgw_fcgi.h
+  rgw_file.h
+  rgw_formats.h
+  rgw_frontend.h
+  rgw_gc.h
+  rgw_http_client.h
+  rgw_http_client_curl.h
+  rgw_http_errors.h
+  rgw_iam_policy.h
+  rgw_iam_policy_keywords.h
+  rgw_keystone.h
+  rgw_lc.h
+  rgw_lc_s3.h
+  rgw_ldap.h
+  rgw_lib.h
+  rgw_lib_frontend.h
+  rgw_loadgen.h
+  rgw_log.h
+  rgw_meta_sync_status.h
+  rgw_metadata.h
+  rgw_multi.h
+  rgw_multi_del.h
+  rgw_object_expirer_core.h
+  rgw_op.h
+  rgw_orphan.h
+  rgw_os_lib.h
+  rgw_otp.h
+  rgw_period_history.h
+  rgw_period_puller.h
+  rgw_period_pusher.h
+  rgw_policy_s3.h
+  rgw_process.h
+  rgw_quota.h
+  rgw_rados.h
+  rgw_realm_reloader.h
+  rgw_realm_watcher.h
+  rgw_replica_log.h
+  rgw_request.h
+  rgw_reshard.h
+  rgw_resolve.h
+  rgw_rest.h
+  rgw_rest_admin.h
+  rgw_rest_bucket.h
+  rgw_rest_client.h
+  rgw_rest_config.h
+  rgw_rest_conn.h
+  rgw_rest_log.h
+  rgw_rest_metadata.h
+  rgw_rest_opstate.h
+  rgw_rest_realm.h
+  rgw_rest_replica_log.h
+  rgw_rest_role.h
+  rgw_rest_s3.h
+  rgw_rest_s3website.h
+  rgw_rest_swift.h
+  rgw_rest_usage.h
+  rgw_rest_user.h
+  rgw_role.h
+  rgw_string.h
+  rgw_swift_auth.h
+  rgw_sync.h
+  rgw_sync_log_trim.h
+  rgw_sync_module.h
+  rgw_sync_module_aws.h
+  rgw_sync_module_es.h
+  rgw_sync_module_es_rest.h
+  rgw_sync_module_log.h
+  rgw_sync_trace.h
+  rgw_tag.h
+  rgw_tag_s3.h
+  rgw_tar.h
+  rgw_token.h
+  rgw_tools.h
+  rgw_torrent.h
+  rgw_usage.h
+  rgw_user.h
+  rgw_website.h
+  rgw_xml.h
+ }
+ rocksdb=rocksdb {
+ }
+ script=script {
+  CMakeLists.txt
+  add_header.pl
+  backport-create-issue
+  bdev_grep.pl
+  build-integration-branch
+  ceph-debug-docker.sh
+  ceph-release-notes
+  check_commands.sh
+  cmake_uninstall.cmake.in
+  crash_bdev.sh
+  credits.sh
+  dep-report.sh
+  find_dups_in_pg_log.sh
+  fix_modeline.pl
+  kcon_all.sh
+  kcon_most.sh
+  ptl-tool.py
+  run-coverity
+  run_uml.sh
+  sepia_bt.sh
+  strip_trailing_whitespace.sh
+  subman
+  smr_benchmark=smr_benchmark {
+   linearCopy.sh
+   linearSMRCopy.sh
+  }
+ }
+ spdk=spdk {
+ }
+ telemetry=telemetry {
+  README.md
+  server=server {
+   app.wsgi
+   requirements.txt
+   ceph_telemetry=ceph_telemetry {
+    __init__.py
+    app.py
+    rest=rest {
+     __init__.py
+     index.py
+     report.py
+    }
+   }
+  }
+ }
+ test=test {
+  CMakeLists.txt
+  TestSignalHandlers.cc
+  TestTimers.cc
+  admin_socket.cc
+  admin_socket_output.cc
+  admin_socket_output_tests.cc
+  barclass.cc
+  base64.cc
+  bench_log.cc
+  bufferlist.cc
+  buildtest_skeleton.cc
+  ceph_argparse.cc
+  ceph_compatset.cc
+  ceph_crypto.cc
+  confutils.cc
+  coverage.sh
+  crypto.cc
+  crypto_init.cc
+  daemon_config.cc
+  detect-build-env-vars.sh
+  docker-test-helper.sh
+  docker-test.sh
+  encoding.cc
+  escape.cc
+  fooclass.cc
+  formatter.cc
+  gather.cc
+  gprof-helper.c
+  heartbeat_map.cc
+  kv_store_bench.cc
+  libcephfs_config.cc
+  librgw_file.cc
+  librgw_file_aw.cc
+  librgw_file_cd.cc
+  librgw_file_gp.cc
+  librgw_file_marker.cc
+  librgw_file_nfsns.cc
+  mime.cc
+  multi_stress_watch.cc
+  objectstore_bench.cc
+  omap_bench.cc
+  on_exit.cc
+  perf_counters.cc
+  perf_helper.cc
+  perf_local.cc
+  rbd-ggate.sh
+  run-cli-tests
+  run-cli-tests-maybe-unset-ccache
+  run-rbd-tests
+  run-rbd-unit-tests.sh
+  run-rbd-valgrind-unit-tests.sh
+  run_cmd.cc
+  signals.cc
+  simple_spin.cc
+  smoke.sh
+  strtol.cc
+  test_addrs.cc
+  test_admin_socket_output.cc
+  test_any.cc
+  test_arch.cc
+  test_backfill.sh
+  test_c_headers.c
+  test_cfuse_cache_invalidate.cc
+  test_common.sh
+  test_cors.cc
+  test_crush_bucket.sh
+  test_csyn.sh
+  test_denc.cc
+  test_features.cc
+  test_filejournal.cc
+  test_get_blkdev_size.cc
+  test_intarith.cc
+  test_ipaddr.cc
+  test_lost.sh
+  test_mempool.cc
+  test_missing_unfound.sh
+  test_mutate.cc
+  test_objectstore_memstore.sh
+  test_pageset.cc
+  test_pidfile.sh
+  test_pool_create.sh
+  test_pools.sh
+  test_prebufferedstreambuf.cc
+  test_rados_tool.sh
+  test_rbd_replay.cc
+  test_rewrite_latency.cc
+  test_rgw_admin_log.cc
+  test_rgw_admin_meta.cc
+  test_rgw_admin_opstate.cc
+  test_rgw_ldap.cc
+  test_rgw_token.cc
+  test_rw.sh
+  test_snap_mapper.cc
+  test_split.sh
+  test_str_list.cc
+  test_stress_watch.cc
+  test_striper.cc
+  test_subman.sh
+  test_subprocess.cc
+  test_texttable.cc
+  test_trans.cc
+  test_unfound.sh
+  test_workqueue.cc
+  test_xlist.cc
+  testclass.cc
+  testcrypto.cc
+  testkeys.cc
+  testmsgr.cc
+  unit.cc
+  utf8.cc
+  vstart_wrapper.sh
+  xattr_bench.cc
+  admin_socket_output.h
+  admin_socket_output_tests.h
+  kv_store_bench.h
+  omap_bench.h
+  perf_helper.h
+  ObjectMap=ObjectMap {
+   CMakeLists.txt
+   KeyValueDBMemory.cc
+   test_keyvaluedb_atomicity.cc
+   test_keyvaluedb_iterators.cc
+   test_object_map.cc
+   KeyValueDBMemory.h
+  }
+  admin_socket=admin_socket {
+   objecter_requests
+   osd_requests
+  }
+  alpine-edge=alpine-edge {
+   APKBUILD.in
+   Dockerfile.in
+   install-deps.sh
+  }
+  centos-7=centos-7 {
+   Dockerfile.in
+   ceph.spec.in
+   install-deps.sh
+  }
+  cli=cli {
+   ceph-authtool=ceph-authtool {
+    add-key-segv.t
+    add-key.t
+    cap-bin.t
+    cap-invalid.t
+    cap-overwrite.t
+    cap.t
+    create-gen-list-bin.t
+    create-gen-list.t
+    help.t
+    list-empty-bin.t
+    list-empty.t
+    list-nonexistent-bin.t
+    list-nonexistent.t
+    manpage.t
+    simple.t
+   }
+   ceph-conf=ceph-conf {
+    env-vs-args.t
+    help.t
+    invalid-args.t
+    manpage.t
+    option.t
+    sections.t
+    show-config-value.t
+    show-config.t
+    simple.t
+   }
+   ceph-kvstore-tool=ceph-kvstore-tool {
+    help.t
+   }
+   crushtool=crushtool {
+    add-bucket.t
+    add-item-in-tree.t
+    add-item.t
+    adjust-item-weight.t
+    arg-order-checks.t
+    bad-mappings.crushmap.txt
+    bad-mappings.t
+    build.t
+    check-invalid-map.t
+    check-names.empty.crushmap.txt
+    check-names.empty.t
+    check-names.max-id.t
+    check-overlapped-rules.crushmap
+    check-overlapped-rules.crushmap.txt
+    check-overlapped-rules.t
+    choose-args.crush
+    choose-args.t
+    compile-decompile-recompile.t
+    device-class.crush
+    device-class.t
+    empty-default.cushmap.txt
+    empty-default.t
+    five-devices.crushmap
+    help.t
+    location.t
+    missing-bucket.crushmap.txt
+    multitype.after
+    multitype.before
+    need_tree_order.crush
+    output-csv.t
+    reclassify.t
+    reweight.t
+    reweight_multiple.t
+    rules.t
+    rules.txt
+    set-choose.crushmap.txt
+    set-choose.t
+    show-choose-tries.t
+    show-choose-tries.txt
+    simple.template
+    simple.template.adj.one
+    simple.template.adj.three
+    simple.template.adj.two
+    simple.template.five
+    simple.template.four
+    simple.template.multitree
+    simple.template.multitree.reweighted
+    simple.template.one
+    simple.template.three
+    simple.template.two
+    straw2.t
+    straw2.txt
+    test-map-a.crushmap
+    test-map-big-1.crushmap
+    test-map-bobtail-tunables.t
+    test-map-firefly-tunables.t
+    test-map-firstn-indep.t
+    test-map-firstn-indep.txt
+    test-map-hammer-tunables.crushmap
+    test-map-hammer-tunables.t
+    test-map-indep.crushmap
+    test-map-indep.t
+    test-map-jewel-tunables.crushmap
+    test-map-jewel-tunables.t
+    test-map-legacy-tunables.t
+    test-map-tries-vs-retries.crushmap
+    test-map-tries-vs-retries.t
+    test-map-vary-r-0.t
+    test-map-vary-r-1.t
+    test-map-vary-r-2.t
+    test-map-vary-r-3.t
+    test-map-vary-r-4.t
+    test-map-vary-r.crushmap
+    tree.template
+    tree.template.final
+    crush-classes=crush-classes {
+     a
+     b
+     beesly
+     c
+     d
+     e
+     f
+     flax
+     g
+     gabe
+     gabe2
+    }
+   }
+   monmaptool=monmaptool {
+    add-exists.t
+    add-many.t
+    clobber.t
+    create-print.t
+    create-with-add.t
+    feature-set-unset-list.t
+    help.t
+    print-empty.t
+    print-nonexistent.t
+    rm-nonexistent.t
+    rm.t
+    simple.t
+   }
+   osdmaptool=osdmaptool {
+    ceph.conf.withracks
+    clobber.t
+    create-print.t
+    create-racks.t
+    crush.t
+    help.t
+    missing-argument.t
+    pool.t
+    print-empty.t
+    print-nonexistent.t
+    test-map-pgs.t
+    tree.t
+    upmap-out.t
+    upmap.t
+   }
+   radosgw-admin=radosgw-admin {
+    help.t
+   }
+   rbd=rbd {
+    help.t
+    invalid-snap-usage.t
+    not-enough-args.t
+    too-many-args.t
+   }
+  }
+  cli-integration=cli-integration {
+   rbd=rbd {
+    defaults.t
+    formatted-output.t
+    unmap.t
+   }
+  }
+  client=client {
+   iozone.sh
+   kernel_untar_build.sh
+  }
+  cls_hello=cls_hello {
+   CMakeLists.txt
+   test_cls_hello.cc
+  }
+  cls_journal=cls_journal {
+   CMakeLists.txt
+   test_cls_journal.cc
+  }
+  cls_lock=cls_lock {
+   CMakeLists.txt
+   test_cls_lock.cc
+  }
+  cls_log=cls_log {
+   CMakeLists.txt
+   test_cls_log.cc
+  }
+  cls_lua=cls_lua {
+   CMakeLists.txt
+   test_cls_lua.cc
+  }
+  cls_numops=cls_numops {
+   CMakeLists.txt
+   test_cls_numops.cc
+  }
+  cls_rbd=cls_rbd {
+   CMakeLists.txt
+   test_cls_rbd.cc
+  }
+  cls_refcount=cls_refcount {
+   CMakeLists.txt
+   test_cls_refcount.cc
+  }
+  cls_replica_log=cls_replica_log {
+   CMakeLists.txt
+   test_cls_replica_log.cc
+  }
+  cls_rgw=cls_rgw {
+   CMakeLists.txt
+   test_cls_rgw.cc
+  }
+  cls_sdk=cls_sdk {
+   CMakeLists.txt
+   test_cls_sdk.cc
+  }
+  cls_statelog=cls_statelog {
+   CMakeLists.txt
+   test_cls_statelog.cc
+  }
+  cls_version=cls_version {
+   CMakeLists.txt
+   test_cls_version.cc
+  }
+  common=common {
+   CMakeLists.txt
+   ObjectContents.cc
+   Readahead.cc
+   Throttle.cc
+   dns_resolve.cc
+   get_command_descriptions.cc
+   histogram.cc
+   test_back_trace.cc
+   test_bit_vector.cc
+   test_blkdev.cc
+   test_bloom_filter.cc
+   test_bounded_key_counter.cc
+   test_config.cc
+   test_context.cc
+   test_convenience.cc
+   test_crc32c.cc
+   test_global_doublefree.cc
+   test_hobject.cc
+   test_hostname.cc
+   test_interval_map.cc
+   test_interval_set.cc
+   test_io_priority.cc
+   test_iso_8601.cc
+   test_json_formattable.cc
+   test_lru.cc
+   test_mclock_priority_queue.cc
+   test_mutex.cc
+   test_mutex_debug.cc
+   test_perf_histogram.cc
+   test_prioritized_queue.cc
+   test_random.cc
+   test_safe_io.cc
+   test_shared_cache.cc
+   test_sharedptr_registry.cc
+   test_shunique_lock.cc
+   test_sloppy_crc_map.cc
+   test_static_ptr.cc
+   test_str_map.cc
+   test_tableformatter.cc
+   test_time.cc
+   test_url_escape.cc
+   test_util.cc
+   test_weighted_priority_queue.cc
+   test_xmlformatter.cc
+   ObjectContents.h
+   dns_messages.h
+   test_blkdev_sys_block=test_blkdev_sys_block {
+    sys=sys {
+     block=block {
+      cciss
+      c0d1
+      sda=sda {
+       bar
+       dev
+       foo
+       device=device {
+        model
+       }
+       queue=queue {
+        add_random
+        discard_granularity
+        discard_max_bytes
+        discard_zeroes_data
+        hw_sector_size
+        iostats
+        logical_block_size
+        max_hw_sectors_kb
+        max_integrity_segments
+        max_sectors_kb
+        max_segment_size
+        max_segments
+        minimum_io_size
+        nomerges
+        nr_requests
+        optimal_io_size
+        physical_block_size
+        read_ahead_kb
+        rotational
+        rq_affinity
+        scheduler
+        write_same_max_bytes
+        iosched=iosched {
+         fifo_batch
+         front_merges
+         read_expire
+         write_expire
+         writes_starved
+        }
+       }
+      }
+      sdb=sdb {
+       bar
+       dev
+       foo
+       device=device {
+        model
+       }
+       queue=queue {
+        add_random
+        discard_granularity
+        discard_max_bytes
+        discard_zeroes_data
+        hw_sector_size
+        iostats
+        logical_block_size
+        max_hw_sectors_kb
+        max_integrity_segments
+        max_sectors_kb
+        max_segment_size
+        max_segments
+        minimum_io_size
+        nomerges
+        nr_requests
+        optimal_io_size
+        physical_block_size
+        queue
+        read_ahead_kb
+        rotational
+        rq_affinity
+        scheduler
+        write_same_max_bytes
+        iosched=iosched {
+         fifo_batch
+         front_merges
+         read_expire
+         write_expire
+         writes_starved
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  compressor=compressor {
+   CMakeLists.txt
+   compressor_plugin_example.cc
+   test_compression.cc
+   compressor_example.h
+  }
+  crush=crush {
+   CMakeLists.txt
+   CrushWrapper.cc
+   crush-choose-args-expected-one-more-0.txt
+   crush-choose-args-expected-one-more-3.txt
+   crush.cc
+   crush_weights.sh
+  }
+  debian-jessie=debian-jessie {
+   Dockerfile.in
+   install-deps.sh
+   debian=debian {
+    ceph-base.dirs
+    ceph-base.docs
+    ceph-base.install
+    ceph-base.lintian-overrides
+    ceph-base.maintscript
+    ceph-base.postinst
+    ceph-base.prerm
+    ceph-common.dirs
+    ceph-common.install
+    ceph-common.postinst
+    ceph-common.postrm
+    ceph-fuse.install
+    ceph-mds.dirs
+    ceph-mds.install
+    ceph-mds.postinst
+    ceph-mds.prerm
+    ceph-mgr.dirs
+    ceph-mgr.install
+    ceph-mgr.postinst
+    ceph-mgr.prerm
+    ceph-mon.dirs
+    ceph-mon.install
+    ceph-mon.postinst
+    ceph-mon.prerm
+    ceph-osd.dirs
+    ceph-osd.install
+    ceph-osd.postinst
+    ceph-osd.prerm
+    ceph-resource-agents.install
+    ceph-test.install
+    changelog
+    compat
+    control
+    copyright
+    libcephfs-dev.install
+    libcephfs-java.jlibs
+    libcephfs-jni.install
+    libcephfs2.install
+    librados-dev.install
+    librados2.install
+    libradosstriper-dev.install
+    libradosstriper1.install
+    librbd-dev.install
+    librbd1.install
+    librgw-dev.install
+    librgw2.install
+    python-ceph-argparse.install
+    python-cephfs.install
+    python-rados.install
+    python-rbd.install
+    python-rgw.install
+    python3-ceph-argparse.install
+    python3-cephfs.install
+    python3-rados.install
+    python3-rbd.install
+    python3-rgw.install
+    rados-objclass-dev.install
+    radosgw.dirs
+    radosgw.install
+    radosgw.postinst
+    radosgw.prerm
+    rbd-fuse.install
+    rbd-mirror.install
+    rbd-nbd.install
+    rules
+    watch
+    source=source {
+     format
+    }
+   }
+  }
+  direct_messenger=direct_messenger {
+   CMakeLists.txt
+   DirectMessenger.cc
+   test_direct_messenger.cc
+   DirectMessenger.h
+  }
+  downloads=downloads {
+   cram-0.5.0ceph.2011-01-14.tar.gz
+  }
+  encoding=encoding {
+   CMakeLists.txt
+   ceph_dencoder.cc
+   check-generated.sh
+   generate-corpus-objects.sh
+   identity.sh
+   import-generated.sh
+   import.sh
+   readable.sh
+   test_ceph_time.h
+   test_sstring.h
+   types.h
+  }
+  erasure-code=erasure-code {
+   CMakeLists.txt
+   ErasureCodePluginExample.cc
+   ErasureCodePluginFailToInitialize.cc
+   ErasureCodePluginFailToRegister.cc
+   ErasureCodePluginHangs.cc
+   ErasureCodePluginMissingEntryPoint.cc
+   ErasureCodePluginMissingVersion.cc
+   TestErasureCode.cc
+   TestErasureCodeExample.cc
+   TestErasureCodeIsa.cc
+   TestErasureCodeJerasure.cc
+   TestErasureCodeLrc.cc
+   TestErasureCodePlugin.cc
+   TestErasureCodePluginIsa.cc
+   TestErasureCodePluginJerasure.cc
+   TestErasureCodePluginLrc.cc
+   TestErasureCodePluginShec.cc
+   TestErasureCodeShec.cc
+   TestErasureCodeShec_all.cc
+   TestErasureCodeShec_arguments.cc
+   TestErasureCodeShec_thread.cc
+   ceph_erasure_code.cc
+   ceph_erasure_code_benchmark.cc
+   ceph_erasure_code_non_regression.cc
+   ErasureCodeExample.h
+   ceph_erasure_code_benchmark.h
+  }
+  fedora-21=fedora-21 {
+   Dockerfile.in
+   ceph.spec.in
+   install-deps.sh
+  }
+  filestore=filestore {
+   CMakeLists.txt
+   TestFileStore.cc
+  }
+  fio=fio {
+   CMakeLists.txt
+   README.md
+   ceph-bluestore.conf
+   ceph-bluestore.fio
+   ceph-filestore.conf
+   ceph-filestore.fio
+   ceph-memstore.conf
+   ceph-memstore.fio
+   fio_ceph_objectstore.cc
+  }
+  fs=fs {
+   CMakeLists.txt
+   mds_types.cc
+  }
+  journal=journal {
+   CMakeLists.txt
+   RadosTestFixture.cc
+   test_Entry.cc
+   test_FutureImpl.cc
+   test_JournalMetadata.cc
+   test_JournalPlayer.cc
+   test_JournalRecorder.cc
+   test_JournalTrimmer.cc
+   test_Journaler.cc
+   test_ObjectPlayer.cc
+   test_ObjectRecorder.cc
+   test_main.cc
+   RadosTestFixture.h
+   mock=mock {
+    MockJournaler.cc
+    MockJournaler.h
+   }
+  }
+  lazy-omap-stats=lazy-omap-stats {
+   CMakeLists.txt
+   lazy_omap_stats_test.cc
+   main.cc
+   lazy_omap_stats_test.h
+  }
+  libcephfs=libcephfs {
+   CMakeLists.txt
+   access.cc
+   acl.cc
+   caps.cc
+   deleg.cc
+   flock.cc
+   main.cc
+   multiclient.cc
+   readdir_r_cb.cc
+   recordlock.cc
+   test.cc
+  }
+  librados=librados {
+   CMakeLists.txt
+   TestCase.cc
+   aio.cc
+   asio.cc
+   c_read_operations.cc
+   c_write_operations.cc
+   cls.cc
+   cmd.cc
+   io.cc
+   librados.cc
+   librados_config.cc
+   list.cc
+   lock.cc
+   misc.cc
+   pool.cc
+   service.cc
+   snapshots.cc
+   stat.cc
+   test.cc
+   test_common.cc
+   tier.cc
+   watch_notify.cc
+   TestCase.h
+   test.h
+   test_common.h
+  }
+  librados_test_stub=librados_test_stub {
+   CMakeLists.txt
+   LibradosTestStub.cc
+   TestClassHandler.cc
+   TestIoCtxImpl.cc
+   TestMemCluster.cc
+   TestMemIoCtxImpl.cc
+   TestMemRadosClient.cc
+   TestRadosClient.cc
+   TestWatchNotify.cc
+   LibradosTestStub.h
+   MockTestMemCluster.h
+   MockTestMemIoCtxImpl.h
+   MockTestMemRadosClient.h
+   TestClassHandler.h
+   TestCluster.h
+   TestIoCtxImpl.h
+   TestMemCluster.h
+   TestMemIoCtxImpl.h
+   TestMemRadosClient.h
+   TestRadosClient.h
+   TestWatchNotify.h
+  }
+  libradosstriper=libradosstriper {
+   CMakeLists.txt
+   TestCase.cc
+   aio.cc
+   io.cc
+   striping.cc
+   TestCase.h
+  }
+  librbd=librbd {
+   CMakeLists.txt
+   fsx.cc
+   rbdrw.py
+   test_BlockGuard.cc
+   test_DeepCopy.cc
+   test_Groups.cc
+   test_ImageWatcher.cc
+   test_MirroringWatcher.cc
+   test_ObjectMap.cc
+   test_Operations.cc
+   test_fixture.cc
+   test_internal.cc
+   test_librbd.cc
+   test_main.cc
+   test_mirroring.cc
+   test_mock_DeepCopyRequest.cc
+   test_mock_ExclusiveLock.cc
+   test_mock_Journal.cc
+   test_mock_ManagedLock.cc
+   test_mock_ObjectMap.cc
+   test_mock_TrashWatcher.cc
+   test_mock_Watcher.cc
+   test_mock_fixture.cc
+   test_notify.py
+   test_support.cc
+   test_fixture.h
+   test_mock_fixture.h
+   test_support.h
+   deep_copy=deep_copy {
+    test_mock_ImageCopyRequest.cc
+    test_mock_MetadataCopyRequest.cc
+    test_mock_ObjectCopyRequest.cc
+    test_mock_SetHeadRequest.cc
+    test_mock_SnapshotCopyRequest.cc
+    test_mock_SnapshotCreateRequest.cc
+   }
+   exclusive_lock=exclusive_lock {
+    test_mock_PostAcquireRequest.cc
+    test_mock_PreAcquireRequest.cc
+    test_mock_PreReleaseRequest.cc
+   }
+   image=image {
+    test_mock_CloneRequest.cc
+    test_mock_DetachChildRequest.cc
+    test_mock_RefreshRequest.cc
+    test_mock_RemoveRequest.cc
+    test_mock_ValidatePoolRequest.cc
+   }
+   io=io {
+    test_mock_ImageRequest.cc
+    test_mock_ImageRequestWQ.cc
+    test_mock_ObjectRequest.cc
+   }
+   journal=journal {
+    test_Entries.cc
+    test_Replay.cc
+    test_mock_OpenRequest.cc
+    test_mock_PromoteRequest.cc
+    test_mock_Replay.cc
+    test_mock_ResetRequest.cc
+   }
+   managed_lock=managed_lock {
+    test_mock_AcquireRequest.cc
+    test_mock_BreakRequest.cc
+    test_mock_GetLockerRequest.cc
+    test_mock_ReacquireRequest.cc
+    test_mock_ReleaseRequest.cc
+   }
+   mirror=mirror {
+    test_mock_DisableRequest.cc
+   }
+   mock=mock {
+    MockImageCtx.cc
+    MockJournal.cc
+    MockContextWQ.h
+    MockExclusiveLock.h
+    MockImageCtx.h
+    MockImageState.h
+    MockImageWatcher.h
+    MockJournal.h
+    MockJournalPolicy.h
+    MockObjectMap.h
+    MockOperations.h
+    MockReadahead.h
+    cache=cache {
+     MockImageCache.h
+    }
+    exclusive_lock=exclusive_lock {
+     MockPolicy.h
+    }
+    io=io {
+     MockImageRequestWQ.h
+     MockObjectDispatch.h
+     MockObjectDispatcher.h
+    }
+   }
+   object_map=object_map {
+    test_mock_InvalidateRequest.cc
+    test_mock_LockRequest.cc
+    test_mock_RefreshRequest.cc
+    test_mock_ResizeRequest.cc
+    test_mock_SnapshotCreateRequest.cc
+    test_mock_SnapshotRemoveRequest.cc
+    test_mock_SnapshotRollbackRequest.cc
+    test_mock_UnlockRequest.cc
+    test_mock_UpdateRequest.cc
+    mock=mock {
+     MockInvalidateRequest.h
+    }
+   }
+   operation=operation {
+    test_mock_DisableFeaturesRequest.cc
+    test_mock_EnableFeaturesRequest.cc
+    test_mock_Request.cc
+    test_mock_ResizeRequest.cc
+    test_mock_SnapshotCreateRequest.cc
+    test_mock_SnapshotProtectRequest.cc
+    test_mock_SnapshotRemoveRequest.cc
+    test_mock_SnapshotRollbackRequest.cc
+    test_mock_SnapshotUnprotectRequest.cc
+    test_mock_TrimRequest.cc
+   }
+   trash=trash {
+    test_mock_MoveRequest.cc
+    test_mock_RemoveRequest.cc
+   }
+   watcher=watcher {
+    test_mock_RewatchRequest.cc
+   }
+  }
+  mds=mds {
+   CMakeLists.txt
+   TestMDSAuthCaps.cc
+   TestSessionFilter.cc
+  }
+  memuse=memuse {
+   test_pool_memuse.sh
+   test_pool_memuse_tcmalloc.sh
+   test_written_pool_memuse.sh
+   test_written_pool_memuse_tcmalloc.sh
+  }
+  messenger=messenger {
+   CMakeLists.txt
+   simple_client.cc
+   simple_dispatcher.cc
+   simple_server.cc
+   xio_client.cc
+   xio_dispatcher.cc
+   xio_server.cc
+   message_helper.h
+   simple_dispatcher.h
+   xio_dispatcher.h
+  }
+  mgr=mgr {
+   CMakeLists.txt
+   mgr-dashboard-smoke.sh
+  }
+  mon=mon {
+   CMakeLists.txt
+   MonMap.cc
+   PGMap.cc
+   moncap.cc
+   test-mon-msg.cc
+   test_mon_types.cc
+   test_mon_workloadgen.cc
+  }
+  msgr=msgr {
+   CMakeLists.txt
+   perf_msgr_client.cc
+   perf_msgr_server.cc
+   test_async_driver.cc
+   test_async_networkstack.cc
+   test_msgr.cc
+   test_userspace_event.cc
+  }
+  objectstore=objectstore {
+   Allocator_bench.cc
+   Allocator_test.cc
+   CMakeLists.txt
+   DeterministicOpSequence.cc
+   FileStoreDiff.cc
+   FileStoreTracker.cc
+   ObjectStoreTransactionBenchmark.cc
+   TestObjectStoreState.cc
+   TestRocksdbOptionParse.cc
+   chain_xattr.cc
+   fastbmap_allocator_test.cc
+   run_seed_to.sh
+   run_seed_to_range.sh
+   store_test.cc
+   store_test_fixture.cc
+   test_bluefs.cc
+   test_bluestore_types.cc
+   test_idempotent.cc
+   test_idempotent_sequence.cc
+   test_kv.cc
+   test_memstore_clone.cc
+   test_transaction.cc
+   DeterministicOpSequence.h
+   FileStoreDiff.h
+   FileStoreTracker.h
+   TestObjectStoreState.h
+   store_test_fixture.h
+  }
+  old=old {
+   test_disk_bw.cc
+   test_seek_read.c
+   test_setlayout.c
+   test_short_seek_read.c
+   testbucket.cc
+   testbuffers.cc
+   testcounter.cc
+   testcrush.cc
+   testfilepath.cc
+   testmpi.cc
+   testnewbuffers.cc
+   testtree.cc
+   testxattr.cc
+  }
+  opensuse-13.2=opensuse-13.2 {
+   Dockerfile.in
+   ceph.spec.in
+   install-deps.sh
+  }
+  os=os {
+   CMakeLists.txt
+   TestLFNIndex.cc
+  }
+  osd=osd {
+   CMakeLists.txt
+   Object.cc
+   RadosModel.cc
+   TestECBackend.cc
+   TestMClockClientQueue.cc
+   TestMClockOpClassQueue.cc
+   TestOSDMap.cc
+   TestOSDScrub.cc
+   TestOpStat.cc
+   TestPGLog.cc
+   TestRados.cc
+   hitset.cc
+   osdcap.cc
+   safe-to-destroy.sh
+   test_ec_transaction.cc
+   test_extent_cache.cc
+   test_pg_transaction.cc
+   types.cc
+   Object.h
+   RadosModel.h
+   TestOpStat.h
+  }
+  osdc=osdc {
+   CMakeLists.txt
+   FakeWriteback.cc
+   MemWriteback.cc
+   object_cacher_stress.cc
+   FakeWriteback.h
+   MemWriteback.h
+  }
+  pybind=pybind {
+   CMakeLists.txt
+   test_ceph_argparse.py
+   test_ceph_daemon.py
+   test_cephfs.py
+   test_rados.py
+   test_rbd.py
+   test_rgwfs.py
+  }
+  python=python {
+   brag-client=brag-client {
+    setup.py
+    tox.ini
+    tests=tests {
+     test_ceph_brag.py
+    }
+   }
+   ceph=ceph {
+    setup.py
+    tox.ini
+    tests=tests {
+     test_ceph.py
+    }
+   }
+   ceph-disk=ceph-disk {
+    tox.ini
+   }
+  }
+  rbd_mirror=rbd_mirror {
+   CMakeLists.txt
+   random_write.cc
+   test_ClusterWatcher.cc
+   test_ImageDeleter.cc
+   test_ImageReplayer.cc
+   test_ImageSync.cc
+   test_InstanceWatcher.cc
+   test_Instances.cc
+   test_LeaderWatcher.cc
+   test_PoolWatcher.cc
+   test_fixture.cc
+   test_main.cc
+   test_mock_ImageMap.cc
+   test_mock_ImageReplayer.cc
+   test_mock_ImageSync.cc
+   test_mock_ImageSyncThrottler.cc
+   test_mock_InstanceReplayer.cc
+   test_mock_InstanceWatcher.cc
+   test_mock_LeaderWatcher.cc
+   test_mock_PoolWatcher.cc
+   test_mock_fixture.cc
+   test_fixture.h
+   test_mock_fixture.h
+   image_deleter=image_deleter {
+    test_mock_SnapshotPurgeRequest.cc
+    test_mock_TrashMoveRequest.cc
+    test_mock_TrashRemoveRequest.cc
+    test_mock_TrashWatcher.cc
+   }
+   image_map=image_map {
+    test_Policy.cc
+   }
+   image_replayer=image_replayer {
+    test_mock_BootstrapRequest.cc
+    test_mock_CreateImageRequest.cc
+    test_mock_EventPreprocessor.cc
+    test_mock_GetMirrorImageIdRequest.cc
+    test_mock_PrepareLocalImageRequest.cc
+    test_mock_PrepareRemoteImageRequest.cc
+   }
+   image_sync=image_sync {
+    test_mock_SyncPointCreateRequest.cc
+    test_mock_SyncPointPruneRequest.cc
+   }
+   mock=mock {
+    MockContextWQ.h
+    MockSafeTimer.h
+   }
+   pool_watcher=pool_watcher {
+    test_mock_RefreshImagesRequest.cc
+   }
+  }
+  rgw=rgw {
+   CMakeLists.txt
+   test-rgw-call.sh
+   test-rgw-common.sh
+   test-rgw-meta-sync.sh
+   test-rgw-multisite.sh
+   test_http_manager.cc
+   test_multen.py
+   test_multi.py
+   test_rgw_bencode.cc
+   test_rgw_common.cc
+   test_rgw_compression.cc
+   test_rgw_crypto.cc
+   test_rgw_iam_policy.cc
+   test_rgw_manifest.cc
+   test_rgw_obj.cc
+   test_rgw_period_history.cc
+   test_rgw_string.cc
+   test_rgw_common.h
+   rgw_multi=rgw_multi {
+    __init__.py
+    conn.py
+    multisite.py
+    tests.py
+    tests_es.py
+    tools.py
+    zone_cloud.py
+    zone_es.py
+    zone_rados.py
+   }
+  }
+  system=system {
+   CMakeLists.txt
+   cross_process_sem.cc
+   rados_delete_pools_parallel.cc
+   rados_list_parallel.cc
+   rados_open_pools_parallel.cc
+   rados_watch_notify.cc
+   rerun.sh
+   st_rados_create_pool.cc
+   st_rados_delete_objs.cc
+   st_rados_delete_pool.cc
+   st_rados_list_objects.cc
+   st_rados_notify.cc
+   st_rados_watch.cc
+   systest_runnable.cc
+   systest_settings.cc
+   cross_process_sem.h
+   st_rados_create_pool.h
+   st_rados_delete_objs.h
+   st_rados_delete_pool.h
+   st_rados_list_objects.h
+   st_rados_notify.h
+   st_rados_watch.h
+   systest_runnable.h
+   systest_settings.h
+  }
+  ubuntu-16.04=ubuntu-16.04 {
+   Dockerfile.in
+   install-deps.sh
+   debian=debian {
+    ceph-base.dirs
+    ceph-base.docs
+    ceph-base.install
+    ceph-base.lintian-overrides
+    ceph-base.maintscript
+    ceph-base.postinst
+    ceph-base.prerm
+    ceph-common.dirs
+    ceph-common.install
+    ceph-common.postinst
+    ceph-common.postrm
+    ceph-fuse.install
+    ceph-mds.dirs
+    ceph-mds.install
+    ceph-mds.postinst
+    ceph-mds.prerm
+    ceph-mgr.dirs
+    ceph-mgr.install
+    ceph-mgr.postinst
+    ceph-mgr.prerm
+    ceph-mon.dirs
+    ceph-mon.install
+    ceph-mon.postinst
+    ceph-mon.prerm
+    ceph-osd.dirs
+    ceph-osd.install
+    ceph-osd.postinst
+    ceph-osd.prerm
+    ceph-resource-agents.install
+    ceph-test.install
+    changelog
+    compat
+    control
+    copyright
+    libcephfs-dev.install
+    libcephfs-java.jlibs
+    libcephfs-jni.install
+    libcephfs2.install
+    librados-dev.install
+    librados2.install
+    libradosstriper-dev.install
+    libradosstriper1.install
+    librbd-dev.install
+    librbd1.install
+    librgw-dev.install
+    librgw2.install
+    python-ceph-argparse.install
+    python-cephfs.install
+    python-rados.install
+    python-rbd.install
+    python-rgw.install
+    python3-ceph-argparse.install
+    python3-cephfs.install
+    python3-rados.install
+    python3-rbd.install
+    python3-rgw.install
+    rados-objclass-dev.install
+    radosgw.dirs
+    radosgw.install
+    radosgw.postinst
+    radosgw.prerm
+    rbd-fuse.install
+    rbd-mirror.install
+    rbd-nbd.install
+    rules
+    watch
+    source=source {
+     format
+    }
+   }
+  }
+  ubuntu-17.04=ubuntu-17.04 {
+   Dockerfile.in
+   install-deps.sh
+   debian=debian {
+    ceph-base.dirs
+    ceph-base.docs
+    ceph-base.install
+    ceph-base.lintian-overrides
+    ceph-base.maintscript
+    ceph-base.postinst
+    ceph-base.prerm
+    ceph-common.dirs
+    ceph-common.install
+    ceph-common.postinst
+    ceph-common.postrm
+    ceph-fuse.install
+    ceph-mds.dirs
+    ceph-mds.install
+    ceph-mds.postinst
+    ceph-mds.prerm
+    ceph-mgr.dirs
+    ceph-mgr.install
+    ceph-mgr.postinst
+    ceph-mgr.prerm
+    ceph-mon.dirs
+    ceph-mon.install
+    ceph-mon.postinst
+    ceph-mon.prerm
+    ceph-osd.dirs
+    ceph-osd.install
+    ceph-osd.postinst
+    ceph-osd.prerm
+    ceph-resource-agents.install
+    ceph-test.install
+    changelog
+    compat
+    control
+    copyright
+    libcephfs-dev.install
+    libcephfs-java.jlibs
+    libcephfs-jni.install
+    libcephfs2.install
+    librados-dev.install
+    librados2.install
+    libradosstriper-dev.install
+    libradosstriper1.install
+    librbd-dev.install
+    librbd1.install
+    librgw-dev.install
+    librgw2.install
+    python-ceph-argparse.install
+    python-cephfs.install
+    python-rados.install
+    python-rbd.install
+    python-rgw.install
+    python3-ceph-argparse.install
+    python3-cephfs.install
+    python3-rados.install
+    python3-rbd.install
+    python3-rgw.install
+    rados-objclass-dev.install
+    radosgw.dirs
+    radosgw.install
+    radosgw.postinst
+    radosgw.prerm
+    rbd-fuse.install
+    rbd-mirror.install
+    rbd-nbd.install
+    rules
+    watch
+    source=source {
+     format
+    }
+   }
+  }
+ }
+ tools=tools {
+  CMakeLists.txt
+  RadosDump.cc
+  ceph-client-debug.cc
+  ceph-monstore-update-crush.sh
+  ceph_authtool.cc
+  ceph_conf.cc
+  ceph_kvstore_tool.cc
+  ceph_monstore_tool.cc
+  ceph_objectstore_tool.cc
+  ceph_osdomap_tool.cc
+  crushtool.cc
+  histogram_dump.py
+  monmaptool.cc
+  osdmaptool.cc
+  psim.cc
+  radosacl.cc
+  rebuild_mondb.cc
+  scratchtool.c
+  scratchtoolpp.cc
+  setup-virtualenv.sh
+  RadosDump.h
+  ceph_objectstore_tool.h
+  rebuild_mondb.h
+  ceph-lazy=ceph-lazy {
+   ceph-lazy
+   bash_completion.d=bash_completion.d {
+    ceph-lazy
+   }
+  }
+  cephfs=cephfs {
+   CMakeLists.txt
+   DataScan.cc
+   Dumper.cc
+   EventOutput.cc
+   JournalFilter.cc
+   JournalScanner.cc
+   JournalTool.cc
+   MDSUtility.cc
+   PgFiles.cc
+   Resetter.cc
+   RoleSelector.cc
+   TableTool.cc
+   cephfs-data-scan.cc
+   cephfs-journal-tool.cc
+   cephfs-table-tool.cc
+   DataScan.h
+   Dumper.h
+   EventOutput.h
+   JournalFilter.h
+   JournalScanner.h
+   JournalTool.h
+   MDSUtility.h
+   PgFiles.h
+   Resetter.h
+   RoleSelector.h
+   TableTool.h
+  }
+  rados=rados {
+   PoolDump.cc
+   RadosImport.cc
+   rados.cc
+   PoolDump.h
+   RadosImport.h
+  }
+  rbd=rbd {
+   ArgumentTypes.cc
+   CMakeLists.txt
+   IndentStream.cc
+   OptionPrinter.cc
+   Shell.cc
+   Utils.cc
+   rbd.cc
+   ArgumentTypes.h
+   IndentStream.h
+   OptionPrinter.h
+   Shell.h
+   Utils.h
+   action=action {
+    Bench.cc
+    Children.cc
+    Clone.cc
+    Copy.cc
+    Create.cc
+    Device.cc
+    Diff.cc
+    DiskUsage.cc
+    Export.cc
+    Feature.cc
+    Flatten.cc
+    Ggate.cc
+    Group.cc
+    ImageMeta.cc
+    Import.cc
+    Info.cc
+    Journal.cc
+    Kernel.cc
+    List.cc
+    Lock.cc
+    MergeDiff.cc
+    MirrorImage.cc
+    MirrorPool.cc
+    Nbd.cc
+    ObjectMap.cc
+    Pool.cc
+    Remove.cc
+    Rename.cc
+    Resize.cc
+    Snap.cc
+    Status.cc
+    Trash.cc
+    Watch.cc
+   }
+  }
+  rbd_ggate=rbd_ggate {
+   CMakeLists.txt
+   Driver.cc
+   Server.cc
+   Watcher.cc
+   debug.cc
+   ggate_drv.c
+   main.cc
+   Driver.h
+   Request.h
+   Server.h
+   Watcher.h
+   debug.h
+   ggate_drv.h
+  }
+  rbd_mirror=rbd_mirror {
+   CMakeLists.txt
+   ClusterWatcher.cc
+   ImageDeleter.cc
+   ImageMap.cc
+   ImageReplayer.cc
+   ImageSync.cc
+   ImageSyncThrottler.cc
+   InstanceReplayer.cc
+   InstanceWatcher.cc
+   Instances.cc
+   LeaderWatcher.cc
+   Mirror.cc
+   MirrorStatusWatcher.cc
+   PoolReplayer.cc
+   PoolWatcher.cc
+   ServiceDaemon.cc
+   Threads.cc
+   main.cc
+   types.cc
+   BaseRequest.h
+   ClusterWatcher.h
+   ImageDeleter.h
+   ImageMap.h
+   ImageReplayer.h
+   ImageSync.h
+   ImageSyncThrottler.h
+   InstanceReplayer.h
+   InstanceWatcher.h
+   Instances.h
+   LeaderWatcher.h
+   Mirror.h
+   MirrorStatusWatcher.h
+   PoolReplayer.h
+   PoolWatcher.h
+   ProgressContext.h
+   ServiceDaemon.h
+   Threads.h
+   types.h
+   image_deleter=image_deleter {
+    SnapshotPurgeRequest.cc
+    TrashMoveRequest.cc
+    TrashRemoveRequest.cc
+    TrashWatcher.cc
+    SnapshotPurgeRequest.h
+    TrashMoveRequest.h
+    TrashRemoveRequest.h
+    TrashWatcher.h
+    Types.h
+   }
+   image_map=image_map {
+    LoadRequest.cc
+    Policy.cc
+    SimplePolicy.cc
+    StateTransition.cc
+    Types.cc
+    UpdateRequest.cc
+    LoadRequest.h
+    Policy.h
+    SimplePolicy.h
+    StateTransition.h
+    Types.h
+    UpdateRequest.h
+   }
+   image_replayer=image_replayer {
+    BootstrapRequest.cc
+    CloseImageRequest.cc
+    CreateImageRequest.cc
+    EventPreprocessor.cc
+    GetMirrorImageIdRequest.cc
+    IsPrimaryRequest.cc
+    OpenImageRequest.cc
+    OpenLocalImageRequest.cc
+    PrepareLocalImageRequest.cc
+    PrepareRemoteImageRequest.cc
+    ReplayStatusFormatter.cc
+    BootstrapRequest.h
+    CloseImageRequest.h
+    CreateImageRequest.h
+    EventPreprocessor.h
+    GetMirrorImageIdRequest.h
+    IsPrimaryRequest.h
+    OpenImageRequest.h
+    OpenLocalImageRequest.h
+    PrepareLocalImageRequest.h
+    PrepareRemoteImageRequest.h
+    ReplayStatusFormatter.h
+    Types.h
+   }
+   image_sync=image_sync {
+    SyncPointCreateRequest.cc
+    SyncPointPruneRequest.cc
+    SyncPointCreateRequest.h
+    SyncPointPruneRequest.h
+   }
+   instance_watcher=instance_watcher {
+    Types.cc
+    Types.h
+   }
+   instances=instances {
+    Types.h
+   }
+   leader_watcher=leader_watcher {
+    Types.cc
+    Types.h
+   }
+   pool_watcher=pool_watcher {
+    RefreshImagesRequest.cc
+    RefreshImagesRequest.h
+    Types.h
+   }
+   service_daemon=service_daemon {
+    Types.cc
+    Types.h
+   }
+  }
+  rbd_nbd=rbd_nbd {
+   CMakeLists.txt
+   rbd-nbd.cc
+  }
+  rbd_recover_tool=rbd_recover_tool {
+   FAQ
+   README
+   TODO
+   common_h
+   database_h
+   epoch_h
+   metadata_h
+   osd_job
+   rbd-recover-tool
+   test_rbd_recover_tool.sh
+   config=config {
+    mds_host
+    mon_host
+    osd_host_path
+   }
+  }
+  rgw=rgw {
+   parse-cr-dump.py
+  }
+ }
+ tracing=tracing {
+  CMakeLists.txt
+  README.md
+  cyg_profile.c
+  cyg_profile.tp
+  cyg_profile_functions.c
+  eventtrace.c
+  eventtrace.tp
+  librados.c
+  librados.tp
+  librbd.c
+  librbd.tp
+  objectstore.c
+  objectstore.tp
+  oprequest.c
+  oprequest.tp
+  osd.c
+  osd.tp
+  pg.c
+  pg.tp
+  rgw_op.c
+  rgw_op.tp
+  rgw_rados.c
+  rgw_rados.tp
+  tracing-common.h
+ }
+ upstart=upstart {
+  ceph-all.conf
+  ceph-disk.conf
+  ceph-mds-all-starter.conf
+  ceph-mds-all.conf
+  ceph-mds.conf
+  ceph-mgr-all-starter.conf
+  ceph-mgr-all.conf
+  ceph-mgr.conf
+  ceph-mon-all-starter.conf
+  ceph-mon-all.conf
+  ceph-mon.conf
+  ceph-osd-all-starter.conf
+  ceph-osd-all.conf
+  ceph-osd.conf
+  ceph-rbd-mirror-all-starter.conf
+  ceph-rbd-mirror-all.conf
+  ceph-rbd-mirror.conf
+  radosgw-all-starter.conf
+  radosgw-all.conf
+  radosgw.conf
+  rbdmap.conf
+ }
+ xxHash=xxHash {
+ }
+ zstd=zstd {
+ }
+}

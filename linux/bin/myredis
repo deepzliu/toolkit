@@ -1,0 +1,8 @@
+#!/bin/sh
+
+name="$1"
+
+cmd=$(zkname ${name} | awk '{printf("redis-cli -h %s -p %s\n", $1, $2);}')
+
+echo ${cmd}
+${cmd}

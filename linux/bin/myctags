@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -f tags.txt ]; then
+	ctags -L tags.txt -R .
+else
+	tagsfile=$(dirname $0)/tags.txt
+	if [ -f ${tagsfile} ]; then
+		ctags -L ${tagsfile} -R .
+	else
+		ctags -R .
+	fi
+fi

@@ -1,0 +1,131 @@
+set nocompatible              " be iMproved, required
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'        "https://github.com/VundleVim/Vundle.vim
+
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " for html ???
+Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'https://github.com/majutsushi/tagbar.git'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plugin 'https://github.com/rking/ag.vim.git'
+Plugin 'https://github.com/vimplugin/project.vim.git'
+Plugin 'vim-scripts/gtags.vim'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'skywind3000/gutentags_plus'
+Plugin 'skywind3000/vim-preview'
+Plugin 'jiangmiao/auto-pairs' " 括号自动补全
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/vim-auto-save'
+Plugin 'itchyny/lightline.vim' " suit me better than vim-airline
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+let g:tagbar_ctags_bin = '~/opt/ctags58/bin/ctags'
+
+"自动载入ctags gtags
+if version >= 800
+    "Plug 'ludovicchabant/vim-gutentags'
+    "Plug 'skywind3000/gutentags_plus'
+
+	"let g:gutentags_trace = 1
+
+    "let $GTAGSLABEL = 'native-pygments' " unused 
+    let $GTAGSCONF = '/data/home/deepliu/opt/gtags/share/gtags/gtags.conf'
+
+	" cscope
+	"set cscopetag                  " 使用 cscope 作为 tags 命令
+	"set cscopeprg='gtags-cscope'   " 使用 gtags-cscope 代替 cscope
+	
+	" gtags
+	let GtagsCscope_Auto_Load = 1
+	let CtagsCscope_Auto_Map = 1
+	let GtagsCscope_Quiet = 1
+
+    " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
+    let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+
+    " 所生成的数据文件的名称
+    let g:gutentags_ctags_tagfile = '.tags'
+
+    " 同时开启 ctags 和 gtags 支持：
+    let g:gutentags_modules = []
+    if executable('~/opt/ctags58/bin/ctags')
+        let g:gutentags_modules += ['~/opt/ctags58/bin/ctags']
+    endif
+    if executable('gtags-cscope') && executable('gtags')
+        let g:gutentags_modules += ['gtags_cscope']
+    endif
+
+    " 将自动生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
+    let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+    " 配置 ctags 的参数
+    let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+    let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+    let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+    " 如果使用 universal ctags 需要增加下面一行
+    let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+
+    " 禁用 gutentags 自动加载 gtags 数据库的行为
+    " 避免多个项目数据库相互干扰
+    " 使用plus插件解决问题
+    let g:gutentags_auto_add_gtags_cscope = 0
+
+    "预览 quickfix 窗口 ctrl-w z 关闭
+    "Plug 'skywind3000/vim-preview'
+    "P 预览 大p关闭
+    autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+    autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
+	" 往上滚动预览窗口
+    noremap <Leader>u :PreviewScroll -1<cr> 
+	" 往下滚动预览窗口
+    noremap <leader>d :PreviewScroll +1<cr> 
+endif
+
+" vim-auto-save
+let g:auto_save = 1
+" 设置updatetime  值不可变,为默认的 200
+let g:auto_save_no_updatetime = 1
+let g:updatetime = 5
+" 插入模式下不进行自动保存
+let g:auto_save_in_insert_mode = 1
+" 保存时不在状态栏提示保存时间
+"let g:auto_save_silent = 1  
+
+" tagbar plugin setting
+nmap <F7> :NERDTreeToggle<CR>
+" ag.vim plugin setting
+set runtimepath^=~/.vim
+"let g:ag_prg="<custom-ag-path-goes-here> --vimgrep"
+let g:ag_working_path_mode="r"
+
+nmap <leader>s :sh<CR>
+
+syntax on
+set ts=4
+"set fileencodings=cp936
+"set fileencodings=utf8
+set relativenumber
+set number
+
+" jce 
+augroup filetype
+  au! BufRead,BufNewFile *.jce setfiletype jce
+augroup end
+
+" show tab number
+set tabline=%!ShowTabNo()  " custom tab pages line
+
+source ~/projects/deep-toolkit/vim/devel/kola.vim

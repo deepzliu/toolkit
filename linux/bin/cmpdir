@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $# != 2 ]; then
+	echo "usage: $0 <dir1> <dir2>"
+	exit
+fi
+
+dir1=$1
+dir2=$2
+
+diff -r ${dir1} ${dir2} | grep -wEv '(.svn|/tags)' | grep Only --color
+diff -r ${dir1} ${dir2} | grep -wEv '(.svn|/tags)' | grep 'diff -r' --color

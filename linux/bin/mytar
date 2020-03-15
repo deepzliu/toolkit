@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ $# == 0 ]; then
+	cmd=$(basename $0)
+    echo "Usage: ${cmd} <file1> [file2] ..."
+    exit
+fi
+
+if [ $# == 1 ]; then
+	file=$1
+	if [ ! -f $file ]; then
+		echo "$file: No such file or directory"
+		exit
+	fi
+
+else
+	file=`basename "$PWD"`
+	if [ "${file}" == "test" ]; then
+		cd ../
+		prefix=`basename "$PWD"`
+		cd -
+		file="${prefix}-${file}"
+	fi
+fi
+
+tar zcvf ${file}.tar.gz $@
+
+echo "${file}.tar.gz"
+

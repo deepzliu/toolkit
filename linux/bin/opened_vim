@@ -1,0 +1,12 @@
+#!/bin/sh
+
+user=`whoami`
+
+tty
+ps auxf | grep vim | grep ${user} | grep -Ev '(grep|opened_vim)' | 
+	awk '{
+			printf("%s ", $7); 
+			for(i=13;i<=NF;i++) 
+				printf("%s ", $i);
+			printf("\n"); 
+		}'

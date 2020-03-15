@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $# != 1 ]; then
+    echo "usage: $0 <container name>"
+    exit
+fi
+
+name=$1
+
+docker exec -it ${name} /bin/bash

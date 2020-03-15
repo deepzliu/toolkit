@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $# == 0 ]; then
+	pwd
+elif [ $# == 1 ]; then
+	file="$(cd $(dirname $1); pwd)/$(basename $1)"
+	if [ -f $file ] || [ -d $file ]; then
+		echo "$file"
+	else
+		echo "'$file' not exist"
+	fi
+else
+	cmd=$(basename $0)
+	echo "Usage: $cmd [file]"
+	exit
+fi
+

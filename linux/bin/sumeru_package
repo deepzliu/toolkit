@@ -1,0 +1,30 @@
+#!/bin/sh 
+
+if [ $# == 0 ]; then
+	cmd=$(basename $0)
+    echo "Usage: ${cmd} <dir> [is_sumeru_comm_name]"
+    exit
+fi
+
+file=`basename "$1"`
+is=$2
+if [ ! -d $file ]; then
+	echo "$file: No such directory"
+	mkdir -p $file/conf
+	mkdir -p $file/lib
+	exit
+elif [ ! -d $file/conf ]; then
+	echo "$file/conf: No such directory"
+	mkdir -p $file/conf
+	exit
+elif [ ! -d $file/lib ]; then
+	echo "$file/lib: No such directory"
+	mkdir -p $file/lib
+	exit
+fi
+
+if [ "SS$2" == "SS1" ]; then
+	tar zcvf sumeru-app.tgz ${file}
+else
+	tar zcvf ${file}.tgz ${file}
+fi

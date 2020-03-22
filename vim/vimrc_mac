@@ -1,37 +1,71 @@
-set nocompatible              " be iMproved, required
 
+set shell=/bin/bash " optional for Vundle
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" vim-plug
+call plug#begin()
+Plug 'skywind3000/asyncrun.vim'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'} " for html ???
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'https://github.com/majutsushi/tagbar.git'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'https://github.com/rking/ag.vim.git'
+Plug 'https://github.com/vimplugin/project.vim.git'
+Plug 'vim-scripts/gtags.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+Plug 'skywind3000/vim-preview'
+"Plug 'w0rp/ale' " now working
+"Plug 'Valloric/YouCompleteMe', {'do':'./install.py --clang-completer --go-completer --java-completer'}
+"Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs' " 括号自动补全
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-scripts/vim-auto-save'
+Plug 'itchyny/lightline.vim' " suit me better than vim-airline
+"Plug 'vim-scripts/Conque-Shell' " has python errors
+call plug#end()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'        "https://github.com/VundleVim/Vundle.vim
+" 对应语言需要安装相应的检查工具 (yum无法安装ale_linters)
+" https://github.com/w0rp/ale
+"	let g:ale_linters = {
+"		\   'cpp': ['cppcheck','clang','gcc'],
+"		\   'c': ['cppcheck','clang', 'gcc'],
+"		\   'python': ['pylint'],
+"		\   'bash': ['shellcheck'],
+"		\   'go': ['golint'],
+"		\}
+let g:ale_linters_explicit = 1 "除g:ale_linters指定，其他不可用
+let g:ale_linters = {
+	\   'cpp': ['cppcheck'],
+	\   'c': ['cppcheck'],
+	\}
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_completion_delay = 500
+let g:ale_echo_delay = 20
+let g:ale_lint_delay = 500
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:airline#extensions#ale#enabled = 1
+"let g:ale_set_quickfix = 1
+"let g:ale_open_list = 1"打开quitfix对话框
+let g:ale_statusline_format = ['X %d', '⚡ %d', '~ ok']
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+let g:ale_c_cppcheck_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_cppcheck_options = '-Wall -O2 -std=c++14'
 
-Plugin 'skywind3000/asyncrun.vim'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " for html ???
-Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'https://github.com/majutsushi/tagbar.git'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/rking/ag.vim.git'
-Plugin 'https://github.com/vimplugin/project.vim.git'
-Plugin 'vim-scripts/gtags.vim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'skywind3000/gutentags_plus'
-Plugin 'skywind3000/vim-preview'
-Plugin 'jiangmiao/auto-pairs' " 括号自动补全
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-scripts/vim-auto-save'
-Plugin 'itchyny/lightline.vim' " suit me better than vim-airline
+"let s:error_symbol = get(g:, 'airline#extensions#ale#error_symbol', '✗ ')
+"let s:warning_symbol = get(g:, 'airline#extensions#ale#warning_symbol', '⚡ ')
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-let g:tagbar_ctags_bin = '~/opt/ctags58/bin/ctags'
+let g:ale_sign_error = ">>"
+let g:ale_sign_warning = "--"
+"map <F7> ::ALEToggle<CR>
 
 "自动载入ctags gtags
 if version >= 800
@@ -60,8 +94,8 @@ if version >= 800
 
     " 同时开启 ctags 和 gtags 支持：
     let g:gutentags_modules = []
-    if executable('~/opt/ctags58/bin/ctags')
-        let g:gutentags_modules += ['~/opt/ctags58/bin/ctags']
+    if executable('~/opt/bin/ctags')
+        let g:gutentags_modules += ['~/opt/bin/ctags']
     endif
     if executable('gtags-cscope') && executable('gtags')
         let g:gutentags_modules += ['gtags_cscope']
@@ -94,6 +128,64 @@ if version >= 800
     noremap <leader>d :PreviewScroll +1<cr> 
 endif
 
+"let g:ycm_server_python_interpreter='/data/home/deepliu/opt/python-3.6.5/bin/python3'
+let g:ycm_server_python_interpreter='/data/home/deepliu/opt/python-3.6.5/bin/python3'
+let g:ycm_global_ycm_extra_conf='/data/home/deepliu/projects/deep-toolkit/vim/ycm_extra_conf.py'
+
+" Add highlighting for function definition in C++
+"function! EnhanceCppSyntax()
+"	syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?$"
+"	hi def link cppFuncDef Special
+"endfunction 
+
+" tagbar plugin setting
+nmap <F7> :NERDTreeToggle<CR>
+" ag.vim plugin setting
+set runtimepath^=~/.vim
+"let g:ag_prg="<custom-ag-path-goes-here> --vimgrep"
+let g:ag_working_path_mode="r"
+
+nmap <leader>s :sh<CR>
+"nmap <leader>s :ConqueTermSplit bash<CR>
+"let g:ConqueTerm_PyVersion = 3 " 本机的 python 是 2.7,所以这里设置成 2
+"let g:ConqueTerm_StartMessages = 0 "去掉烦人的警告
+
+
+
+" jce 
+augroup filetype
+  au! BufRead,BufNewFile *.jce setfiletype jce
+augroup end
+
+"map <F2> :call FormatCode()<CR>
+func! FormatCode()
+	exec "w"
+	if &filetype == 'C' || &filetype == 'h'
+	   exec "%!astyle --style=allman --indent=tab"
+	elseif &filetype == 'cpp'
+	   exec "%!astyle --style=allman --indent=tab"
+	return
+	endif
+	exec "w"
+endfunc
+command! -nargs=0 Fmt :call FormatCode()<CR>
+
+
+" show tab number
+set tabline=%!ShowTabNo()  " custom tab pages line
+
+" vim-airline
+"let g:airline_section_b = '%{strftime("%c")}'
+"let g:airline_section_y = 'BN: %{bufnr("%")}'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline_theme = 'base16'
+
+let g:lightline = {
+      \ 'colorscheme': 'default',
+      \ }
+
 " vim-auto-save
 let g:auto_save = 1
 " 设置updatetime  值不可变,为默认的 200
@@ -104,28 +196,39 @@ let g:auto_save_in_insert_mode = 1
 " 保存时不在状态栏提示保存时间
 "let g:auto_save_silent = 1  
 
-" tagbar plugin setting
-nmap <F7> :NERDTreeToggle<CR>
-" ag.vim plugin setting
-set runtimepath^=~/.vim
-"let g:ag_prg="<custom-ag-path-goes-here> --vimgrep"
-let g:ag_working_path_mode="r"
-
-nmap <leader>s :sh<CR>
+" ============== custom setting ===================
+" Deepliu
+source ~/projects/toolkit/vim/devel/kola.vim
+let g:syntastic_python_python_exec = '/data/home/deepliu/opt/python-3.6.5/bin/python3' 
+let NERDTreeIgnore = ['\.o$', '\.tar.gz$', '\.so', '\.pyc$', 'unit_test', 'pressure_test']
 
 syntax on
 set ts=4
 "set fileencodings=cp936
 "set fileencodings=utf8
+set mouse-=a
+set ruler
+"color koehler
+"color darkblue 
+color desert
+set scrolloff=3
 set relativenumber
 set number
+set nobackup
+"set nowritebackup
+set nopaste " paste without indent
+set nocindent
+set hlsearch
 
-" jce 
-augroup filetype
-  au! BufRead,BufNewFile *.jce setfiletype jce
-augroup end
+"let g:islogopen = 1
 
-" show tab number
-set tabline=%!ShowTabNo()  " custom tab pages line
-
-source ~/projects/deep-toolkit/vim/devel/kola.vim
+""set foldenable              " 开始折叠
+"set foldmethod=syntax       " 设置语法折叠
+"set foldmethod=marker		 " this works, but not like it
+"set foldcolumn=0            " 设置折叠区域的宽度
+"setlocal foldlevel=2        " 设置折叠层数为
+"set foldlevelstart=99       " 打开文件是默认不折叠代码
+"
+""set foldclose=all          " 设置为自动关闭折叠                
+"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+                            " 用空格键来开关折叠

@@ -198,7 +198,7 @@ let g:auto_save_in_insert_mode = 1
 
 " ============== custom setting ===================
 " Deepliu
-source ~/projects/deep-toolkit/vim/devel/kola.vim
+source ~/projects/toolkit/vim/devel/kola.vim
 let g:syntastic_python_python_exec = '/data/home/deepliu/opt/python-3.6.5/bin/python3' 
 let NERDTreeIgnore = ['\.o$', '\.tar.gz$', '\.so', '\.pyc$', 'unit_test', 'pressure_test']
 

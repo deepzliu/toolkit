@@ -1,943 +1,187 @@
 
-redis=/Users/deepliu/projects/redis-5.0.8 CD=. filter="*" {
- 00-RELEASENOTES
- BUGS
- CONTRIBUTING
- COPYING
- INSTALL
- MANIFESTO
+redis-src=/root/projects/redis-5.0.8/src CD=. filter="*" {
  Makefile
- README.md
- redis.conf
- runtest
- runtest-cluster
- runtest-moduleapi
- runtest-sentinel
- sentinel.conf
- deps=deps {
+ adlist.c
+ ae.c
+ ae_epoll.c
+ ae_evport.c
+ ae_kqueue.c
+ ae_select.c
+ anet.c
+ aof.c
+ bio.c
+ bitops.c
+ blocked.c
+ childinfo.c
+ cluster.c
+ config.c
+ crc16.c
+ crc64.c
+ db.c
+ debug.c
+ defrag.c
+ dict.c
+ endianconv.c
+ evict.c
+ expire.c
+ geo.c
+ geohash.c
+ geohash_helper.c
+ hyperloglog.c
+ intset.c
+ latency.c
+ lazyfree.c
+ listpack.c
+ localtime.c
+ lolwut.c
+ lolwut5.c
+ lzf_c.c
+ lzf_d.c
+ memtest.c
+ mkreleasehdr.sh
+ module.c
+ multi.c
+ networking.c
+ notify.c
+ object.c
+ pqsort.c
+ pubsub.c
+ quicklist.c
+ rand.c
+ rax.c
+ rdb.c
+ redis-benchmark.c
+ redis-check-aof.c
+ redis-check-rdb.c
+ redis-cli.c
+ redis-trib.rb
+ release.c
+ replication.c
+ rio.c
+ scripting.c
+ sds.c
+ sentinel.c
+ server.c
+ setproctitle.c
+ sha1.c
+ siphash.c
+ slowlog.c
+ sort.c
+ sparkline.c
+ syncio.c
+ t_hash.c
+ t_list.c
+ t_set.c
+ t_stream.c
+ t_string.c
+ t_zset.c
+ util.c
+ valgrind.sup
+ ziplist.c
+ zipmap.c
+ zmalloc.c
+ adlist.h
+ ae.h
+ anet.h
+ asciilogo.h
+ atomicvar.h
+ bio.h
+ cluster.h
+ config.h
+ crc64.h
+ debugmacro.h
+ dict.h
+ endianconv.h
+ fmacros.h
+ geo.h
+ geohash.h
+ geohash_helper.h
+ help.h
+ intset.h
+ latency.h
+ listpack.h
+ listpack_malloc.h
+ lzf.h
+ lzfP.h
+ pqsort.h
+ quicklist.h
+ rand.h
+ rax.h
+ rax_malloc.h
+ rdb.h
+ redisassert.h
+ redismodule.h
+ rio.h
+ sds.h
+ sdsalloc.h
+ server.h
+ sha1.h
+ slowlog.h
+ solarisfixes.h
+ sparkline.h
+ stream.h
+ testhelp.h
+ util.h
+ version.h
+ ziplist.h
+ zipmap.h
+ zmalloc.h
+ modules=modules {
   Makefile
-  README.md
-  update-jemalloc.sh
-  hiredis=hiredis {
-   CHANGELOG.md
-   COPYING
-   Makefile
-   README.md
-   appveyor.yml
-   async.c
-   dict.c
-   hiredis.c
-   net.c
-   read.c
-   sds.c
-   test.c
-   async.h
-   dict.h
-   fmacros.h
-   hiredis.h
-   net.h
-   read.h
-   sds.h
-   sdsalloc.h
-   win32.h
-   adapters=adapters {
-    ae.h
-    glib.h
-    ivykis.h
-    libev.h
-    libevent.h
-    libuv.h
-    macosx.h
-    qt.h
-   }
-   examples=examples {
-    example-ae.c
-    example-glib.c
-    example-ivykis.c
-    example-libev.c
-    example-libevent.c
-    example-libuv.c
-    example-macosx.c
-    example-qt.cpp
-    example.c
-    example-qt.h
-   }
-  }
-  jemalloc=jemalloc {
-   COPYING
-   ChangeLog
-   INSTALL.md
-   Makefile.in
-   README
-   TUNING.md
-   VERSION
-   autogen.sh
-   config.stamp.in
-   configure
-   configure.ac
-   jemalloc.pc.in
-   run_tests.sh
-   bin=bin {
-    jemalloc-config.in
-    jemalloc.sh.in
-    jeprof.in
-   }
-   build-aux=build-aux {
-    config.guess
-    config.sub
-    install-sh
-   }
-   doc=doc {
-    html.xsl.in
-    jemalloc.xml.in
-    manpages.xsl.in
-    stylesheet.xsl
-   }
-   include=include {
-    jemalloc=jemalloc {
-     jemalloc.sh
-     jemalloc_defs.h.in
-     jemalloc_macros.h.in
-     jemalloc_mangle.sh
-     jemalloc_protos.h.in
-     jemalloc_rename.sh
-     jemalloc_typedefs.h.in
-     internal=internal {
-      jemalloc_internal_defs.h.in
-      jemalloc_preamble.h.in
-      private_namespace.sh
-      private_symbols.sh
-      public_namespace.sh
-      public_unnamespace.sh
-      size_classes.sh
-      smoothstep.sh
-      arena_externs.h
-      arena_inlines_a.h
-      arena_inlines_b.h
-      arena_stats.h
-      arena_structs_a.h
-      arena_structs_b.h
-      arena_types.h
-      assert.h
-      atomic.h
-      atomic_c11.h
-      atomic_gcc_atomic.h
-      atomic_gcc_sync.h
-      atomic_msvc.h
-      background_thread_externs.h
-      background_thread_inlines.h
-      background_thread_structs.h
-      base_externs.h
-      base_inlines.h
-      base_structs.h
-      base_types.h
-      bin.h
-      bin_stats.h
-      bit_util.h
-      bitmap.h
-      cache_bin.h
-      ckh.h
-      ctl.h
-      div.h
-      emitter.h
-      extent_dss.h
-      extent_externs.h
-      extent_inlines.h
-      extent_mmap.h
-      extent_structs.h
-      extent_types.h
-      hash.h
-      hooks.h
-      jemalloc_internal_decls.h
-      jemalloc_internal_externs.h
-      jemalloc_internal_includes.h
-      jemalloc_internal_inlines_a.h
-      jemalloc_internal_inlines_b.h
-      jemalloc_internal_inlines_c.h
-      jemalloc_internal_macros.h
-      jemalloc_internal_types.h
-      large_externs.h
-      log.h
-      malloc_io.h
-      mutex.h
-      mutex_pool.h
-      mutex_prof.h
-      nstime.h
-      pages.h
-      ph.h
-      prng.h
-      prof_externs.h
-      prof_inlines_a.h
-      prof_inlines_b.h
-      prof_structs.h
-      prof_types.h
-      ql.h
-      qr.h
-      rb.h
-      rtree.h
-      rtree_tsd.h
-      smoothstep.h
-      spin.h
-      stats.h
-      sz.h
-      tcache_externs.h
-      tcache_inlines.h
-      tcache_structs.h
-      tcache_types.h
-      ticker.h
-      tsd.h
-      tsd_generic.h
-      tsd_malloc_thread_cleanup.h
-      tsd_tls.h
-      tsd_types.h
-      tsd_win.h
-      util.h
-      witness.h
-     }
-    }
-    msvc_compat=msvc_compat {
-     strings.h
-     windows_extra.h
-     C99=C99 {
-      stdbool.h
-      stdint.h
-     }
-    }
-   }
-   m4=m4 {
-    ax_cxx_compile_stdcxx.m4
-   }
-   msvc=msvc {
-    ReadMe.txt
-    jemalloc_vc2015.sln
-    jemalloc_vc2017.sln
-    projects=projects {
-     vc2015=vc2015 {
-      jemalloc=jemalloc {
-       jemalloc.vcxproj
-       jemalloc.vcxproj.filters
-      }
-      test_threads=test_threads {
-       test_threads.vcxproj
-       test_threads.vcxproj.filters
-      }
-     }
-     vc2017=vc2017 {
-      jemalloc=jemalloc {
-       jemalloc.vcxproj
-       jemalloc.vcxproj.filters
-      }
-      test_threads=test_threads {
-       test_threads.vcxproj
-       test_threads.vcxproj.filters
-      }
-     }
-    }
-    test_threads=test_threads {
-     test_threads.cpp
-     test_threads_main.cpp
-     test_threads.h
-    }
-   }
-   scripts=scripts {
-    gen_run_tests.py
-    gen_travis.py
-   }
-   src=src {
-    arena.c
-    background_thread.c
-    base.c
-    bin.c
-    bitmap.c
-    ckh.c
-    ctl.c
-    div.c
-    extent.c
-    extent_dss.c
-    extent_mmap.c
-    hash.c
-    hooks.c
-    jemalloc.c
-    jemalloc_cpp.cpp
-    large.c
-    log.c
-    malloc_io.c
-    mutex.c
-    mutex_pool.c
-    nstime.c
-    pages.c
-    prng.c
-    prof.c
-    rtree.c
-    stats.c
-    sz.c
-    tcache.c
-    ticker.c
-    tsd.c
-    witness.c
-    zone.c
-   }
-   test=test {
-    test.sh.in
-    include=include {
-     test=test {
-      jemalloc_test.h.in
-      jemalloc_test_defs.h.in
-      SFMT-alti.h
-      SFMT-params.h
-      SFMT-params11213.h
-      SFMT-params1279.h
-      SFMT-params132049.h
-      SFMT-params19937.h
-      SFMT-params216091.h
-      SFMT-params2281.h
-      SFMT-params4253.h
-      SFMT-params44497.h
-      SFMT-params607.h
-      SFMT-params86243.h
-      SFMT-sse2.h
-      SFMT.h
-      btalloc.h
-      extent_hooks.h
-      math.h
-      mq.h
-      mtx.h
-      test.h
-      thd.h
-      timer.h
-     }
-    }
-    integration=integration {
-     MALLOCX_ARENA.c
-     aligned_alloc.c
-     allocated.c
-     extent.c
-     extent.sh
-     mallocx.c
-     mallocx.sh
-     overflow.c
-     posix_memalign.c
-     rallocx.c
-     sdallocx.c
-     thread_arena.c
-     thread_tcache_enabled.c
-     xallocx.c
-     xallocx.sh
-     cpp=cpp {
-      basic.cpp
-     }
-    }
-    src=src {
-     SFMT.c
-     btalloc.c
-     btalloc_0.c
-     btalloc_1.c
-     math.c
-     mq.c
-     mtx.c
-     test.c
-     thd.c
-     timer.c
-    }
-    stress=stress {
-     microbench.c
-    }
-    unit=unit {
-     SFMT.c
-     a0.c
-     arena_reset.c
-     arena_reset_prof.c
-     arena_reset_prof.sh
-     atomic.c
-     background_thread.c
-     background_thread_enable.c
-     base.c
-     bit_util.c
-     bitmap.c
-     ckh.c
-     decay.c
-     decay.sh
-     div.c
-     emitter.c
-     extent_quantize.c
-     fork.c
-     hash.c
-     hooks.c
-     junk.c
-     junk.sh
-     junk_alloc.c
-     junk_alloc.sh
-     junk_free.c
-     junk_free.sh
-     log.c
-     mallctl.c
-     malloc_io.c
-     math.c
-     mq.c
-     mtx.c
-     nstime.c
-     pack.c
-     pack.sh
-     pages.c
-     ph.c
-     prng.c
-     prof_accum.c
-     prof_accum.sh
-     prof_active.c
-     prof_active.sh
-     prof_gdump.c
-     prof_gdump.sh
-     prof_idump.c
-     prof_idump.sh
-     prof_reset.c
-     prof_reset.sh
-     prof_tctx.c
-     prof_tctx.sh
-     prof_thread_name.c
-     prof_thread_name.sh
-     ql.c
-     qr.c
-     rb.c
-     retained.c
-     rtree.c
-     size_classes.c
-     slab.c
-     smoothstep.c
-     spin.c
-     stats.c
-     stats_print.c
-     ticker.c
-     tsd.c
-     witness.c
-     zero.c
-     zero.sh
-    }
-   }
-  }
-  linenoise=linenoise {
-   Makefile
-   README.markdown
-   example.c
-   linenoise.c
-   linenoise.h
-  }
-  lua=lua {
-   COPYRIGHT
-   HISTORY
-   INSTALL
-   Makefile
-   README
-   doc=doc {
-    contents.html
-    cover.png
-    logo.gif
-    lua.1
-    lua.css
-    lua.html
-    luac.1
-    luac.html
-    manual.css
-    manual.html
-    readme.html
-   }
-   etc=etc {
-    Makefile
-    README
-    all.c
-    lua.hpp
-    lua.ico
-    lua.pc
-    luavs.bat
-    min.c
-    noparser.c
-    strict.lua
-   }
-   src=src {
-    Makefile
-    fpconv.c
-    lapi.c
-    lauxlib.c
-    lbaselib.c
-    lcode.c
-    ldblib.c
-    ldebug.c
-    ldo.c
-    ldump.c
-    lfunc.c
-    lgc.c
-    linit.c
-    liolib.c
-    llex.c
-    lmathlib.c
-    lmem.c
-    loadlib.c
-    lobject.c
-    lopcodes.c
-    loslib.c
-    lparser.c
-    lstate.c
-    lstring.c
-    lstrlib.c
-    ltable.c
-    ltablib.c
-    ltm.c
-    lua.c
-    lua_bit.c
-    lua_cjson.c
-    lua_cmsgpack.c
-    lua_struct.c
-    luac.c
-    lundump.c
-    lvm.c
-    lzio.c
-    print.c
-    strbuf.c
-    fpconv.h
-    lapi.h
-    lauxlib.h
-    lcode.h
-    ldebug.h
-    ldo.h
-    lfunc.h
-    lgc.h
-    llex.h
-    llimits.h
-    lmem.h
-    lobject.h
-    lopcodes.h
-    lparser.h
-    lstate.h
-    lstring.h
-    ltable.h
-    ltm.h
-    lua.h
-    luaconf.h
-    lualib.h
-    lundump.h
-    lvm.h
-    lzio.h
-    strbuf.h
-   }
-   test=test {
-    README
-    bisect.lua
-    cf.lua
-    echo.lua
-    env.lua
-    factorial.lua
-    fib.lua
-    fibfor.lua
-    globals.lua
-    hello.lua
-    life.lua
-    luac.lua
-    printf.lua
-    readonly.lua
-    sieve.lua
-    sort.lua
-    table.lua
-    trace-calls.lua
-    trace-globals.lua
-    xd.lua
-   }
-  }
- }
- src=src {
-  Makefile
-  adlist.c
-  ae.c
-  ae_epoll.c
-  ae_evport.c
-  ae_kqueue.c
-  ae_select.c
-  anet.c
-  aof.c
-  bio.c
-  bitops.c
-  blocked.c
-  childinfo.c
-  cluster.c
-  config.c
-  crc16.c
-  crc64.c
-  db.c
-  debug.c
-  defrag.c
-  dict.c
-  endianconv.c
-  evict.c
-  expire.c
-  geo.c
-  geohash.c
-  geohash_helper.c
-  hyperloglog.c
-  intset.c
-  latency.c
-  lazyfree.c
-  listpack.c
-  localtime.c
-  lolwut.c
-  lolwut5.c
-  lzf_c.c
-  lzf_d.c
-  memtest.c
-  mkreleasehdr.sh
-  module.c
-  multi.c
-  networking.c
-  notify.c
-  object.c
-  pqsort.c
-  pubsub.c
-  quicklist.c
-  rand.c
-  rax.c
-  rdb.c
-  redis-benchmark.c
-  redis-check-aof.c
-  redis-check-rdb.c
-  redis-cli.c
-  redis-trib.rb
-  release.c
-  replication.c
-  rio.c
-  scripting.c
-  sds.c
-  sentinel.c
-  server.c
-  setproctitle.c
-  sha1.c
-  siphash.c
-  slowlog.c
-  sort.c
-  sparkline.c
-  syncio.c
-  t_hash.c
-  t_list.c
-  t_set.c
-  t_stream.c
-  t_string.c
-  t_zset.c
-  util.c
-  valgrind.sup
-  ziplist.c
-  zipmap.c
-  zmalloc.c
-  adlist.h
-  ae.h
-  anet.h
-  asciilogo.h
-  atomicvar.h
-  bio.h
-  cluster.h
-  config.h
-  crc64.h
-  debugmacro.h
-  dict.h
-  endianconv.h
-  fmacros.h
-  geo.h
-  geohash.h
-  geohash_helper.h
-  help.h
-  intset.h
-  latency.h
-  listpack.h
-  listpack_malloc.h
-  lzf.h
-  lzfP.h
-  pqsort.h
-  quicklist.h
-  rand.h
-  rax.h
-  rax_malloc.h
-  rdb.h
-  redisassert.h
-  redismodule.h
-  rio.h
-  sds.h
-  sdsalloc.h
-  server.h
-  sha1.h
-  slowlog.h
-  solarisfixes.h
-  sparkline.h
-  stream.h
-  testhelp.h
-  util.h
-  version.h
-  ziplist.h
-  zipmap.h
-  zmalloc.h
-  modules=modules {
-   Makefile
-   gendoc.rb
-   helloblock.c
-   hellocluster.c
-   hellodict.c
-   hellotimer.c
-   hellotype.c
-   helloworld.c
-   testmodule.c
-  }
- }
- tests=tests {
-  instances.tcl
-  test_helper.tcl
-  assets=assets {
-   default.conf
-   encodings.rdb
-   hash-zipmap.rdb
-  }
-  cluster=cluster {
-   cluster.tcl
-   run.tcl
-   tests=tests {
-    00-base.tcl
-    01-faildet.tcl
-    02-failover.tcl
-    03-failover-loop.tcl
-    04-resharding.tcl
-    05-slave-selection.tcl
-    06-slave-stop-cond.tcl
-    07-replica-migration.tcl
-    08-update-msg.tcl
-    09-pubsub.tcl
-    10-manual-failover.tcl
-    11-manual-takeover.tcl
-    12-replica-migration-2.tcl
-    13-no-failover-option.tcl
-    helpers=helpers {
-     onlydots.tcl
-    }
-    includes=includes {
-     init-tests.tcl
-    }
-   }
-   tmp=tmp {
-   }
-  }
-  helpers=helpers {
-   bg_block_op.tcl
-   bg_complex_data.tcl
-   gen_write_load.tcl
-  }
-  integration=integration {
-   aof-race.tcl
-   aof.tcl
-   block-repl.tcl
-   convert-zipmap-hash-on-load.tcl
-   logging.tcl
-   psync2-reg.tcl
-   psync2.tcl
-   rdb.tcl
-   redis-cli.tcl
-   replication-2.tcl
-   replication-3.tcl
-   replication-4.tcl
-   replication-psync.tcl
-   replication.tcl
-  }
-  modules=modules {
-   Makefile
-   commandfilter.c
-   testrdb.c
-  }
-  sentinel=sentinel {
-   run.tcl
-   tests=tests {
-    00-base.tcl
-    01-conf-update.tcl
-    02-slaves-reconf.tcl
-    03-runtime-reconf.tcl
-    04-slave-selection.tcl
-    05-manual.tcl
-    06-ckquorum.tcl
-    07-down-conditions.tcl
-    includes=includes {
-     init-tests.tcl
-    }
-   }
-   tmp=tmp {
-   }
-  }
-  support=support {
-   cluster.tcl
-   redis.tcl
-   server.tcl
-   test.tcl
-   tmpfile.tcl
-   util.tcl
-  }
-  tmp=tmp {
-  }
-  unit=unit {
-   aofrw.tcl
-   auth.tcl
-   bitfield.tcl
-   bitops.tcl
-   dump.tcl
-   expire.tcl
-   geo.tcl
-   hyperloglog.tcl
-   introspection-2.tcl
-   introspection.tcl
-   keyspace.tcl
-   latency-monitor.tcl
-   lazyfree.tcl
-   limits.tcl
-   maxmemory.tcl
-   memefficiency.tcl
-   multi.tcl
-   obuf-limits.tcl
-   other.tcl
-   pendingquerybuf.tcl
-   printver.tcl
-   protocol.tcl
-   pubsub.tcl
-   quit.tcl
-   scan.tcl
-   scripting.tcl
-   slowlog.tcl
-   sort.tcl
-   wait.tcl
-   moduleapi=moduleapi {
-    commandfilter.tcl
-    testrdb.tcl
-   }
-   type=type {
-    hash.tcl
-    incr.tcl
-    list-2.tcl
-    list-3.tcl
-    list-common.tcl
-    list.tcl
-    set.tcl
-    stream-cgroups.tcl
-    stream.tcl
-    string.tcl
-    zset.tcl
-   }
-  }
- }
- utils=utils {
-  build-static-symbols.tcl
-  cluster_fail_time.tcl
-  corrupt_rdb.c
-  generate-command-help.rb
-  install_server.sh
-  redis-copy.rb
-  redis-sha1.rb
-  redis_init_script
-  redis_init_script.tpl
-  speed-regression.tcl
-  whatisdoing.sh
-  create-cluster=create-cluster {
-   README
-   create-cluster
-  }
-  graphs=graphs {
-   commits-over-time=commits-over-time {
-    README.md
-    genhtml.tcl
-   }
-  }
-  hashtable=hashtable {
-   README
-   rehashing.c
-  }
-  hyperloglog=hyperloglog {
-   hll-err.rb
-   hll-gnuplot-graph.rb
-  }
-  lru=lru {
-   README
-   lfu-simulation.c
-   test-lru.rb
-  }
-  releasetools=releasetools {
-   01_create_tarball.sh
-   02_upload_tarball.sh
-   03_test_release.sh
-   04_release_hash.sh
-   changelog.tcl
-  }
+  gendoc.rb
+  helloblock.c
+  hellocluster.c
+  hellodict.c
+  hellotimer.c
+  hellotype.c
+  helloworld.c
+  testmodule.c
  }
 }
-ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
- CMakeLists.txt
- README
- TODO
+ceph=/root/projects/ceph-13.2.8/src CD=. filter="*.h *.c *.hpp *.cc *.cpp *.lua *.md *.conf *akefile* INSTALL *.sh *.ac configure* *.m4 *.in *.py *.rb *.tcl" {
+ perf_histogram.h
  btrfs_ioc_test.c
- ceph-clsinfo
- ceph-coverage.in
- ceph-crash.in
- ceph-create-keys
- ceph-debugpack.in
- ceph-osd-prestart.sh
- ceph-post-file.in
- ceph-rbdnamer
- ceph-run
- ceph.conf.twoosds
- ceph.in
- ceph_common.sh
+ ceph_ver.c
  ceph_fuse.cc
  ceph_mds.cc
  ceph_mgr.cc
  ceph_mon.cc
  ceph_osd.cc
- ceph_release
  ceph_syn.cc
- ceph_ver.c
- ceph_ver.h.in.cmake
  cls_acl.cc
  cls_crypto.cc
- cmonctl
- etc-rbdmap
- init-ceph.in
- init-radosgw
- init-rbdmap
  krbd.cc
  libcephfs.cc
  librados-config.cc
- loadclass.sh
  logrotate.conf
- mount.fuse.ceph
+ sample.ceph.conf
+ ceph-osd-prestart.sh
+ ceph_common.sh
+ loadclass.sh
  mrgw.sh
- mrun
  mstart.sh
  mstop.sh
  multi-dump.sh
- ps-ceph.pl
- push_to_qemu.pl
- rbd-replay-many
- rbdmap
- sample.ceph.conf
  stop.sh
  unittest_bufferlist.sh
  vstart.sh
- yasm-wrapper
- perf_histogram.h
+ ceph-coverage.in
+ ceph-crash.in
+ ceph-debugpack.in
+ ceph-post-file.in
+ ceph.in
+ init-ceph.in
  arch=arch {
-  arm.c
-  intel.c
-  ppc.c
-  probe.cc
   arm.h
   intel.h
   ppc.h
   probe.h
+  arm.c
+  intel.c
+  ppc.c
+  probe.cc
  }
  auth=auth {
-  AuthAuthorizeHandler.cc
-  AuthClientHandler.cc
-  AuthMethodList.cc
-  AuthServiceHandler.cc
-  AuthSessionHandler.cc
-  Crypto.cc
-  KeyRing.cc
-  RotatingKeyRing.cc
-  scheme.txt
   Auth.h
   AuthAuthorizeHandler.h
   AuthClientHandler.h
@@ -947,56 +191,53 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   Crypto.h
   KeyRing.h
   RotatingKeyRing.h
+  AuthAuthorizeHandler.cc
+  AuthClientHandler.cc
+  AuthMethodList.cc
+  AuthServiceHandler.cc
+  AuthSessionHandler.cc
+  Crypto.cc
+  KeyRing.cc
+  RotatingKeyRing.cc
   cephx=cephx {
-   CephxAuthorizeHandler.cc
-   CephxClientHandler.cc
-   CephxKeyServer.cc
-   CephxProtocol.cc
-   CephxServiceHandler.cc
-   CephxSessionHandler.cc
    CephxAuthorizeHandler.h
    CephxClientHandler.h
    CephxKeyServer.h
    CephxProtocol.h
    CephxServiceHandler.h
    CephxSessionHandler.h
+   CephxAuthorizeHandler.cc
+   CephxClientHandler.cc
+   CephxKeyServer.cc
+   CephxProtocol.cc
+   CephxServiceHandler.cc
+   CephxSessionHandler.cc
   }
   none=none {
-   AuthNoneAuthorizeHandler.cc
    AuthNoneAuthorizeHandler.h
    AuthNoneClientHandler.h
    AuthNoneProtocol.h
    AuthNoneServiceHandler.h
    AuthNoneSessionHandler.h
+   AuthNoneAuthorizeHandler.cc
   }
   unknown=unknown {
-   AuthUnknownAuthorizeHandler.cc
    AuthUnknownAuthorizeHandler.h
    AuthUnknownClientHandler.h
    AuthUnknownProtocol.h
    AuthUnknownServiceHandler.h
    AuthUnknownSessionHandler.h
+   AuthUnknownAuthorizeHandler.cc
   }
  }
  bash_completion=bash_completion {
-  CMakeLists.txt
-  ceph
-  rados
-  radosgw-admin
-  rbd
  }
  blkin=blkin {
  }
  ceph-detect-init=ceph-detect-init {
-  AUTHORS.rst
-  CMakeLists.txt
-  MANIFEST.in
-  README.rst
-  requirements.txt
   run-tox.sh
+  MANIFEST.in
   setup.py
-  test-requirements.txt
-  tox.ini
   ceph_detect_init=ceph_detect_init {
    __init__.py
    exc.py
@@ -1039,35 +280,16 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   integration=integration {
-   alpine-3.4.dockerfile
-   centos-6.dockerfile
-   centos-7.dockerfile
-   debian-jessie.dockerfile
-   debian-sid.dockerfile
-   debian-squeeze.dockerfile
-   debian-wheezy.dockerfile
-   fedora-21.dockerfile
-   opensuse-13.1.dockerfile
-   opensuse-13.2.dockerfile
    test_main.py
-   ubuntu-12.04.dockerfile
-   ubuntu-14.04.dockerfile
-   ubuntu-15.04.dockerfile
   }
   tests=tests {
    test_all.py
   }
  }
  ceph-disk=ceph-disk {
-  AUTHORS.rst
-  CMakeLists.txt
-  MANIFEST.in
-  README.rst
-  requirements.txt
   run-tox.sh
+  MANIFEST.in
   setup.py
-  test-requirements.txt
-  tox.ini
   ceph_disk=ceph_disk {
    __init__.py
    main.py
@@ -1079,11 +301,8 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   }
  }
  ceph-volume=ceph-volume {
-  CMakeLists.txt
   MANIFEST.in
   setup.py
-  shell_tox.ini
-  tox.ini
   ceph_volume=ceph_volume {
    __init__.py
    configuration.py
@@ -1174,397 +393,182 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     }
     functional=functional {
      README.md
-     Vagrantfile
      batch=batch {
-      tox.ini
       centos7=centos7 {
        bluestore=bluestore {
         mixed-type=mixed-type {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         mixed-type-dmcrypt=mixed-type-dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         mixed-type-dmcrypt-explicit=mixed-type-dmcrypt-explicit {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         mixed-type-explicit=mixed-type-explicit {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         single-type=single-type {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         single-type-dmcrypt=single-type-dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
        filestore=filestore {
         mixed-type=mixed-type {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         mixed-type-dmcrypt=mixed-type-dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         mixed-type-dmcrypt-explicit=mixed-type-dmcrypt-explicit {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         mixed-type-explicit=mixed-type-explicit {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         single-type=single-type {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         single-type-dmcrypt=single-type-dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
       }
       playbooks=playbooks {
-       noop.yml
-       setup_mixed_type.yml
-       test.yml
-       test_explicit.yml
-       test_zap.yml
       }
       xenial=xenial {
        bluestore=bluestore {
         single-type=single-type {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         single-type-dmcrypt=single-type-dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
        filestore=filestore {
         single-type=single-type {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         single-type-dmcrypt=single-type-dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         test_zap.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
       }
      }
      lvm=lvm {
-      tox.ini
       centos7=centos7 {
        bluestore=bluestore {
         create=create {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         dmcrypt=dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
        filestore=filestore {
         create=create {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         dmcrypt=dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
       }
       playbooks=playbooks {
-       setup_partitions.yml
-       test_bluestore.yml
-       test_filestore.yml
       }
       xenial=xenial {
        bluestore=bluestore {
         create=create {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         dmcrypt=dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
        filestore=filestore {
         create=create {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
         dmcrypt=dmcrypt {
-         Vagrantfile
-         hosts
-         setup.yml
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
         }
        }
       }
      }
      playbooks=playbooks {
-      deploy.yml
      }
      scripts=scripts {
       generate_ssh_config.sh
-      output.py
       test_unicode.sh
       vagrant_reload.sh
       vagrant_up.sh
+      output.py
      }
      simple=simple {
-      tox.ini
       centos7=centos7 {
        bluestore=bluestore {
         activate=activate {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-luks=dmcrypt-luks {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-plain=dmcrypt-plain {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
        }
        filestore=filestore {
         activate=activate {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-luks=dmcrypt-luks {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-plain=dmcrypt-plain {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
        }
@@ -1572,83 +576,41 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
       xenial=xenial {
        bluestore=bluestore {
         activate=activate {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-luks=dmcrypt-luks {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-plain=dmcrypt-plain {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
        }
        filestore=filestore {
         activate=activate {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-luks=dmcrypt-luks {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
         dmcrypt-plain=dmcrypt-plain {
-         Vagrantfile
-         hosts
-         test.yml
-         vagrant_variables.yml
          group_vars=group_vars {
-          all
          }
          host_vars=host_vars {
-          osd0.yml
-          osd1.yml
          }
         }
        }
@@ -1693,21 +655,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
  civetweb=civetweb {
  }
  client=client {
-  CMakeLists.txt
-  Client.cc
-  ClientSnapRealm.cc
-  Delegation.cc
-  Dentry.cc
-  Fh.cc
-  Inode.cc
-  MetaRequest.cc
-  MetaSession.cc
-  SyntheticClient.cc
-  Trace.cc
-  barrier.cc
-  fuse_ll.cc
-  posix_acl.cc
-  test_ioctls.c
   Client.h
   ClientSnapRealm.h
   Delegation.h
@@ -1726,259 +673,149 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   fuse_ll.h
   ioctl.h
   posix_acl.h
+  test_ioctls.c
+  Client.cc
+  ClientSnapRealm.cc
+  Delegation.cc
+  Dentry.cc
+  Fh.cc
+  Inode.cc
+  MetaRequest.cc
+  MetaSession.cc
+  SyntheticClient.cc
+  Trace.cc
+  barrier.cc
+  fuse_ll.cc
+  posix_acl.cc
   hypertable=hypertable {
-   CephBroker.cc
    CephBroker.h
+   CephBroker.cc
   }
  }
  cls=cls {
-  CMakeLists.txt
   cephfs=cephfs {
-   cls_cephfs.cc
-   cls_cephfs_client.cc
    cls_cephfs.h
    cls_cephfs_client.h
+   cls_cephfs.cc
+   cls_cephfs_client.cc
   }
   hello=hello {
    cls_hello.cc
   }
   journal=journal {
+   cls_journal_client.h
+   cls_journal_types.h
    cls_journal.cc
    cls_journal_client.cc
    cls_journal_types.cc
-   cls_journal_client.h
-   cls_journal_types.h
   }
   lock=lock {
+   cls_lock_client.h
+   cls_lock_ops.h
+   cls_lock_types.h
    cls_lock.cc
    cls_lock_client.cc
    cls_lock_ops.cc
    cls_lock_types.cc
-   cls_lock_client.h
-   cls_lock_ops.h
-   cls_lock_types.h
   }
   log=log {
-   cls_log.cc
-   cls_log_client.cc
    cls_log_client.h
    cls_log_ops.h
    cls_log_types.h
+   cls_log.cc
+   cls_log_client.cc
   }
   lua=lua {
-   cls_lua.cc
-   cls_lua_client.cc
-   lua_bufferlist.cc
    cls_lua.h
    cls_lua_client.h
    cls_lua_ops.h
+   cls_lua.cc
+   cls_lua_client.cc
+   lua_bufferlist.cc
   }
   numops=numops {
+   cls_numops_client.h
    cls_numops.cc
    cls_numops_client.cc
-   cls_numops_client.h
   }
   otp=otp {
-   cls_otp.cc
-   cls_otp_client.cc
-   cls_otp_types.cc
    cls_otp_client.h
    cls_otp_ops.h
    cls_otp_types.h
+   cls_otp.cc
+   cls_otp_client.cc
+   cls_otp_types.cc
   }
   rbd=rbd {
-   cls_rbd.cc
-   cls_rbd_client.cc
-   cls_rbd_types.cc
    cls_rbd.h
    cls_rbd_client.h
    cls_rbd_types.h
+   cls_rbd.cc
+   cls_rbd_client.cc
+   cls_rbd_types.cc
   }
   refcount=refcount {
+   cls_refcount_client.h
+   cls_refcount_ops.h
    cls_refcount.cc
    cls_refcount_client.cc
    cls_refcount_ops.cc
-   cls_refcount_client.h
-   cls_refcount_ops.h
   }
   replica_log=replica_log {
+   cls_replica_log_client.h
+   cls_replica_log_ops.h
+   cls_replica_log_types.h
    cls_replica_log.cc
    cls_replica_log_client.cc
    cls_replica_log_ops.cc
    cls_replica_log_types.cc
-   cls_replica_log_client.h
-   cls_replica_log_ops.h
-   cls_replica_log_types.h
   }
   rgw=rgw {
-   cls_rgw.cc
-   cls_rgw_client.cc
-   cls_rgw_ops.cc
-   cls_rgw_types.cc
    cls_rgw_client.h
    cls_rgw_const.h
    cls_rgw_ops.h
    cls_rgw_types.h
+   cls_rgw.cc
+   cls_rgw_client.cc
+   cls_rgw_ops.cc
+   cls_rgw_types.cc
   }
   sdk=sdk {
    cls_sdk.cc
   }
   statelog=statelog {
-   cls_statelog.cc
-   cls_statelog_client.cc
    cls_statelog_client.h
    cls_statelog_ops.h
    cls_statelog_types.h
+   cls_statelog.cc
+   cls_statelog_client.cc
   }
   timeindex=timeindex {
-   cls_timeindex.cc
-   cls_timeindex_client.cc
    cls_timeindex_client.h
    cls_timeindex_ops.h
    cls_timeindex_types.h
+   cls_timeindex.cc
+   cls_timeindex_client.cc
   }
   user=user {
+   cls_user_client.h
+   cls_user_ops.h
+   cls_user_types.h
    cls_user.cc
    cls_user_client.cc
    cls_user_ops.cc
    cls_user_types.cc
-   cls_user_client.h
-   cls_user_ops.h
-   cls_user_types.h
   }
   version=version {
-   cls_version.cc
-   cls_version_client.cc
-   cls_version_types.cc
    cls_version_client.h
    cls_version_ops.h
    cls_version_types.h
+   cls_version.cc
+   cls_version_client.cc
+   cls_version_types.cc
   }
  }
  common=common {
-  AsyncOpTracker.cc
-  BackTrace.cc
-  CachedPrebufferedStreambuf.cc
-  ConfUtils.cc
-  ContextCompletion.cc
-  Cycles.cc
-  DecayCounter.cc
-  EventTrace.cc
-  Finisher.cc
-  Formatter.cc
-  Graylog.cc
-  HTMLFormatter.cc
-  HeartbeatMap.cc
-  LogClient.cc
-  LogEntry.cc
-  MemoryModel.cc
-  Mutex.cc
-  OutputDataSocket.cc
-  PluginRegistry.cc
-  PrebufferedStreambuf.cc
-  PriorityCache.cc
-  Readahead.cc
-  RefCountedObj.cc
-  SloppyCRCMap.cc
-  TextTable.cc
-  Thread.cc
-  Throttle.cc
-  Timer.cc
-  TracepointProvider.cc
-  TrackedOp.cc
-  WorkQueue.cc
-  addr_parsing.c
-  address_helper.cc
-  admin_socket.cc
-  admin_socket_client.cc
-  aix_errno.cc
-  armor.c
-  assert.cc
-  bit_str.cc
-  bit_vector.hpp
-  blkdev.cc
-  bloom_filter.cc
-  bloom_filter.hpp
-  buffer.cc
-  ceph_argparse.cc
-  ceph_context.cc
-  ceph_crypto.cc
-  ceph_crypto_cms.cc
-  ceph_frag.cc
-  ceph_fs.cc
-  ceph_hash.cc
-  ceph_json.cc
-  ceph_strings.cc
-  ceph_time.cc
-  cmdparse.cc
-  code_environment.cc
-  common_init.cc
-  compat.cc
-  config.cc
-  crc32c.cc
-  crc32c_aarch64.c
-  crc32c_intel_baseline.c
-  crc32c_intel_fast.c
-  crc32c_intel_fast_asm.s
-  crc32c_intel_fast_zero_asm.s
-  crc32c_ppc.c
-  crc32c_ppc_asm.S
-  crc32c_ppc_fast_zero_asm.S
-  darwin_errno.cc
-  dns_resolve.cc
-  dout.cc
-  dummy.cc
-  entity_name.cc
-  environment.cc
-  errno.cc
-  escape.cc
-  fd.cc
-  freebsd_errno.cc
-  fs_types.cc
-  hex.cc
-  histogram.cc
-  hobject.cc
-  hostname.cc
-  io_priority.cc
-  ipaddr.cc
-  iso_8601.cc
-  linux_version.c
-  lockdep.cc
-  map_cacher.hpp
-  mempool.cc
-  mime.c
-  module.c
-  mutex_debug.cc
-  obj_bencher.cc
-  options.cc
-  page.cc
-  perf_counters.cc
-  perf_histogram.cc
-  pick_address.cc
-  random_cache.hpp
-  reverse.c
-  run_cmd.cc
-  safe_io.c
-  scrub_types.cc
-  sctp_crc32.c
-  secret.c
-  shared_cache.hpp
-  sharedptr_registry.hpp
-  signal.cc
-  simple_cache.hpp
-  snap_types.cc
-  solaris_errno.cc
-  sstring.hh
-  str_list.cc
-  str_map.cc
-  strtol.cc
-  tracked_int_ptr.hpp
-  types.cc
-  url_escape.cc
-  utf8.c
-  util.cc
-  version.cc
-  xattr.c
   AsyncOpTracker.h
   AsyncReserver.h
   BackTrace.h
@@ -2113,57 +950,158 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   version.h
   xattr.h
   zipkin_trace.h
+  addr_parsing.c
+  armor.c
+  crc32c_aarch64.c
+  crc32c_intel_baseline.c
+  crc32c_intel_fast.c
+  crc32c_ppc.c
+  linux_version.c
+  mime.c
+  module.c
+  reverse.c
+  safe_io.c
+  sctp_crc32.c
+  secret.c
+  utf8.c
+  xattr.c
+  bit_vector.hpp
+  bloom_filter.hpp
+  map_cacher.hpp
+  random_cache.hpp
+  shared_cache.hpp
+  sharedptr_registry.hpp
+  simple_cache.hpp
+  tracked_int_ptr.hpp
+  AsyncOpTracker.cc
+  BackTrace.cc
+  CachedPrebufferedStreambuf.cc
+  ConfUtils.cc
+  ContextCompletion.cc
+  Cycles.cc
+  DecayCounter.cc
+  EventTrace.cc
+  Finisher.cc
+  Formatter.cc
+  Graylog.cc
+  HTMLFormatter.cc
+  HeartbeatMap.cc
+  LogClient.cc
+  LogEntry.cc
+  MemoryModel.cc
+  Mutex.cc
+  OutputDataSocket.cc
+  PluginRegistry.cc
+  PrebufferedStreambuf.cc
+  PriorityCache.cc
+  Readahead.cc
+  RefCountedObj.cc
+  SloppyCRCMap.cc
+  TextTable.cc
+  Thread.cc
+  Throttle.cc
+  Timer.cc
+  TracepointProvider.cc
+  TrackedOp.cc
+  WorkQueue.cc
+  address_helper.cc
+  admin_socket.cc
+  admin_socket_client.cc
+  aix_errno.cc
+  assert.cc
+  bit_str.cc
+  blkdev.cc
+  bloom_filter.cc
+  buffer.cc
+  ceph_argparse.cc
+  ceph_context.cc
+  ceph_crypto.cc
+  ceph_crypto_cms.cc
+  ceph_frag.cc
+  ceph_fs.cc
+  ceph_hash.cc
+  ceph_json.cc
+  ceph_strings.cc
+  ceph_time.cc
+  cmdparse.cc
+  code_environment.cc
+  common_init.cc
+  compat.cc
+  config.cc
+  crc32c.cc
+  darwin_errno.cc
+  dns_resolve.cc
+  dout.cc
+  dummy.cc
+  entity_name.cc
+  environment.cc
+  errno.cc
+  escape.cc
+  fd.cc
+  freebsd_errno.cc
+  fs_types.cc
+  hex.cc
+  histogram.cc
+  hobject.cc
+  hostname.cc
+  io_priority.cc
+  ipaddr.cc
+  iso_8601.cc
+  lockdep.cc
+  mempool.cc
+  mutex_debug.cc
+  obj_bencher.cc
+  options.cc
+  page.cc
+  perf_counters.cc
+  perf_histogram.cc
+  pick_address.cc
+  run_cmd.cc
+  scrub_types.cc
+  signal.cc
+  snap_types.cc
+  solaris_errno.cc
+  str_list.cc
+  str_map.cc
+  strtol.cc
+  types.cc
+  url_escape.cc
+  util.cc
+  version.cc
  }
  compressor=compressor {
-  CMakeLists.txt
-  Compressor.cc
   CompressionPlugin.h
   Compressor.h
+  Compressor.cc
   brotli=brotli {
-   BrotliCompressor.cc
-   CMakeLists.txt
-   CompressionPluginBrotli.cc
    BrotliCompressor.h
    CompressionPluginBrotli.h
+   BrotliCompressor.cc
+   CompressionPluginBrotli.cc
   }
   lz4=lz4 {
-   CMakeLists.txt
-   CompressionPluginLZ4.cc
    CompressionPluginLZ4.h
    LZ4Compressor.h
+   CompressionPluginLZ4.cc
   }
   snappy=snappy {
-   CMakeLists.txt
-   CompressionPluginSnappy.cc
    CompressionPluginSnappy.h
    SnappyCompressor.h
+   CompressionPluginSnappy.cc
   }
   zlib=zlib {
-   CMakeLists.txt
-   CompressionPluginZlib.cc
-   ZlibCompressor.cc
    CompressionPluginZlib.h
    ZlibCompressor.h
+   CompressionPluginZlib.cc
+   ZlibCompressor.cc
   }
   zstd=zstd {
-   CMakeLists.txt
-   CompressionPluginZstd.cc
    CompressionPluginZstd.h
    ZstdCompressor.h
+   CompressionPluginZstd.cc
   }
  }
  crush=crush {
-  CrushCompiler.cc
-  CrushLocation.cc
-  CrushTester.cc
-  CrushWrapper.cc
-  CrushWrapper.i
-  builder.c
-  crush.c
-  hash.c
-  mapper.c
-  old_sample.txt
-  sample.txt
   CrushCompiler.h
   CrushLocation.h
   CrushTester.h
@@ -2177,35 +1115,36 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   hash.h
   mapper.h
   types.h
+  builder.c
+  crush.c
+  hash.c
+  mapper.c
+  CrushCompiler.cc
+  CrushLocation.cc
+  CrushTester.cc
+  CrushWrapper.cc
  }
  crypto=crypto {
-  CMakeLists.txt
   crypto_accel.h
   crypto_plugin.h
   isa-l=isa-l {
-   CMakeLists.txt
-   isal_crypto_accel.cc
-   isal_crypto_plugin.cc
    isal_crypto_accel.h
    isal_crypto_plugin.h
+   isal_crypto_accel.cc
+   isal_crypto_plugin.cc
    isa-l_crypto=isa-l_crypto {
    }
   }
  }
  dmclock=dmclock {
-  CMakeLists.txt
-  COPYING
-  COPYING-LGPL2.1
-  README.before-modifying-files-here-or-below
   README.md
   dmclock-config.cmake.in
-  dmclock-targets.cmake
   benchmark=benchmark {
    README.md
    data_gen.sh
-   data_parser.py
    plot_gen.sh
    run.sh
+   data_parser.py
    configs=configs {
     dmc_sim_100_100.conf
     dmc_sim_8_6.conf
@@ -2213,22 +1152,12 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   }
   cmake=cmake {
    modules=modules {
-    BuildGTest.cmake
    }
   }
   sim=sim {
-   CMakeLists.txt
    dmc_sim_100th.conf
    dmc_sim_example.conf
    src=src {
-    CMakeLists.txt
-    ConfUtils.cc
-    config.cc
-    str_list.cc
-    test_dmclock.cc
-    test_dmclock_main.cc
-    test_ssched.cc
-    test_ssched_main.cc
     ConfUtils.h
     config.h
     sim_client.h
@@ -2238,6 +1167,13 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     str_list.h
     test_dmclock.h
     test_ssched.h
+    ConfUtils.cc
+    config.cc
+    str_list.cc
+    test_dmclock.cc
+    test_dmclock_main.cc
+    test_ssched.cc
+    test_ssched_main.cc
     ssched=ssched {
      ssched_client.h
      ssched_recs.h
@@ -2246,119 +1182,95 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   src=src {
-   CMakeLists.txt
-   dmclock_util.cc
    dmclock_client.h
    dmclock_recs.h
    dmclock_server.h
    dmclock_util.h
+   dmclock_util.cc
   }
   support=support {
    src=src {
-    run_every.cc
     debug.h
     heap.h
     indirect_intrusive_heap.h
     intrusive_heap.h
     profile.h
     run_every.h
+    run_every.cc
    }
    test=test {
-    CMakeLists.txt
     test_ind_intru_heap.cc
     test_indirect_intrusive_heap.cc
     test_intrusive_heap.cc
    }
   }
   test=test {
-   CMakeLists.txt
-   dmtest-config.h.in
+   dmcPrCtl.h
    test_dmclock_client.cc
    test_dmclock_server.cc
    test_test_client.cc
-   dmcPrCtl.h
+   dmtest-config.h.in
   }
  }
  doc=doc {
-  Commitdir.txt
-  caching.txt
-  dynamic-throttle.txt
-  header.txt
-  inos.txt
-  killpoints.txt
-  lazy_posix.txt
-  mds_locks.txt
-  modeline.txt
-  mon-janitorial-queue.txt
-  mon-wishlist.txt
-  rgw.txt
  }
  erasure-code=erasure-code {
-  CMakeLists.txt
-  ErasureCode.cc
-  ErasureCodePlugin.cc
   ErasureCode.h
   ErasureCodeInterface.h
   ErasureCodePlugin.h
+  ErasureCode.cc
+  ErasureCodePlugin.cc
   isa=isa {
-   CMakeLists.txt
-   ErasureCodeIsa.cc
-   ErasureCodeIsaTableCache.cc
-   ErasureCodePluginIsa.cc
-   README
-   xor_op.cc
    ErasureCodeIsa.h
    ErasureCodeIsaTableCache.h
    ErasureCodePluginIsa.h
    xor_op.h
+   ErasureCodeIsa.cc
+   ErasureCodeIsaTableCache.cc
+   ErasureCodePluginIsa.cc
+   xor_op.cc
   }
   jerasure=jerasure {
-   CMakeLists.txt
-   ErasureCodeJerasure.cc
-   ErasureCodePluginJerasure.cc
-   jerasure_init.cc
    ErasureCodeJerasure.h
    ErasureCodePluginJerasure.h
    jerasure_init.h
+   ErasureCodeJerasure.cc
+   ErasureCodePluginJerasure.cc
+   jerasure_init.cc
    gf-complete=gf-complete {
    }
    jerasure=jerasure {
    }
   }
   lrc=lrc {
-   CMakeLists.txt
-   ErasureCodeLrc.cc
-   ErasureCodePluginLrc.cc
    ErasureCodeLrc.h
    ErasureCodePluginLrc.h
+   ErasureCodeLrc.cc
+   ErasureCodePluginLrc.cc
   }
   shec=shec {
-   CMakeLists.txt
-   ErasureCodePluginShec.cc
-   ErasureCodeShec.cc
-   ErasureCodeShecTableCache.cc
-   determinant.c
    ErasureCodePluginShec.h
    ErasureCodeShec.h
    ErasureCodeShecTableCache.h
+   determinant.c
+   ErasureCodePluginShec.cc
+   ErasureCodeShec.cc
+   ErasureCodeShecTableCache.cc
   }
  }
  global=global {
-  CMakeLists.txt
-  global_context.cc
-  global_init.cc
-  pidfile.cc
-  signal_handler.cc
   global_context.h
   global_init.h
   pidfile.h
   signal_handler.h
+  global_context.cc
+  global_init.cc
+  pidfile.cc
+  signal_handler.cc
  }
  googletest=googletest {
  }
  include=include {
-  CMakeLists.txt
-  config-h.in.cmake
   CompatSet.h
   Context.h
   Distribution.h
@@ -2441,8 +1353,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    btree_set.h
   }
   rados=rados {
-   librados.hpp
-   rados_types.hpp
    buffer.h
    buffer_fwd.h
    crc32c.h
@@ -2454,79 +1364,49 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    page.h
    rados_types.h
    rgw_file.h
+   librados.hpp
+   rados_types.hpp
   }
   radosstriper=radosstriper {
-   libradosstriper.hpp
    libradosstriper.h
+   libradosstriper.hpp
   }
   rbd=rbd {
-   librbd.hpp
    features.h
    librbd.h
    object_map_types.h
+   librbd.hpp
   }
  }
  isa-l=isa-l {
  }
  java=java {
-  CMakeLists.txt
-  README
-  build.xml
   java=java {
    com=com {
     ceph=ceph {
      crush=crush {
-      Bucket.java
      }
      fs=fs {
-      CephAlreadyMountedException.java
-      CephFileAlreadyExistsException.java
-      CephFileExtent.java
-      CephMount.java
-      CephNativeLoader.java
-      CephNotDirectoryException.java
-      CephNotMountedException.java
-      CephPoolException.java
-      CephStat.java
-      CephStatVFS.java
      }
     }
    }
   }
   native=native {
-   CMakeLists.txt
-   JniConstants.cpp
-   libcephfs_jni.cc
    JniConstants.h
    ScopedLocalRef.h
+   libcephfs_jni.cc
+   JniConstants.cpp
   }
   test=test {
    com=com {
     ceph=ceph {
      fs=fs {
-      CephAllTests.java
-      CephDoubleMountTest.java
-      CephMountCreateTest.java
-      CephMountTest.java
-      CephUnmountedTest.java
      }
     }
    }
   }
  }
  journal=journal {
-  CMakeLists.txt
-  Entry.cc
-  Future.cc
-  FutureImpl.cc
-  JournalMetadata.cc
-  JournalPlayer.cc
-  JournalRecorder.cc
-  JournalTrimmer.cc
-  Journaler.cc
-  ObjectPlayer.cc
-  ObjectRecorder.cc
-  Utils.cc
   Entry.h
   Future.h
   FutureImpl.h
@@ -2542,12 +1422,19 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   ReplayHandler.h
   Settings.h
   Utils.h
+  Entry.cc
+  Future.cc
+  FutureImpl.cc
+  JournalMetadata.cc
+  JournalPlayer.cc
+  JournalRecorder.cc
+  JournalTrimmer.cc
+  Journaler.cc
+  ObjectPlayer.cc
+  ObjectRecorder.cc
+  Utils.cc
  }
  json_spirit=json_spirit {
-  CMakeLists.txt
-  json_spirit_reader.cpp
-  json_spirit_value.cpp
-  json_spirit_writer.cpp
   json_spirit.h
   json_spirit_error_position.h
   json_spirit_reader.h
@@ -2558,41 +1445,36 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   json_spirit_writer.h
   json_spirit_writer_options.h
   json_spirit_writer_template.h
+  json_spirit_reader.cpp
+  json_spirit_value.cpp
+  json_spirit_writer.cpp
  }
  key_value_store=key_value_store {
-  CMakeLists.txt
-  cls_kvs.cc
-  kv_flat_btree_async.cc
   key_value_structure.h
   kv_flat_btree_async.h
   kvs_arg_types.h
+  cls_kvs.cc
+  kv_flat_btree_async.cc
  }
  kv=kv {
-  CMakeLists.txt
-  KeyValueDB.cc
-  KineticStore.cc
-  LevelDBStore.cc
-  MemDB.cc
-  RocksDBStore.cc
   KeyValueDB.h
   KineticStore.h
   LevelDBStore.h
   MemDB.h
   RocksDBStore.h
+  KeyValueDB.cc
+  KineticStore.cc
+  LevelDBStore.cc
+  MemDB.cc
+  RocksDBStore.cc
   rocksdb_cache=rocksdb_cache {
-   BinnedLRUCache.cc
-   ShardedCache.cc
    BinnedLRUCache.h
    ShardedCache.h
+   BinnedLRUCache.cc
+   ShardedCache.cc
   }
  }
  librados=librados {
-  CMakeLists.txt
-  IoCtxImpl.cc
-  RadosClient.cc
-  RadosXattrIter.cc
-  librados.cc
-  snap_set_diff.cc
   AioCompletionImpl.h
   IoCtxImpl.h
   ListObjectImpl.h
@@ -2601,38 +1483,20 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   RadosXattrIter.h
   librados_asio.h
   snap_set_diff.h
+  IoCtxImpl.cc
+  RadosClient.cc
+  RadosXattrIter.cc
+  librados.cc
+  snap_set_diff.cc
  }
  libradosstriper=libradosstriper {
-  CMakeLists.txt
+  MultiAioCompletionImpl.h
+  RadosStriperImpl.h
   MultiAioCompletionImpl.cc
   RadosStriperImpl.cc
   libradosstriper.cc
-  MultiAioCompletionImpl.h
-  RadosStriperImpl.h
  }
  librbd=librbd {
-  AsyncObjectThrottle.cc
-  AsyncRequest.cc
-  CMakeLists.txt
-  DeepCopyRequest.cc
-  ExclusiveLock.cc
-  Features.cc
-  ImageCtx.cc
-  ImageState.cc
-  ImageWatcher.cc
-  Journal.cc
-  LibrbdAdminSocketHook.cc
-  LibrbdWriteback.cc
-  ManagedLock.cc
-  MirroringWatcher.cc
-  ObjectMap.cc
-  Operations.cc
-  TrashWatcher.cc
-  Utils.cc
-  WatchNotifyTypes.cc
-  Watcher.cc
-  internal.cc
-  librbd.cc
   AsyncObjectThrottle.h
   AsyncRequest.h
   BlockGuard.h
@@ -2656,35 +1520,49 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   WatchNotifyTypes.h
   Watcher.h
   internal.h
+  AsyncObjectThrottle.cc
+  AsyncRequest.cc
+  DeepCopyRequest.cc
+  ExclusiveLock.cc
+  Features.cc
+  ImageCtx.cc
+  ImageState.cc
+  ImageWatcher.cc
+  Journal.cc
+  LibrbdAdminSocketHook.cc
+  LibrbdWriteback.cc
+  ManagedLock.cc
+  MirroringWatcher.cc
+  ObjectMap.cc
+  Operations.cc
+  TrashWatcher.cc
+  Utils.cc
+  WatchNotifyTypes.cc
+  Watcher.cc
+  internal.cc
+  librbd.cc
   api=api {
-   DiffIterate.cc
-   Group.cc
-   Image.cc
-   Mirror.cc
-   Snapshot.cc
    DiffIterate.h
    Group.h
    Image.h
    Mirror.h
    Snapshot.h
+   DiffIterate.cc
+   Group.cc
+   Image.cc
+   Mirror.cc
+   Snapshot.cc
   }
   cache=cache {
-   ImageWriteback.cc
-   ObjectCacherObjectDispatch.cc
-   PassthroughImageCache.cc
    ImageCache.h
    ImageWriteback.h
    ObjectCacherObjectDispatch.h
    PassthroughImageCache.h
+   ImageWriteback.cc
+   ObjectCacherObjectDispatch.cc
+   PassthroughImageCache.cc
   }
   deep_copy=deep_copy {
-   ImageCopyRequest.cc
-   MetadataCopyRequest.cc
-   ObjectCopyRequest.cc
-   SetHeadRequest.cc
-   SnapshotCopyRequest.cc
-   SnapshotCreateRequest.cc
-   Utils.cc
    ImageCopyRequest.h
    MetadataCopyRequest.h
    ObjectCopyRequest.h
@@ -2693,32 +1571,28 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    SnapshotCreateRequest.h
    Types.h
    Utils.h
+   ImageCopyRequest.cc
+   MetadataCopyRequest.cc
+   ObjectCopyRequest.cc
+   SetHeadRequest.cc
+   SnapshotCopyRequest.cc
+   SnapshotCreateRequest.cc
+   Utils.cc
   }
   exclusive_lock=exclusive_lock {
-   AutomaticPolicy.cc
-   PostAcquireRequest.cc
-   PreAcquireRequest.cc
-   PreReleaseRequest.cc
-   StandardPolicy.cc
    AutomaticPolicy.h
    Policy.h
    PostAcquireRequest.h
    PreAcquireRequest.h
    PreReleaseRequest.h
    StandardPolicy.h
+   AutomaticPolicy.cc
+   PostAcquireRequest.cc
+   PreAcquireRequest.cc
+   PreReleaseRequest.cc
+   StandardPolicy.cc
   }
   image=image {
-   CloneRequest.cc
-   CloseRequest.cc
-   CreateRequest.cc
-   DetachChildRequest.cc
-   OpenRequest.cc
-   RefreshParentRequest.cc
-   RefreshRequest.cc
-   RemoveRequest.cc
-   SetFlagsRequest.cc
-   SetSnapRequest.cc
-   ValidatePoolRequest.cc
    CloneRequest.h
    CloseRequest.h
    CreateRequest.h
@@ -2731,24 +1605,23 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    SetSnapRequest.h
    TypeTraits.h
    ValidatePoolRequest.h
+   CloneRequest.cc
+   CloseRequest.cc
+   CreateRequest.cc
+   DetachChildRequest.cc
+   OpenRequest.cc
+   RefreshParentRequest.cc
+   RefreshRequest.cc
+   RemoveRequest.cc
+   SetFlagsRequest.cc
+   SetSnapRequest.cc
+   ValidatePoolRequest.cc
   }
   image_watcher=image_watcher {
-   NotifyLockOwner.cc
    NotifyLockOwner.h
+   NotifyLockOwner.cc
   }
   io=io {
-   AioCompletion.cc
-   AsyncOperation.cc
-   CopyupRequest.cc
-   ImageDispatchSpec.cc
-   ImageRequest.cc
-   ImageRequestWQ.cc
-   ObjectDispatch.cc
-   ObjectDispatchSpec.cc
-   ObjectDispatcher.cc
-   ObjectRequest.cc
-   ReadResult.cc
-   Utils.cc
    AioCompletion.h
    AsyncOperation.h
    CopyupRequest.h
@@ -2763,19 +1636,20 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    ReadResult.h
    Types.h
    Utils.h
+   AioCompletion.cc
+   AsyncOperation.cc
+   CopyupRequest.cc
+   ImageDispatchSpec.cc
+   ImageRequest.cc
+   ImageRequestWQ.cc
+   ObjectDispatch.cc
+   ObjectDispatchSpec.cc
+   ObjectDispatcher.cc
+   ObjectRequest.cc
+   ReadResult.cc
+   Utils.cc
   }
   journal=journal {
-   CreateRequest.cc
-   DemoteRequest.cc
-   ObjectDispatch.cc
-   OpenRequest.cc
-   PromoteRequest.cc
-   RemoveRequest.cc
-   Replay.cc
-   ResetRequest.cc
-   StandardPolicy.cc
-   Types.cc
-   Utils.cc
    CreateRequest.h
    DemoteRequest.h
    DisabledPolicy.h
@@ -2790,14 +1664,19 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    TypeTraits.h
    Types.h
    Utils.h
+   CreateRequest.cc
+   DemoteRequest.cc
+   ObjectDispatch.cc
+   OpenRequest.cc
+   PromoteRequest.cc
+   RemoveRequest.cc
+   Replay.cc
+   ResetRequest.cc
+   StandardPolicy.cc
+   Types.cc
+   Utils.cc
   }
   managed_lock=managed_lock {
-   AcquireRequest.cc
-   BreakRequest.cc
-   GetLockerRequest.cc
-   ReacquireRequest.cc
-   ReleaseRequest.cc
-   Utils.cc
    AcquireRequest.h
    BreakRequest.h
    GetLockerRequest.h
@@ -2805,14 +1684,14 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    ReleaseRequest.h
    Types.h
    Utils.h
+   AcquireRequest.cc
+   BreakRequest.cc
+   GetLockerRequest.cc
+   ReacquireRequest.cc
+   ReleaseRequest.cc
+   Utils.cc
   }
   mirror=mirror {
-   DemoteRequest.cc
-   DisableRequest.cc
-   EnableRequest.cc
-   GetInfoRequest.cc
-   GetStatusRequest.cc
-   PromoteRequest.cc
    DemoteRequest.h
    DisableRequest.h
    EnableRequest.h
@@ -2820,24 +1699,18 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    GetStatusRequest.h
    PromoteRequest.h
    Types.h
+   DemoteRequest.cc
+   DisableRequest.cc
+   EnableRequest.cc
+   GetInfoRequest.cc
+   GetStatusRequest.cc
+   PromoteRequest.cc
   }
   mirroring_watcher=mirroring_watcher {
-   Types.cc
    Types.h
+   Types.cc
   }
   object_map=object_map {
-   CreateRequest.cc
-   InvalidateRequest.cc
-   LockRequest.cc
-   RefreshRequest.cc
-   RemoveRequest.cc
-   Request.cc
-   ResizeRequest.cc
-   SnapshotCreateRequest.cc
-   SnapshotRemoveRequest.cc
-   SnapshotRollbackRequest.cc
-   UnlockRequest.cc
-   UpdateRequest.cc
    CreateRequest.h
    InvalidateRequest.h
    LockRequest.h
@@ -2850,26 +1723,20 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    SnapshotRollbackRequest.h
    UnlockRequest.h
    UpdateRequest.h
-  }
-  operation=operation {
-   DisableFeaturesRequest.cc
-   EnableFeaturesRequest.cc
-   FlattenRequest.cc
-   MetadataRemoveRequest.cc
-   MetadataSetRequest.cc
-   ObjectMapIterate.cc
-   RebuildObjectMapRequest.cc
-   RenameRequest.cc
+   CreateRequest.cc
+   InvalidateRequest.cc
+   LockRequest.cc
+   RefreshRequest.cc
+   RemoveRequest.cc
    Request.cc
    ResizeRequest.cc
    SnapshotCreateRequest.cc
-   SnapshotLimitRequest.cc
-   SnapshotProtectRequest.cc
    SnapshotRemoveRequest.cc
-   SnapshotRenameRequest.cc
    SnapshotRollbackRequest.cc
-   SnapshotUnprotectRequest.cc
-   TrimRequest.cc
+   UnlockRequest.cc
+   UpdateRequest.cc
+  }
+  operation=operation {
    DisableFeaturesRequest.h
    EnableFeaturesRequest.h
    FlattenRequest.h
@@ -2888,85 +1755,57 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    SnapshotRollbackRequest.h
    SnapshotUnprotectRequest.h
    TrimRequest.h
+   DisableFeaturesRequest.cc
+   EnableFeaturesRequest.cc
+   FlattenRequest.cc
+   MetadataRemoveRequest.cc
+   MetadataSetRequest.cc
+   ObjectMapIterate.cc
+   RebuildObjectMapRequest.cc
+   RenameRequest.cc
+   Request.cc
+   ResizeRequest.cc
+   SnapshotCreateRequest.cc
+   SnapshotLimitRequest.cc
+   SnapshotProtectRequest.cc
+   SnapshotRemoveRequest.cc
+   SnapshotRenameRequest.cc
+   SnapshotRollbackRequest.cc
+   SnapshotUnprotectRequest.cc
+   TrimRequest.cc
   }
   trash=trash {
-   MoveRequest.cc
-   RemoveRequest.cc
    MoveRequest.h
    RemoveRequest.h
+   MoveRequest.cc
+   RemoveRequest.cc
   }
   trash_watcher=trash_watcher {
-   Types.cc
    Types.h
+   Types.cc
   }
   watcher=watcher {
-   Notifier.cc
-   RewatchRequest.cc
-   Types.cc
    Notifier.h
    RewatchRequest.h
    Types.h
    Utils.h
+   Notifier.cc
+   RewatchRequest.cc
+   Types.cc
   }
  }
  log=log {
-  Log.cc
-  test.cc
   Entry.h
   EntryQueue.h
   Log.h
   LogClock.h
   SubsystemMap.h
+  Log.cc
+  test.cc
  }
  lua=lua {
  }
  mds=mds {
-  Anchor.cc
-  Beacon.cc
-  CDentry.cc
-  CDir.cc
-  CInode.cc
-  CMakeLists.txt
-  Capability.cc
-  DamageTable.cc
-  FSMap.cc
-  FSMapUser.cc
-  InoTable.cc
-  JournalPointer.cc
-  Locker.cc
-  LogEvent.cc
-  MDBalancer.cc
-  MDCache.cc
-  MDLog.cc
-  MDSAuthCaps.cc
-  MDSCacheObject.cc
-  MDSContext.cc
-  MDSDaemon.cc
-  MDSMap.cc
-  MDSRank.cc
-  MDSTable.cc
-  MDSTableClient.cc
-  MDSTableServer.cc
-  Mantle.cc
-  Migrator.cc
-  Mutation.cc
-  OpenFileTable.cc
-  PurgeQueue.cc
-  RecoveryQueue.cc
-  ScrubStack.cc
-  Server.cc
-  SessionMap.cc
-  SimpleLock.cc
-  SnapClient.cc
-  SnapRealm.cc
-  SnapServer.cc
-  StrayManager.cc
-  flock.cc
-  inode_backtrace.cc
-  journal.cc
-  locks.c
-  mdstypes.cc
-  snap.cc
   Anchor.h
   Beacon.h
   CDentry.h
@@ -3018,6 +1857,51 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   mds_table_types.h
   mdstypes.h
   snap.h
+  locks.c
+  Anchor.cc
+  Beacon.cc
+  CDentry.cc
+  CDir.cc
+  CInode.cc
+  Capability.cc
+  DamageTable.cc
+  FSMap.cc
+  FSMapUser.cc
+  InoTable.cc
+  JournalPointer.cc
+  Locker.cc
+  LogEvent.cc
+  MDBalancer.cc
+  MDCache.cc
+  MDLog.cc
+  MDSAuthCaps.cc
+  MDSCacheObject.cc
+  MDSContext.cc
+  MDSDaemon.cc
+  MDSMap.cc
+  MDSRank.cc
+  MDSTable.cc
+  MDSTableClient.cc
+  MDSTableServer.cc
+  Mantle.cc
+  Migrator.cc
+  Mutation.cc
+  OpenFileTable.cc
+  PurgeQueue.cc
+  RecoveryQueue.cc
+  ScrubStack.cc
+  Server.cc
+  SessionMap.cc
+  SimpleLock.cc
+  SnapClient.cc
+  SnapRealm.cc
+  SnapServer.cc
+  StrayManager.cc
+  flock.cc
+  inode_backtrace.cc
+  journal.cc
+  mdstypes.cc
+  snap.cc
   balancers=balancers {
    greedyspill.lua
   }
@@ -3194,26 +2078,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   PaxosServiceMessage.h
  }
  mgr=mgr {
-  ActivePyModule.cc
-  ActivePyModules.cc
-  BaseMgrModule.cc
-  BaseMgrStandbyModule.cc
-  ClusterState.cc
-  DaemonHealthMetricCollector.cc
-  DaemonServer.cc
-  DaemonState.cc
-  Gil.cc
-  Mgr.cc
-  MgrClient.cc
-  MgrStandby.cc
-  PyFormatter.cc
-  PyModule.cc
-  PyModuleRegistry.cc
-  PyModuleRunner.cc
-  PyOSDMap.cc
-  ServiceMap.cc
-  StandbyPyModules.cc
-  mgr_commands.cc
   ActivePyModule.h
   ActivePyModules.h
   BaseMgrModule.h
@@ -3239,29 +2103,28 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   ServiceMap.h
   StandbyPyModules.h
   mgr_commands.h
+  ActivePyModule.cc
+  ActivePyModules.cc
+  BaseMgrModule.cc
+  BaseMgrStandbyModule.cc
+  ClusterState.cc
+  DaemonHealthMetricCollector.cc
+  DaemonServer.cc
+  DaemonState.cc
+  Gil.cc
+  Mgr.cc
+  MgrClient.cc
+  MgrStandby.cc
+  PyFormatter.cc
+  PyModule.cc
+  PyModuleRegistry.cc
+  PyModuleRunner.cc
+  PyOSDMap.cc
+  ServiceMap.cc
+  StandbyPyModules.cc
+  mgr_commands.cc
  }
  mon=mon {
-  AuthMonitor.cc
-  CMakeLists.txt
-  ConfigKeyService.cc
-  ConfigMap.cc
-  ConfigMonitor.cc
-  Elector.cc
-  FSCommands.cc
-  HealthMonitor.cc
-  LogMonitor.cc
-  MDSMonitor.cc
-  MgrMonitor.cc
-  MgrStatMonitor.cc
-  MonCap.cc
-  MonClient.cc
-  MonMap.cc
-  Monitor.cc
-  MonmapMonitor.cc
-  OSDMonitor.cc
-  PGMap.cc
-  Paxos.cc
-  PaxosService.cc
   AuthMonitor.h
   ConfigKeyService.h
   ConfigMap.h
@@ -3293,6 +2156,26 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   Session.h
   health_check.h
   mon_types.h
+  AuthMonitor.cc
+  ConfigKeyService.cc
+  ConfigMap.cc
+  ConfigMonitor.cc
+  Elector.cc
+  FSCommands.cc
+  HealthMonitor.cc
+  LogMonitor.cc
+  MDSMonitor.cc
+  MgrMonitor.cc
+  MgrStatMonitor.cc
+  MonCap.cc
+  MonClient.cc
+  MonMap.cc
+  Monitor.cc
+  MonmapMonitor.cc
+  OSDMonitor.cc
+  PGMap.cc
+  Paxos.cc
+  PaxosService.cc
  }
  mount=mount {
   canonicalize.c
@@ -3300,11 +2183,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   mtab.c
  }
  msg=msg {
-  DispatchQueue.cc
-  Message.cc
-  Messenger.cc
-  QueueStrategy.cc
-  msg_types.cc
   Connection.h
   DispatchQueue.h
   DispatchStrategy.h
@@ -3315,16 +2193,12 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   QueueStrategy.h
   SimplePolicyMessenger.h
   msg_types.h
+  DispatchQueue.cc
+  Message.cc
+  Messenger.cc
+  QueueStrategy.cc
+  msg_types.cc
   async=async {
-   AsyncConnection.cc
-   AsyncMessenger.cc
-   Event.cc
-   EventEpoll.cc
-   EventKqueue.cc
-   EventSelect.cc
-   PosixStack.cc
-   Stack.cc
-   net_handler.cc
    AsyncConnection.h
    AsyncMessenger.h
    Event.h
@@ -3334,19 +2208,16 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    PosixStack.h
    Stack.h
    net_handler.h
+   AsyncConnection.cc
+   AsyncMessenger.cc
+   Event.cc
+   EventEpoll.cc
+   EventKqueue.cc
+   EventSelect.cc
+   PosixStack.cc
+   Stack.cc
+   net_handler.cc
    dpdk=dpdk {
-    ARP.cc
-    DPDK.cc
-    DPDKStack.cc
-    EventDPDK.cc
-    IP.cc
-    IPChecksum.cc
-    Packet.cc
-    TCP.cc
-    UserspaceEvent.cc
-    dpdk_rte.cc
-    ethernet.cc
-    net.cc
     ARP.h
     DPDK.h
     DPDKStack.h
@@ -3373,32 +2244,39 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     stream.h
     toeplitz.h
     transfer.h
+    ARP.cc
+    DPDK.cc
+    DPDKStack.cc
+    EventDPDK.cc
+    IP.cc
+    IPChecksum.cc
+    Packet.cc
+    TCP.cc
+    UserspaceEvent.cc
+    dpdk_rte.cc
+    ethernet.cc
+    net.cc
    }
    rdma=rdma {
+    Infiniband.h
+    RDMAStack.h
     Infiniband.cc
     RDMAConnectedSocketImpl.cc
     RDMAServerSocketImpl.cc
     RDMAStack.cc
-    Infiniband.h
-    RDMAStack.h
    }
   }
   simple=simple {
-   Accepter.cc
-   Pipe.cc
-   PipeConnection.cc
-   SimpleMessenger.cc
    Accepter.h
    Pipe.h
    PipeConnection.h
    SimpleMessenger.h
+   Accepter.cc
+   Pipe.cc
+   PipeConnection.cc
+   SimpleMessenger.cc
   }
   xio=xio {
-   XioConnection.cc
-   XioMessenger.cc
-   XioMsg.cc
-   XioPool.cc
-   XioPortal.cc
    XioConnection.h
    XioInSeq.h
    XioMessenger.h
@@ -3406,29 +2284,48 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    XioPool.h
    XioPortal.h
    XioSubmit.h
+   XioConnection.cc
+   XioMessenger.cc
+   XioMsg.cc
+   XioPool.cc
+   XioPortal.cc
   }
  }
  objclass=objclass {
-  class_api.cc
   objclass.h
+  class_api.cc
  }
  objsync=objsync {
   boto_del.py
  }
  ocf=ocf {
-  CMakeLists.txt
   rbd.in
  }
  os=os {
-  CMakeLists.txt
-  FuseStore.cc
-  ObjectStore.cc
-  Transaction.cc
   FuseStore.h
   ObjectMap.h
   ObjectStore.h
   kv.h
+  FuseStore.cc
+  ObjectStore.cc
+  Transaction.cc
   bluestore=bluestore {
+   Allocator.h
+   BitmapAllocator.h
+   BitmapFreelistManager.h
+   BlockDevice.h
+   BlueFS.h
+   BlueRocksEnv.h
+   BlueStore.h
+   FreelistManager.h
+   KernelDevice.h
+   NVMEDevice.h
+   PMEMDevice.h
+   StupidAllocator.h
+   aio.h
+   bluefs_types.h
+   bluestore_types.h
+   fastbmap_allocator_impl.h
    Allocator.cc
    BitmapAllocator.cc
    BitmapFreelistManager.cc
@@ -3446,38 +2343,8 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    bluestore_tool.cc
    bluestore_types.cc
    fastbmap_allocator_impl.cc
-   Allocator.h
-   BitmapAllocator.h
-   BitmapFreelistManager.h
-   BlockDevice.h
-   BlueFS.h
-   BlueRocksEnv.h
-   BlueStore.h
-   FreelistManager.h
-   KernelDevice.h
-   NVMEDevice.h
-   PMEMDevice.h
-   StupidAllocator.h
-   aio.h
-   bluefs_types.h
-   bluestore_types.h
-   fastbmap_allocator_impl.h
   }
   filestore=filestore {
-   BtrfsFileStoreBackend.cc
-   DBObjectMap.cc
-   FileJournal.cc
-   FileStore.cc
-   GenericFileStoreBackend.cc
-   HashIndex.cc
-   IndexManager.cc
-   JournalThrottle.cc
-   JournalingObjectStore.cc
-   LFNIndex.cc
-   WBThrottle.cc
-   XfsFileStoreBackend.cc
-   ZFSFileStoreBackend.cc
-   chain_xattr.cc
    BtrfsFileStoreBackend.h
    CollectionIndex.h
    DBObjectMap.h
@@ -3496,57 +2363,43 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    XfsFileStoreBackend.h
    ZFSFileStoreBackend.h
    chain_xattr.h
+   BtrfsFileStoreBackend.cc
+   DBObjectMap.cc
+   FileJournal.cc
+   FileStore.cc
+   GenericFileStoreBackend.cc
+   HashIndex.cc
+   IndexManager.cc
+   JournalThrottle.cc
+   JournalingObjectStore.cc
+   LFNIndex.cc
+   WBThrottle.cc
+   XfsFileStoreBackend.cc
+   ZFSFileStoreBackend.cc
+   chain_xattr.cc
   }
   fs=fs {
-   FS.cc
-   XFS.cc
-   ZFS.cc
    FS.h
    XFS.h
    ZFS.h
    btrfs_ioctl.h
+   FS.cc
+   XFS.cc
+   ZFS.cc
   }
   kstore=kstore {
-   KStore.cc
-   kstore_types.cc
    KStore.h
    kstore_types.h
+   KStore.cc
+   kstore_types.cc
   }
   memstore=memstore {
-   MemStore.cc
    MemStore.h
    PageSet.h
+   MemStore.cc
   }
  }
  osd=osd {
-  CMakeLists.txt
-  ClassHandler.cc
-  ECBackend.cc
-  ECMsgTypes.cc
-  ECTransaction.cc
-  ECUtil.cc
-  ExtentCache.cc
-  HitSet.cc
-  OSD.cc
-  OSDCap.cc
-  OSDMap.cc
-  OSDMapMapping.cc
-  OpQueueItem.cc
-  OpRequest.cc
-  PG.cc
-  PGBackend.cc
-  PGLog.cc
-  PGPeeringEvent.cc
-  PrimaryLogPG.cc
-  ReplicatedBackend.cc
-  ScrubStore.cc
-  Session.cc
-  SnapMapper.cc
-  Watch.cc
-  mClockClientQueue.cc
-  mClockOpClassQueue.cc
-  mClockOpClassSupport.cc
-  osd_types.cc
   ClassHandler.h
   ECBackend.h
   ECMsgTypes.h
@@ -3578,48 +2431,69 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   mClockOpClassSupport.h
   osd_internal_types.h
   osd_types.h
+  ClassHandler.cc
+  ECBackend.cc
+  ECMsgTypes.cc
+  ECTransaction.cc
+  ECUtil.cc
+  ExtentCache.cc
+  HitSet.cc
+  OSD.cc
+  OSDCap.cc
+  OSDMap.cc
+  OSDMapMapping.cc
+  OpQueueItem.cc
+  OpRequest.cc
+  PG.cc
+  PGBackend.cc
+  PGLog.cc
+  PGPeeringEvent.cc
+  PrimaryLogPG.cc
+  ReplicatedBackend.cc
+  ScrubStore.cc
+  Session.cc
+  SnapMapper.cc
+  Watch.cc
+  mClockClientQueue.cc
+  mClockOpClassQueue.cc
+  mClockOpClassSupport.cc
+  osd_types.cc
  }
  osdc=osdc {
-  CMakeLists.txt
-  Filer.cc
-  Journaler.cc
-  ObjectCacher.cc
-  Objecter.cc
-  Striper.cc
   Filer.h
   Journaler.h
   ObjectCacher.h
   Objecter.h
   Striper.h
   WritebackHandler.h
+  Filer.cc
+  Journaler.cc
+  ObjectCacher.cc
+  Objecter.cc
+  Striper.cc
  }
  perfglue=perfglue {
+  cpu_profiler.h
+  heap_profiler.h
   cpu_profiler.cc
   disabled_heap_profiler.cc
   disabled_stubs.cc
   heap_profiler.cc
-  cpu_profiler.h
-  heap_profiler.h
  }
  powerdns=powerdns {
   README.md
-  pdns-backend-rgw.py
   rgw-pdns.conf.in
+  pdns-backend-rgw.py
  }
  pybind=pybind {
-  CMakeLists.txt
   ceph_argparse.py
   ceph_daemon.py
   ceph_volume_client.py
-  tox.ini
   cephfs=cephfs {
-   CMakeLists.txt
    MANIFEST.in
-   cephfs.pyx
    setup.py
   }
   mgr=mgr {
-   CMakeLists.txt
    mgr_module.py
    balancer=balancer {
     __init__.py
@@ -3630,23 +2504,18 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     module.py
    }
    dashboard=dashboard {
-    CMakeLists.txt
-    HACKING.rst
-    README.rst
-    __init__.py
-    awsauth.py
-    exceptions.py
-    module.py
-    requirements.txt
-    rest_client.py
     run-backend-api-request.sh
     run-backend-api-tests.sh
     run-frontend-e2e-tests.sh
     run-frontend-unittests.sh
     run-tox.sh
+    __init__.py
+    awsauth.py
+    exceptions.py
+    module.py
+    rest_client.py
     settings.py
     tools.py
-    tox.ini
     controllers=controllers {
      __init__.py
      auth.py
@@ -3667,566 +2536,176 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
      tcmu_iscsi.py
     }
     frontend=frontend {
-     angular.json
-     karma.conf.js
-     package-lock.json
-     package.json
-     protractor.conf.js
-     proxy.conf.json.sample
-     tsconfig.json
-     tslint.json
      e2e=e2e {
-      helper.po.ts
-      tsconfig.e2e.json
       cluster=cluster {
-       monitors.e2e-spec.ts
-       monitors.po.ts
-       osds.e2e-spec.ts
-       osds.po.ts
       }
      }
      src=src {
-      defaults.scss
-      favicon.ico
-      index.html
-      main.ts
-      openattic-theme.scss
-      polyfills.ts
-      styles.scss
-      test.ts
-      tsconfig.app.json
-      tsconfig.spec.json
-      typings.d.ts
       app=app {
-       app-routing.module.ts
-       app.component.html
-       app.component.scss
-       app.component.spec.ts
-       app.component.ts
-       app.module.ts
        ceph=ceph {
-        ceph.module.ts
         block=block {
-         block.module.ts
-         mirror-health-color.pipe.spec.ts
-         mirror-health-color.pipe.ts
          flatten-confirmation-modal=flatten-confirmation-modal {
-          flatten-confimation-modal.component.html
-          flatten-confimation-modal.component.scss
-          flatten-confimation-modal.component.spec.ts
-          flatten-confimation-modal.component.ts
          }
          iscsi=iscsi {
-          iscsi.component.html
-          iscsi.component.scss
-          iscsi.component.spec.ts
-          iscsi.component.ts
          }
          mirroring=mirroring {
-          mirroring.component.html
-          mirroring.component.scss
-          mirroring.component.spec.ts
-          mirroring.component.ts
          }
          rbd-details=rbd-details {
-          rbd-details.component.html
-          rbd-details.component.scss
-          rbd-details.component.spec.ts
-          rbd-details.component.ts
          }
          rbd-form=rbd-form {
-          rbd-form-clone-request.model.ts
-          rbd-form-copy-request.model.ts
-          rbd-form-create-request.model.ts
-          rbd-form-edit-request.model.ts
-          rbd-form-mode.enum.ts
-          rbd-form-response.model.ts
-          rbd-form.component.html
-          rbd-form.component.scss
-          rbd-form.component.spec.ts
-          rbd-form.component.ts
-          rbd-form.model.ts
-          rbd-parent.model.ts
          }
          rbd-list=rbd-list {
-          rbd-list.component.html
-          rbd-list.component.scss
-          rbd-list.component.spec.ts
-          rbd-list.component.ts
-          rbd-model.ts
          }
          rbd-snapshot-form=rbd-snapshot-form {
-          rbd-snapshot-form.component.html
-          rbd-snapshot-form.component.scss
-          rbd-snapshot-form.component.spec.ts
-          rbd-snapshot-form.component.ts
          }
          rbd-snapshot-list=rbd-snapshot-list {
-          rbd-snapshot-list.component.html
-          rbd-snapshot-list.component.scss
-          rbd-snapshot-list.component.spec.ts
-          rbd-snapshot-list.component.ts
-          rbd-snapshot.model.ts
          }
          rollback-confirmation-modal=rollback-confirmation-modal {
-          rollback-confimation-modal.component.html
-          rollback-confimation-modal.component.scss
-          rollback-confimation-modal.component.spec.ts
-          rollback-confimation-modal.component.ts
          }
         }
         cephfs=cephfs {
-         cephfs.module.ts
          cephfs=cephfs {
-          cephfs.component.html
-          cephfs.component.scss
-          cephfs.component.spec.ts
-          cephfs.component.ts
          }
          cephfs-chart=cephfs-chart {
-          cephfs-chart.component.html
-          cephfs-chart.component.scss
-          cephfs-chart.component.spec.ts
-          cephfs-chart.component.ts
          }
          clients=clients {
-          clients.component.html
-          clients.component.scss
-          clients.component.spec.ts
-          clients.component.ts
          }
         }
         cluster=cluster {
-         cluster.module.ts
          configuration=configuration {
-          configuration.component.html
-          configuration.component.scss
-          configuration.component.spec.ts
-          configuration.component.ts
          }
          hosts=hosts {
-          hosts.component.html
-          hosts.component.scss
-          hosts.component.spec.ts
-          hosts.component.ts
          }
          monitor=monitor {
-          monitor.component.html
-          monitor.component.scss
-          monitor.component.spec.ts
-          monitor.component.ts
          }
          osd=osd {
           osd-details=osd-details {
-           osd-details.component.html
-           osd-details.component.scss
-           osd-details.component.spec.ts
-           osd-details.component.ts
           }
           osd-list=osd-list {
-           osd-list.component.html
-           osd-list.component.scss
-           osd-list.component.spec.ts
-           osd-list.component.ts
           }
           osd-performance-histogram=osd-performance-histogram {
-           osd-performance-histogram.component.html
-           osd-performance-histogram.component.scss
-           osd-performance-histogram.component.spec.ts
-           osd-performance-histogram.component.ts
           }
          }
         }
         dashboard=dashboard {
-         dashboard.module.ts
-         log-color.pipe.spec.ts
-         log-color.pipe.ts
-         mds-summary.pipe.spec.ts
-         mds-summary.pipe.ts
-         mgr-summary.pipe.spec.ts
-         mgr-summary.pipe.ts
-         mon-summary.pipe.spec.ts
-         mon-summary.pipe.ts
-         osd-summary.pipe.spec.ts
-         osd-summary.pipe.ts
-         pg-status-style.pipe.spec.ts
-         pg-status-style.pipe.ts
-         pg-status.pipe.spec.ts
-         pg-status.pipe.ts
          dashboard=dashboard {
-          dashboard.component.html
-          dashboard.component.scss
-          dashboard.component.spec.ts
-          dashboard.component.ts
          }
          health=health {
-          health.component.html
-          health.component.scss
-          health.component.spec.ts
-          health.component.ts
          }
          health-pie=health-pie {
-          health-pie.component.html
-          health-pie.component.scss
-          health-pie.component.spec.ts
-          health-pie.component.ts
          }
         }
         performance-counter=performance-counter {
-         performance-counter.module.ts
          performance-counter=performance-counter {
-          performance-counter.component.html
-          performance-counter.component.scss
-          performance-counter.component.spec.ts
-          performance-counter.component.ts
          }
          table-performance-counter=table-performance-counter {
-          table-performance-counter.component.html
-          table-performance-counter.component.scss
-          table-performance-counter.component.spec.ts
-          table-performance-counter.component.ts
          }
         }
         pool=pool {
-         pool.module.ts
          pool-list=pool-list {
-          pool-list.component.html
-          pool-list.component.scss
-          pool-list.component.spec.ts
-          pool-list.component.ts
          }
         }
         rgw=rgw {
-         rgw.module.ts
          models=models {
-          rgw-user-capability.ts
-          rgw-user-s3-key.ts
-          rgw-user-subuser.ts
-          rgw-user-swift-key.ts
          }
          rgw-501=rgw-501 {
-          rgw-501.component.html
-          rgw-501.component.scss
-          rgw-501.component.spec.ts
-          rgw-501.component.ts
          }
          rgw-bucket-details=rgw-bucket-details {
-          rgw-bucket-details.component.html
-          rgw-bucket-details.component.scss
-          rgw-bucket-details.component.spec.ts
-          rgw-bucket-details.component.ts
          }
          rgw-bucket-form=rgw-bucket-form {
-          rgw-bucket-form.component.html
-          rgw-bucket-form.component.scss
-          rgw-bucket-form.component.spec.ts
-          rgw-bucket-form.component.ts
          }
          rgw-bucket-list=rgw-bucket-list {
-          rgw-bucket-list.component.html
-          rgw-bucket-list.component.scss
-          rgw-bucket-list.component.spec.ts
-          rgw-bucket-list.component.ts
          }
          rgw-daemon-details=rgw-daemon-details {
-          rgw-daemon-details.component.html
-          rgw-daemon-details.component.scss
-          rgw-daemon-details.component.spec.ts
-          rgw-daemon-details.component.ts
          }
          rgw-daemon-list=rgw-daemon-list {
-          rgw-daemon-list.component.html
-          rgw-daemon-list.component.scss
-          rgw-daemon-list.component.spec.ts
-          rgw-daemon-list.component.ts
          }
          rgw-user-capability-modal=rgw-user-capability-modal {
-          rgw-user-capability-modal.component.html
-          rgw-user-capability-modal.component.scss
-          rgw-user-capability-modal.component.spec.ts
-          rgw-user-capability-modal.component.ts
          }
          rgw-user-details=rgw-user-details {
-          rgw-user-details.component.html
-          rgw-user-details.component.scss
-          rgw-user-details.component.spec.ts
-          rgw-user-details.component.ts
          }
          rgw-user-form=rgw-user-form {
-          rgw-user-form.component.html
-          rgw-user-form.component.scss
-          rgw-user-form.component.spec.ts
-          rgw-user-form.component.ts
          }
          rgw-user-list=rgw-user-list {
-          rgw-user-list.component.html
-          rgw-user-list.component.scss
-          rgw-user-list.component.spec.ts
-          rgw-user-list.component.ts
          }
          rgw-user-s3-key-modal=rgw-user-s3-key-modal {
-          rgw-user-s3-key-modal.component.html
-          rgw-user-s3-key-modal.component.scss
-          rgw-user-s3-key-modal.component.spec.ts
-          rgw-user-s3-key-modal.component.ts
          }
          rgw-user-subuser-modal=rgw-user-subuser-modal {
-          rgw-user-subuser-modal.component.html
-          rgw-user-subuser-modal.component.scss
-          rgw-user-subuser-modal.component.spec.ts
-          rgw-user-subuser-modal.component.ts
          }
          rgw-user-swift-key-modal=rgw-user-swift-key-modal {
-          rgw-user-swift-key-modal.component.html
-          rgw-user-swift-key-modal.component.scss
-          rgw-user-swift-key-modal.component.spec.ts
-          rgw-user-swift-key-modal.component.ts
          }
         }
        }
        core=core {
-        core.module.ts
         auth=auth {
-         auth.module.ts
          login=login {
-          login.component.html
-          login.component.scss
-          login.component.spec.ts
-          login.component.ts
          }
          logout=logout {
-          logout.component.html
-          logout.component.scss
-          logout.component.spec.ts
-          logout.component.ts
          }
         }
         navigation=navigation {
-         navigation.module.ts
          navigation=navigation {
-          navigation.component.html
-          navigation.component.scss
-          navigation.component.spec.ts
-          navigation.component.ts
          }
          notifications=notifications {
-          notifications.component.html
-          notifications.component.scss
-          notifications.component.spec.ts
-          notifications.component.ts
          }
          task-manager=task-manager {
-          task-manager.component.html
-          task-manager.component.scss
-          task-manager.component.spec.ts
-          task-manager.component.ts
          }
         }
         not-found=not-found {
-         not-found.component.html
-         not-found.component.scss
-         not-found.component.spec.ts
-         not-found.component.ts
         }
        }
        shared=shared {
-        empty.pipe.spec.ts
-        empty.pipe.ts
-        shared.module.ts
         api=api {
-         api.module.ts
-         auth.service.ts
-         cephfs.service.spec.ts
-         cephfs.service.ts
-         configuration.service.spec.ts
-         configuration.service.ts
-         dashboard.service.spec.ts
-         dashboard.service.ts
-         host.service.ts
-         monitor.service.spec.ts
-         monitor.service.ts
-         osd.service.spec.ts
-         osd.service.ts
-         pool.service.ts
-         rbd-mirroring.service.spec.ts
-         rbd-mirroring.service.ts
-         rbd.service.ts
-         rgw-bucket.service.spec.ts
-         rgw-bucket.service.ts
-         rgw-daemon.service.spec.ts
-         rgw-daemon.service.ts
-         rgw-user.service.spec.ts
-         rgw-user.service.ts
-         table-performance-counter.service.spec.ts
-         table-performance-counter.service.ts
-         tcmu-iscsi.service.ts
         }
         components=components {
-         components.module.ts
          deletion-modal=deletion-modal {
-          deletion-modal.component.html
-          deletion-modal.component.scss
-          deletion-modal.component.spec.ts
-          deletion-modal.component.ts
          }
          error-panel=error-panel {
-          error-panel.component.html
-          error-panel.component.scss
-          error-panel.component.spec.ts
-          error-panel.component.ts
          }
          helper=helper {
-          helper.component.html
-          helper.component.scss
-          helper.component.spec.ts
-          helper.component.ts
          }
          info-panel=info-panel {
-          info-panel.component.html
-          info-panel.component.scss
-          info-panel.component.spec.ts
-          info-panel.component.ts
          }
          loading-panel=loading-panel {
-          loading-panel.component.html
-          loading-panel.component.scss
-          loading-panel.component.spec.ts
-          loading-panel.component.ts
          }
          modal=modal {
-          modal.component.html
-          modal.component.scss
-          modal.component.spec.ts
-          modal.component.ts
          }
          sparkline=sparkline {
-          sparkline.component.html
-          sparkline.component.scss
-          sparkline.component.spec.ts
-          sparkline.component.ts
          }
          submit-button=submit-button {
-          submit-button.component.html
-          submit-button.component.scss
-          submit-button.component.spec.ts
-          submit-button.component.ts
          }
          usage-bar=usage-bar {
-          usage-bar.component.html
-          usage-bar.component.scss
-          usage-bar.component.spec.ts
-          usage-bar.component.ts
          }
          view-cache=view-cache {
-          view-cache.component.html
-          view-cache.component.scss
-          view-cache.component.spec.ts
-          view-cache.component.ts
          }
         }
         datatable=datatable {
-         datatable.module.ts
          table=table {
-          table.component.html
-          table.component.scss
-          table.component.spec.ts
-          table.component.ts
          }
          table-key-value=table-key-value {
-          table-key-value.component.html
-          table-key-value.component.scss
-          table-key-value.component.spec.ts
-          table-key-value.component.ts
          }
         }
         decorators=decorators {
-         cd-encode.spec.ts
-         cd-encode.ts
         }
         directives=directives {
-         autofocus.directive.spec.ts
-         autofocus.directive.ts
-         copy2clipboard-button.directive.spec.ts
-         copy2clipboard-button.directive.ts
-         dimless-binary.directive.spec.ts
-         dimless-binary.directive.ts
-         password-button.directive.spec.ts
-         password-button.directive.ts
         }
         enum=enum {
-         cell-template.enum.ts
-         notification-type.enum.ts
-         unix_errno.enum.ts
-         view-cache-status.enum.ts
         }
         models=models {
-         cd-notification.ts
-         cd-table-column.ts
-         cd-table-selection.ts
-         chart-tooltip.ts
-         credentials.ts
-         executing-task.ts
-         finished-task.ts
-         task-exception.ts
-         task.ts
         }
         pipes=pipes {
-         cd-date.pipe.spec.ts
-         cd-date.pipe.ts
-         ceph-short-version.pipe.spec.ts
-         ceph-short-version.pipe.ts
-         dimless-binary.pipe.spec.ts
-         dimless-binary.pipe.ts
-         dimless.pipe.spec.ts
-         dimless.pipe.ts
-         encode-uri.pipe.spec.ts
-         encode-uri.pipe.ts
-         filter.pipe.spec.ts
-         filter.pipe.ts
-         health-color.pipe.spec.ts
-         health-color.pipe.ts
-         list.pipe.spec.ts
-         list.pipe.ts
-         pipes.module.ts
-         relative-date.pipe.spec.ts
-         relative-date.pipe.ts
         }
         services=services {
-         api-interceptor.service.ts
-         auth-guard.service.ts
-         auth-storage.service.ts
-         formatter.service.spec.ts
-         formatter.service.ts
-         module-status-guard.service.ts
-         notification.service.spec.ts
-         notification.service.ts
-         services.module.ts
-         summary.service.spec.ts
-         summary.service.ts
-         task-manager-message.service.ts
-         task-manager.service.ts
         }
         validators=validators {
-         cd-validators.spec.ts
-         cd-validators.ts
         }
        }
       }
       assets=assets {
-       1280px-Mimic_Octopus2.jpg
-       Ceph_Logo_Stacked_RGB_White_120411_fa_256x256.png
-       Ceph_Logo_Standard_RGB_White_120411_fa.png
-       loading.gif
-       logo-mini.png
-       notification-icons.png
       }
       environments=environments {
-       environment.prod.ts
-       environment.ts
       }
       styles=styles {
-       chart-tooltip.scss
-       popover.scss
       }
      }
     }
@@ -4314,171 +2793,49 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    zabbix=zabbix {
     __init__.py
     module.py
-    zabbix_template.xml
    }
   }
   rados=rados {
-   CMakeLists.txt
    MANIFEST.in
-   rados.pxd
-   rados.pyx
    setup.py
   }
   rbd=rbd {
-   CMakeLists.txt
    MANIFEST.in
-   rbd.pyx
    setup.py
   }
   rgw=rgw {
-   CMakeLists.txt
    MANIFEST.in
-   rgw.pyx
    setup.py
   }
  }
  rapidjson=rapidjson {
  }
  rbd_fuse=rbd_fuse {
-  CMakeLists.txt
   rbd-fuse.cc
  }
  rbd_replay=rbd_replay {
-  ActionTypes.cc
+  ActionTypes.h
+  BufferReader.h
   BoundedBuffer.hpp
-  BufferReader.cc
-  CMakeLists.txt
-  ImageNameMap.cc
   ImageNameMap.hpp
-  PendingIO.cc
   PendingIO.hpp
-  Replayer.cc
   Replayer.hpp
-  actions.cc
   actions.hpp
-  ios.cc
   ios.hpp
+  rbd_loc.hpp
+  rbd_replay_debug.hpp
+  ActionTypes.cc
+  BufferReader.cc
+  ImageNameMap.cc
+  PendingIO.cc
+  Replayer.cc
+  actions.cc
+  ios.cc
   rbd-replay-prep.cc
   rbd-replay.cc
   rbd_loc.cc
-  rbd_loc.hpp
-  rbd_replay_debug.hpp
-  ActionTypes.h
-  BufferReader.h
  }
  rgw=rgw {
-  CMakeLists.txt
-  librgw.cc
-  rgw_acl.cc
-  rgw_acl_s3.cc
-  rgw_acl_swift.cc
-  rgw_aclparser.cc
-  rgw_admin.cc
-  rgw_asio_client.cc
-  rgw_asio_frontend.cc
-  rgw_auth.cc
-  rgw_auth_keystone.cc
-  rgw_auth_s3.cc
-  rgw_basic_types.cc
-  rgw_bucket.cc
-  rgw_cache.cc
-  rgw_civetweb.cc
-  rgw_civetweb_frontend.cc
-  rgw_civetweb_log.cc
-  rgw_client_io.cc
-  rgw_common.cc
-  rgw_compression.cc
-  rgw_coroutine.cc
-  rgw_cors.cc
-  rgw_cors_s3.cc
-  rgw_cr_rados.cc
-  rgw_cr_rest.cc
-  rgw_crypt.cc
-  rgw_crypt_sanitize.cc
-  rgw_data_sync.cc
-  rgw_dencoder.cc
-  rgw_env.cc
-  rgw_es_main.cc
-  rgw_es_query.cc
-  rgw_fcgi.cc
-  rgw_fcgi_process.cc
-  rgw_file.cc
-  rgw_formats.cc
-  rgw_frontend.cc
-  rgw_gc.cc
-  rgw_http_client.cc
-  rgw_http_client_curl.cc
-  rgw_iam_policy.cc
-  rgw_iam_policy_keywords.gperf
-  rgw_json_enc.cc
-  rgw_jsonparser.cc
-  rgw_keystone.cc
-  rgw_lc.cc
-  rgw_lc_s3.cc
-  rgw_ldap.cc
-  rgw_loadgen.cc
-  rgw_loadgen_process.cc
-  rgw_log.cc
-  rgw_main.cc
-  rgw_metadata.cc
-  rgw_multi.cc
-  rgw_multi_del.cc
-  rgw_multiparser.cc
-  rgw_object_expirer.cc
-  rgw_object_expirer_core.cc
-  rgw_op.cc
-  rgw_orphan.cc
-  rgw_os_lib.cc
-  rgw_otp.cc
-  rgw_period_history.cc
-  rgw_period_puller.cc
-  rgw_period_pusher.cc
-  rgw_policy_s3.cc
-  rgw_process.cc
-  rgw_quota.cc
-  rgw_rados.cc
-  rgw_realm_reloader.cc
-  rgw_realm_watcher.cc
-  rgw_replica_log.cc
-  rgw_request.cc
-  rgw_reshard.cc
-  rgw_resolve.cc
-  rgw_rest.cc
-  rgw_rest_bucket.cc
-  rgw_rest_client.cc
-  rgw_rest_config.cc
-  rgw_rest_conn.cc
-  rgw_rest_log.cc
-  rgw_rest_metadata.cc
-  rgw_rest_opstate.cc
-  rgw_rest_realm.cc
-  rgw_rest_replica_log.cc
-  rgw_rest_role.cc
-  rgw_rest_s3.cc
-  rgw_rest_swift.cc
-  rgw_rest_usage.cc
-  rgw_rest_user.cc
-  rgw_role.cc
-  rgw_string.cc
-  rgw_swift_auth.cc
-  rgw_sync.cc
-  rgw_sync_log_trim.cc
-  rgw_sync_module.cc
-  rgw_sync_module_aws.cc
-  rgw_sync_module_es.cc
-  rgw_sync_module_es_rest.cc
-  rgw_sync_module_log.cc
-  rgw_sync_trace.cc
-  rgw_tag.cc
-  rgw_tag_s3.cc
-  rgw_token.cc
-  rgw_tools.cc
-  rgw_torrent.cc
-  rgw_usage.cc
-  rgw_user.cc
-  rgw_website.cc
-  rgw_xml.cc
-  rgw_xml_enc.cc
   rgw_acl.h
   rgw_acl_s3.h
   rgw_acl_swift.h
@@ -4587,32 +2944,133 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   rgw_user.h
   rgw_website.h
   rgw_xml.h
+  librgw.cc
+  rgw_acl.cc
+  rgw_acl_s3.cc
+  rgw_acl_swift.cc
+  rgw_aclparser.cc
+  rgw_admin.cc
+  rgw_asio_client.cc
+  rgw_asio_frontend.cc
+  rgw_auth.cc
+  rgw_auth_keystone.cc
+  rgw_auth_s3.cc
+  rgw_basic_types.cc
+  rgw_bucket.cc
+  rgw_cache.cc
+  rgw_civetweb.cc
+  rgw_civetweb_frontend.cc
+  rgw_civetweb_log.cc
+  rgw_client_io.cc
+  rgw_common.cc
+  rgw_compression.cc
+  rgw_coroutine.cc
+  rgw_cors.cc
+  rgw_cors_s3.cc
+  rgw_cr_rados.cc
+  rgw_cr_rest.cc
+  rgw_crypt.cc
+  rgw_crypt_sanitize.cc
+  rgw_data_sync.cc
+  rgw_dencoder.cc
+  rgw_env.cc
+  rgw_es_main.cc
+  rgw_es_query.cc
+  rgw_fcgi.cc
+  rgw_fcgi_process.cc
+  rgw_file.cc
+  rgw_formats.cc
+  rgw_frontend.cc
+  rgw_gc.cc
+  rgw_http_client.cc
+  rgw_http_client_curl.cc
+  rgw_iam_policy.cc
+  rgw_json_enc.cc
+  rgw_jsonparser.cc
+  rgw_keystone.cc
+  rgw_lc.cc
+  rgw_lc_s3.cc
+  rgw_ldap.cc
+  rgw_loadgen.cc
+  rgw_loadgen_process.cc
+  rgw_log.cc
+  rgw_main.cc
+  rgw_metadata.cc
+  rgw_multi.cc
+  rgw_multi_del.cc
+  rgw_multiparser.cc
+  rgw_object_expirer.cc
+  rgw_object_expirer_core.cc
+  rgw_op.cc
+  rgw_orphan.cc
+  rgw_os_lib.cc
+  rgw_otp.cc
+  rgw_period_history.cc
+  rgw_period_puller.cc
+  rgw_period_pusher.cc
+  rgw_policy_s3.cc
+  rgw_process.cc
+  rgw_quota.cc
+  rgw_rados.cc
+  rgw_realm_reloader.cc
+  rgw_realm_watcher.cc
+  rgw_replica_log.cc
+  rgw_request.cc
+  rgw_reshard.cc
+  rgw_resolve.cc
+  rgw_rest.cc
+  rgw_rest_bucket.cc
+  rgw_rest_client.cc
+  rgw_rest_config.cc
+  rgw_rest_conn.cc
+  rgw_rest_log.cc
+  rgw_rest_metadata.cc
+  rgw_rest_opstate.cc
+  rgw_rest_realm.cc
+  rgw_rest_replica_log.cc
+  rgw_rest_role.cc
+  rgw_rest_s3.cc
+  rgw_rest_swift.cc
+  rgw_rest_usage.cc
+  rgw_rest_user.cc
+  rgw_role.cc
+  rgw_string.cc
+  rgw_swift_auth.cc
+  rgw_sync.cc
+  rgw_sync_log_trim.cc
+  rgw_sync_module.cc
+  rgw_sync_module_aws.cc
+  rgw_sync_module_es.cc
+  rgw_sync_module_es_rest.cc
+  rgw_sync_module_log.cc
+  rgw_sync_trace.cc
+  rgw_tag.cc
+  rgw_tag_s3.cc
+  rgw_token.cc
+  rgw_tools.cc
+  rgw_torrent.cc
+  rgw_usage.cc
+  rgw_user.cc
+  rgw_website.cc
+  rgw_xml.cc
+  rgw_xml_enc.cc
  }
  rocksdb=rocksdb {
  }
  script=script {
-  CMakeLists.txt
-  add_header.pl
-  backport-create-issue
-  bdev_grep.pl
-  build-integration-branch
   ceph-debug-docker.sh
-  ceph-release-notes
   check_commands.sh
-  cmake_uninstall.cmake.in
   crash_bdev.sh
   credits.sh
   dep-report.sh
   find_dups_in_pg_log.sh
-  fix_modeline.pl
   kcon_all.sh
   kcon_most.sh
-  ptl-tool.py
-  run-coverity
   run_uml.sh
   sepia_bt.sh
   strip_trailing_whitespace.sh
-  subman
+  cmake_uninstall.cmake.in
+  ptl-tool.py
   smr_benchmark=smr_benchmark {
    linearCopy.sh
    linearSMRCopy.sh
@@ -4623,8 +3081,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
  telemetry=telemetry {
   README.md
   server=server {
-   app.wsgi
-   requirements.txt
    ceph_telemetry=ceph_telemetry {
     __init__.py
     app.py
@@ -4637,7 +3093,13 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   }
  }
  test=test {
-  CMakeLists.txt
+  admin_socket_output.h
+  admin_socket_output_tests.h
+  kv_store_bench.h
+  omap_bench.h
+  perf_helper.h
+  gprof-helper.c
+  test_c_headers.c
   TestSignalHandlers.cc
   TestTimers.cc
   admin_socket.cc
@@ -4652,19 +3114,14 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   ceph_compatset.cc
   ceph_crypto.cc
   confutils.cc
-  coverage.sh
   crypto.cc
   crypto_init.cc
   daemon_config.cc
-  detect-build-env-vars.sh
-  docker-test-helper.sh
-  docker-test.sh
   encoding.cc
   escape.cc
   fooclass.cc
   formatter.cc
   gather.cc
-  gprof-helper.c
   heartbeat_map.cc
   kv_store_bench.cc
   libcephfs_config.cc
@@ -4682,45 +3139,26 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   perf_counters.cc
   perf_helper.cc
   perf_local.cc
-  rbd-ggate.sh
-  run-cli-tests
-  run-cli-tests-maybe-unset-ccache
-  run-rbd-tests
-  run-rbd-unit-tests.sh
-  run-rbd-valgrind-unit-tests.sh
   run_cmd.cc
   signals.cc
   simple_spin.cc
-  smoke.sh
   strtol.cc
   test_addrs.cc
   test_admin_socket_output.cc
   test_any.cc
   test_arch.cc
-  test_backfill.sh
-  test_c_headers.c
   test_cfuse_cache_invalidate.cc
-  test_common.sh
   test_cors.cc
-  test_crush_bucket.sh
-  test_csyn.sh
   test_denc.cc
   test_features.cc
   test_filejournal.cc
   test_get_blkdev_size.cc
   test_intarith.cc
   test_ipaddr.cc
-  test_lost.sh
   test_mempool.cc
-  test_missing_unfound.sh
   test_mutate.cc
-  test_objectstore_memstore.sh
   test_pageset.cc
-  test_pidfile.sh
-  test_pool_create.sh
-  test_pools.sh
   test_prebufferedstreambuf.cc
-  test_rados_tool.sh
   test_rbd_replay.cc
   test_rewrite_latency.cc
   test_rgw_admin_log.cc
@@ -4728,17 +3166,13 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   test_rgw_admin_opstate.cc
   test_rgw_ldap.cc
   test_rgw_token.cc
-  test_rw.sh
   test_snap_mapper.cc
-  test_split.sh
   test_str_list.cc
   test_stress_watch.cc
   test_striper.cc
-  test_subman.sh
   test_subprocess.cc
   test_texttable.cc
   test_trans.cc
-  test_unfound.sh
   test_workqueue.cc
   test_xlist.cc
   testclass.cc
@@ -4747,202 +3181,72 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   testmsgr.cc
   unit.cc
   utf8.cc
-  vstart_wrapper.sh
   xattr_bench.cc
-  admin_socket_output.h
-  admin_socket_output_tests.h
-  kv_store_bench.h
-  omap_bench.h
-  perf_helper.h
+  coverage.sh
+  detect-build-env-vars.sh
+  docker-test-helper.sh
+  docker-test.sh
+  rbd-ggate.sh
+  run-rbd-unit-tests.sh
+  run-rbd-valgrind-unit-tests.sh
+  smoke.sh
+  test_backfill.sh
+  test_common.sh
+  test_crush_bucket.sh
+  test_csyn.sh
+  test_lost.sh
+  test_missing_unfound.sh
+  test_objectstore_memstore.sh
+  test_pidfile.sh
+  test_pool_create.sh
+  test_pools.sh
+  test_rados_tool.sh
+  test_rw.sh
+  test_split.sh
+  test_subman.sh
+  test_unfound.sh
+  vstart_wrapper.sh
   ObjectMap=ObjectMap {
-   CMakeLists.txt
+   KeyValueDBMemory.h
    KeyValueDBMemory.cc
    test_keyvaluedb_atomicity.cc
    test_keyvaluedb_iterators.cc
    test_object_map.cc
-   KeyValueDBMemory.h
   }
   admin_socket=admin_socket {
-   objecter_requests
-   osd_requests
   }
   alpine-edge=alpine-edge {
+   install-deps.sh
    APKBUILD.in
    Dockerfile.in
-   install-deps.sh
   }
   centos-7=centos-7 {
+   install-deps.sh
    Dockerfile.in
    ceph.spec.in
-   install-deps.sh
   }
   cli=cli {
    ceph-authtool=ceph-authtool {
-    add-key-segv.t
-    add-key.t
-    cap-bin.t
-    cap-invalid.t
-    cap-overwrite.t
-    cap.t
-    create-gen-list-bin.t
-    create-gen-list.t
-    help.t
-    list-empty-bin.t
-    list-empty.t
-    list-nonexistent-bin.t
-    list-nonexistent.t
-    manpage.t
-    simple.t
    }
    ceph-conf=ceph-conf {
-    env-vs-args.t
-    help.t
-    invalid-args.t
-    manpage.t
-    option.t
-    sections.t
-    show-config-value.t
-    show-config.t
-    simple.t
    }
    ceph-kvstore-tool=ceph-kvstore-tool {
-    help.t
    }
    crushtool=crushtool {
-    add-bucket.t
-    add-item-in-tree.t
-    add-item.t
-    adjust-item-weight.t
-    arg-order-checks.t
-    bad-mappings.crushmap.txt
-    bad-mappings.t
-    build.t
-    check-invalid-map.t
-    check-names.empty.crushmap.txt
-    check-names.empty.t
-    check-names.max-id.t
-    check-overlapped-rules.crushmap
-    check-overlapped-rules.crushmap.txt
-    check-overlapped-rules.t
-    choose-args.crush
-    choose-args.t
-    compile-decompile-recompile.t
-    device-class.crush
-    device-class.t
-    empty-default.cushmap.txt
-    empty-default.t
-    five-devices.crushmap
-    help.t
-    location.t
-    missing-bucket.crushmap.txt
-    multitype.after
-    multitype.before
-    need_tree_order.crush
-    output-csv.t
-    reclassify.t
-    reweight.t
-    reweight_multiple.t
-    rules.t
-    rules.txt
-    set-choose.crushmap.txt
-    set-choose.t
-    show-choose-tries.t
-    show-choose-tries.txt
-    simple.template
-    simple.template.adj.one
-    simple.template.adj.three
-    simple.template.adj.two
-    simple.template.five
-    simple.template.four
-    simple.template.multitree
-    simple.template.multitree.reweighted
-    simple.template.one
-    simple.template.three
-    simple.template.two
-    straw2.t
-    straw2.txt
-    test-map-a.crushmap
-    test-map-big-1.crushmap
-    test-map-bobtail-tunables.t
-    test-map-firefly-tunables.t
-    test-map-firstn-indep.t
-    test-map-firstn-indep.txt
-    test-map-hammer-tunables.crushmap
-    test-map-hammer-tunables.t
-    test-map-indep.crushmap
-    test-map-indep.t
-    test-map-jewel-tunables.crushmap
-    test-map-jewel-tunables.t
-    test-map-legacy-tunables.t
-    test-map-tries-vs-retries.crushmap
-    test-map-tries-vs-retries.t
-    test-map-vary-r-0.t
-    test-map-vary-r-1.t
-    test-map-vary-r-2.t
-    test-map-vary-r-3.t
-    test-map-vary-r-4.t
-    test-map-vary-r.crushmap
-    tree.template
-    tree.template.final
     crush-classes=crush-classes {
-     a
-     b
-     beesly
-     c
-     d
-     e
-     f
-     flax
-     g
-     gabe
-     gabe2
     }
    }
    monmaptool=monmaptool {
-    add-exists.t
-    add-many.t
-    clobber.t
-    create-print.t
-    create-with-add.t
-    feature-set-unset-list.t
-    help.t
-    print-empty.t
-    print-nonexistent.t
-    rm-nonexistent.t
-    rm.t
-    simple.t
    }
    osdmaptool=osdmaptool {
-    ceph.conf.withracks
-    clobber.t
-    create-print.t
-    create-racks.t
-    crush.t
-    help.t
-    missing-argument.t
-    pool.t
-    print-empty.t
-    print-nonexistent.t
-    test-map-pgs.t
-    tree.t
-    upmap-out.t
-    upmap.t
    }
    radosgw-admin=radosgw-admin {
-    help.t
    }
    rbd=rbd {
-    help.t
-    invalid-snap-usage.t
-    not-enough-args.t
-    too-many-args.t
    }
   }
   cli-integration=cli-integration {
    rbd=rbd {
-    defaults.t
-    formatted-output.t
-    unmap.t
    }
   }
   client=client {
@@ -4950,59 +3254,47 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    kernel_untar_build.sh
   }
   cls_hello=cls_hello {
-   CMakeLists.txt
    test_cls_hello.cc
   }
   cls_journal=cls_journal {
-   CMakeLists.txt
    test_cls_journal.cc
   }
   cls_lock=cls_lock {
-   CMakeLists.txt
    test_cls_lock.cc
   }
   cls_log=cls_log {
-   CMakeLists.txt
    test_cls_log.cc
   }
   cls_lua=cls_lua {
-   CMakeLists.txt
    test_cls_lua.cc
   }
   cls_numops=cls_numops {
-   CMakeLists.txt
    test_cls_numops.cc
   }
   cls_rbd=cls_rbd {
-   CMakeLists.txt
    test_cls_rbd.cc
   }
   cls_refcount=cls_refcount {
-   CMakeLists.txt
    test_cls_refcount.cc
   }
   cls_replica_log=cls_replica_log {
-   CMakeLists.txt
    test_cls_replica_log.cc
   }
   cls_rgw=cls_rgw {
-   CMakeLists.txt
    test_cls_rgw.cc
   }
   cls_sdk=cls_sdk {
-   CMakeLists.txt
    test_cls_sdk.cc
   }
   cls_statelog=cls_statelog {
-   CMakeLists.txt
    test_cls_statelog.cc
   }
   cls_version=cls_version {
-   CMakeLists.txt
    test_cls_version.cc
   }
   common=common {
-   CMakeLists.txt
+   ObjectContents.h
+   dns_messages.h
    ObjectContents.cc
    Readahead.cc
    Throttle.cc
@@ -5046,89 +3338,22 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_util.cc
    test_weighted_priority_queue.cc
    test_xmlformatter.cc
-   ObjectContents.h
-   dns_messages.h
    test_blkdev_sys_block=test_blkdev_sys_block {
     sys=sys {
      block=block {
-      cciss
-      c0d1
       sda=sda {
-       bar
-       dev
-       foo
        device=device {
-        model
        }
        queue=queue {
-        add_random
-        discard_granularity
-        discard_max_bytes
-        discard_zeroes_data
-        hw_sector_size
-        iostats
-        logical_block_size
-        max_hw_sectors_kb
-        max_integrity_segments
-        max_sectors_kb
-        max_segment_size
-        max_segments
-        minimum_io_size
-        nomerges
-        nr_requests
-        optimal_io_size
-        physical_block_size
-        read_ahead_kb
-        rotational
-        rq_affinity
-        scheduler
-        write_same_max_bytes
         iosched=iosched {
-         fifo_batch
-         front_merges
-         read_expire
-         write_expire
-         writes_starved
         }
        }
       }
       sdb=sdb {
-       bar
-       dev
-       foo
        device=device {
-        model
        }
        queue=queue {
-        add_random
-        discard_granularity
-        discard_max_bytes
-        discard_zeroes_data
-        hw_sector_size
-        iostats
-        logical_block_size
-        max_hw_sectors_kb
-        max_integrity_segments
-        max_sectors_kb
-        max_segment_size
-        max_segments
-        minimum_io_size
-        nomerges
-        nr_requests
-        optimal_io_size
-        physical_block_size
-        queue
-        read_ahead_kb
-        rotational
-        rq_affinity
-        scheduler
-        write_same_max_bytes
         iosched=iosched {
-         fifo_batch
-         front_merges
-         read_expire
-         write_expire
-         writes_starved
         }
        }
       }
@@ -5137,105 +3362,34 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   compressor=compressor {
-   CMakeLists.txt
+   compressor_example.h
    compressor_plugin_example.cc
    test_compression.cc
-   compressor_example.h
   }
   crush=crush {
-   CMakeLists.txt
    CrushWrapper.cc
-   crush-choose-args-expected-one-more-0.txt
-   crush-choose-args-expected-one-more-3.txt
    crush.cc
    crush_weights.sh
   }
   debian-jessie=debian-jessie {
-   Dockerfile.in
    install-deps.sh
+   Dockerfile.in
    debian=debian {
-    ceph-base.dirs
-    ceph-base.docs
-    ceph-base.install
-    ceph-base.lintian-overrides
-    ceph-base.maintscript
-    ceph-base.postinst
-    ceph-base.prerm
-    ceph-common.dirs
-    ceph-common.install
-    ceph-common.postinst
-    ceph-common.postrm
-    ceph-fuse.install
-    ceph-mds.dirs
-    ceph-mds.install
-    ceph-mds.postinst
-    ceph-mds.prerm
-    ceph-mgr.dirs
-    ceph-mgr.install
-    ceph-mgr.postinst
-    ceph-mgr.prerm
-    ceph-mon.dirs
-    ceph-mon.install
-    ceph-mon.postinst
-    ceph-mon.prerm
-    ceph-osd.dirs
-    ceph-osd.install
-    ceph-osd.postinst
-    ceph-osd.prerm
-    ceph-resource-agents.install
-    ceph-test.install
-    changelog
-    compat
-    control
-    copyright
-    libcephfs-dev.install
-    libcephfs-java.jlibs
-    libcephfs-jni.install
-    libcephfs2.install
-    librados-dev.install
-    librados2.install
-    libradosstriper-dev.install
-    libradosstriper1.install
-    librbd-dev.install
-    librbd1.install
-    librgw-dev.install
-    librgw2.install
-    python-ceph-argparse.install
-    python-cephfs.install
-    python-rados.install
-    python-rbd.install
-    python-rgw.install
-    python3-ceph-argparse.install
-    python3-cephfs.install
-    python3-rados.install
-    python3-rbd.install
-    python3-rgw.install
-    rados-objclass-dev.install
-    radosgw.dirs
-    radosgw.install
-    radosgw.postinst
-    radosgw.prerm
-    rbd-fuse.install
-    rbd-mirror.install
-    rbd-nbd.install
-    rules
-    watch
     source=source {
-     format
     }
    }
   }
   direct_messenger=direct_messenger {
-   CMakeLists.txt
+   DirectMessenger.h
    DirectMessenger.cc
    test_direct_messenger.cc
-   DirectMessenger.h
   }
   downloads=downloads {
-   cram-0.5.0ceph.2011-01-14.tar.gz
   }
   encoding=encoding {
-   CMakeLists.txt
+   test_ceph_time.h
+   test_sstring.h
+   types.h
    ceph_dencoder.cc
    check-generated.sh
    generate-corpus-objects.sh
@@ -5243,12 +3397,10 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    import-generated.sh
    import.sh
    readable.sh
-   test_ceph_time.h
-   test_sstring.h
-   types.h
   }
   erasure-code=erasure-code {
-   CMakeLists.txt
+   ErasureCodeExample.h
+   ceph_erasure_code_benchmark.h
    ErasureCodePluginExample.cc
    ErasureCodePluginFailToInitialize.cc
    ErasureCodePluginFailToRegister.cc
@@ -5272,35 +3424,27 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    ceph_erasure_code.cc
    ceph_erasure_code_benchmark.cc
    ceph_erasure_code_non_regression.cc
-   ErasureCodeExample.h
-   ceph_erasure_code_benchmark.h
   }
   fedora-21=fedora-21 {
+   install-deps.sh
    Dockerfile.in
    ceph.spec.in
-   install-deps.sh
   }
   filestore=filestore {
-   CMakeLists.txt
    TestFileStore.cc
   }
   fio=fio {
-   CMakeLists.txt
+   fio_ceph_objectstore.cc
    README.md
    ceph-bluestore.conf
-   ceph-bluestore.fio
    ceph-filestore.conf
-   ceph-filestore.fio
    ceph-memstore.conf
-   ceph-memstore.fio
-   fio_ceph_objectstore.cc
   }
   fs=fs {
-   CMakeLists.txt
    mds_types.cc
   }
   journal=journal {
-   CMakeLists.txt
+   RadosTestFixture.h
    RadosTestFixture.cc
    test_Entry.cc
    test_FutureImpl.cc
@@ -5312,20 +3456,17 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_ObjectPlayer.cc
    test_ObjectRecorder.cc
    test_main.cc
-   RadosTestFixture.h
    mock=mock {
-    MockJournaler.cc
     MockJournaler.h
+    MockJournaler.cc
    }
   }
   lazy-omap-stats=lazy-omap-stats {
-   CMakeLists.txt
+   lazy_omap_stats_test.h
    lazy_omap_stats_test.cc
    main.cc
-   lazy_omap_stats_test.h
   }
   libcephfs=libcephfs {
-   CMakeLists.txt
    access.cc
    acl.cc
    caps.cc
@@ -5338,7 +3479,9 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test.cc
   }
   librados=librados {
-   CMakeLists.txt
+   TestCase.h
+   test.h
+   test_common.h
    TestCase.cc
    aio.cc
    asio.cc
@@ -5360,20 +3503,8 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_common.cc
    tier.cc
    watch_notify.cc
-   TestCase.h
-   test.h
-   test_common.h
   }
   librados_test_stub=librados_test_stub {
-   CMakeLists.txt
-   LibradosTestStub.cc
-   TestClassHandler.cc
-   TestIoCtxImpl.cc
-   TestMemCluster.cc
-   TestMemIoCtxImpl.cc
-   TestMemRadosClient.cc
-   TestRadosClient.cc
-   TestWatchNotify.cc
    LibradosTestStub.h
    MockTestMemCluster.h
    MockTestMemIoCtxImpl.h
@@ -5386,19 +3517,27 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    TestMemRadosClient.h
    TestRadosClient.h
    TestWatchNotify.h
+   LibradosTestStub.cc
+   TestClassHandler.cc
+   TestIoCtxImpl.cc
+   TestMemCluster.cc
+   TestMemIoCtxImpl.cc
+   TestMemRadosClient.cc
+   TestRadosClient.cc
+   TestWatchNotify.cc
   }
   libradosstriper=libradosstriper {
-   CMakeLists.txt
+   TestCase.h
    TestCase.cc
    aio.cc
    io.cc
    striping.cc
-   TestCase.h
   }
   librbd=librbd {
-   CMakeLists.txt
+   test_fixture.h
+   test_mock_fixture.h
+   test_support.h
    fsx.cc
-   rbdrw.py
    test_BlockGuard.cc
    test_DeepCopy.cc
    test_Groups.cc
@@ -5419,11 +3558,9 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_mock_TrashWatcher.cc
    test_mock_Watcher.cc
    test_mock_fixture.cc
-   test_notify.py
    test_support.cc
-   test_fixture.h
-   test_mock_fixture.h
-   test_support.h
+   rbdrw.py
+   test_notify.py
    deep_copy=deep_copy {
     test_mock_ImageCopyRequest.cc
     test_mock_MetadataCopyRequest.cc
@@ -5468,8 +3605,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     test_mock_DisableRequest.cc
    }
    mock=mock {
-    MockImageCtx.cc
-    MockJournal.cc
     MockContextWQ.h
     MockExclusiveLock.h
     MockImageCtx.h
@@ -5480,6 +3615,8 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     MockObjectMap.h
     MockOperations.h
     MockReadahead.h
+    MockImageCtx.cc
+    MockJournal.cc
     cache=cache {
      MockImageCache.h
     }
@@ -5527,7 +3664,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   mds=mds {
-   CMakeLists.txt
    TestMDSAuthCaps.cc
    TestSessionFilter.cc
   }
@@ -5538,23 +3674,20 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_written_pool_memuse_tcmalloc.sh
   }
   messenger=messenger {
-   CMakeLists.txt
+   message_helper.h
+   simple_dispatcher.h
+   xio_dispatcher.h
    simple_client.cc
    simple_dispatcher.cc
    simple_server.cc
    xio_client.cc
    xio_dispatcher.cc
    xio_server.cc
-   message_helper.h
-   simple_dispatcher.h
-   xio_dispatcher.h
   }
   mgr=mgr {
-   CMakeLists.txt
    mgr-dashboard-smoke.sh
   }
   mon=mon {
-   CMakeLists.txt
    MonMap.cc
    PGMap.cc
    moncap.cc
@@ -5563,7 +3696,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_mon_workloadgen.cc
   }
   msgr=msgr {
-   CMakeLists.txt
    perf_msgr_client.cc
    perf_msgr_server.cc
    test_async_driver.cc
@@ -5572,9 +3704,13 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_userspace_event.cc
   }
   objectstore=objectstore {
+   DeterministicOpSequence.h
+   FileStoreDiff.h
+   FileStoreTracker.h
+   TestObjectStoreState.h
+   store_test_fixture.h
    Allocator_bench.cc
    Allocator_test.cc
-   CMakeLists.txt
    DeterministicOpSequence.cc
    FileStoreDiff.cc
    FileStoreTracker.cc
@@ -5583,8 +3719,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    TestRocksdbOptionParse.cc
    chain_xattr.cc
    fastbmap_allocator_test.cc
-   run_seed_to.sh
-   run_seed_to_range.sh
    store_test.cc
    store_test_fixture.cc
    test_bluefs.cc
@@ -5594,17 +3728,14 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_kv.cc
    test_memstore_clone.cc
    test_transaction.cc
-   DeterministicOpSequence.h
-   FileStoreDiff.h
-   FileStoreTracker.h
-   TestObjectStoreState.h
-   store_test_fixture.h
+   run_seed_to.sh
+   run_seed_to_range.sh
   }
   old=old {
-   test_disk_bw.cc
    test_seek_read.c
    test_setlayout.c
    test_short_seek_read.c
+   test_disk_bw.cc
    testbucket.cc
    testbuffers.cc
    testcounter.cc
@@ -5616,16 +3747,17 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    testxattr.cc
   }
   opensuse-13.2=opensuse-13.2 {
+   install-deps.sh
    Dockerfile.in
    ceph.spec.in
-   install-deps.sh
   }
   os=os {
-   CMakeLists.txt
    TestLFNIndex.cc
   }
   osd=osd {
-   CMakeLists.txt
+   Object.h
+   RadosModel.h
+   TestOpStat.h
    Object.cc
    RadosModel.cc
    TestECBackend.cc
@@ -5638,25 +3770,20 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    TestRados.cc
    hitset.cc
    osdcap.cc
-   safe-to-destroy.sh
    test_ec_transaction.cc
    test_extent_cache.cc
    test_pg_transaction.cc
    types.cc
-   Object.h
-   RadosModel.h
-   TestOpStat.h
+   safe-to-destroy.sh
   }
   osdc=osdc {
-   CMakeLists.txt
+   FakeWriteback.h
+   MemWriteback.h
    FakeWriteback.cc
    MemWriteback.cc
    object_cacher_stress.cc
-   FakeWriteback.h
-   MemWriteback.h
   }
   pybind=pybind {
-   CMakeLists.txt
    test_ceph_argparse.py
    test_ceph_daemon.py
    test_cephfs.py
@@ -5667,24 +3794,22 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   python=python {
    brag-client=brag-client {
     setup.py
-    tox.ini
     tests=tests {
      test_ceph_brag.py
     }
    }
    ceph=ceph {
     setup.py
-    tox.ini
     tests=tests {
      test_ceph.py
     }
    }
    ceph-disk=ceph-disk {
-    tox.ini
    }
   }
   rbd_mirror=rbd_mirror {
-   CMakeLists.txt
+   test_fixture.h
+   test_mock_fixture.h
    random_write.cc
    test_ClusterWatcher.cc
    test_ImageDeleter.cc
@@ -5705,8 +3830,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_mock_LeaderWatcher.cc
    test_mock_PoolWatcher.cc
    test_mock_fixture.cc
-   test_fixture.h
-   test_mock_fixture.h
    image_deleter=image_deleter {
     test_mock_SnapshotPurgeRequest.cc
     test_mock_TrashMoveRequest.cc
@@ -5737,14 +3860,8 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   rgw=rgw {
-   CMakeLists.txt
-   test-rgw-call.sh
-   test-rgw-common.sh
-   test-rgw-meta-sync.sh
-   test-rgw-multisite.sh
+   test_rgw_common.h
    test_http_manager.cc
-   test_multen.py
-   test_multi.py
    test_rgw_bencode.cc
    test_rgw_common.cc
    test_rgw_compression.cc
@@ -5754,7 +3871,12 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    test_rgw_obj.cc
    test_rgw_period_history.cc
    test_rgw_string.cc
-   test_rgw_common.h
+   test-rgw-call.sh
+   test-rgw-common.sh
+   test-rgw-meta-sync.sh
+   test-rgw-multisite.sh
+   test_multen.py
+   test_multi.py
    rgw_multi=rgw_multi {
     __init__.py
     conn.py
@@ -5768,21 +3890,6 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   system=system {
-   CMakeLists.txt
-   cross_process_sem.cc
-   rados_delete_pools_parallel.cc
-   rados_list_parallel.cc
-   rados_open_pools_parallel.cc
-   rados_watch_notify.cc
-   rerun.sh
-   st_rados_create_pool.cc
-   st_rados_delete_objs.cc
-   st_rados_delete_pool.cc
-   st_rados_list_objects.cc
-   st_rados_notify.cc
-   st_rados_watch.cc
-   systest_runnable.cc
-   systest_settings.cc
    cross_process_sem.h
    st_rados_create_pool.h
    st_rados_delete_objs.h
@@ -5792,163 +3899,45 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    st_rados_watch.h
    systest_runnable.h
    systest_settings.h
+   cross_process_sem.cc
+   rados_delete_pools_parallel.cc
+   rados_list_parallel.cc
+   rados_open_pools_parallel.cc
+   rados_watch_notify.cc
+   st_rados_create_pool.cc
+   st_rados_delete_objs.cc
+   st_rados_delete_pool.cc
+   st_rados_list_objects.cc
+   st_rados_notify.cc
+   st_rados_watch.cc
+   systest_runnable.cc
+   systest_settings.cc
+   rerun.sh
   }
   ubuntu-16.04=ubuntu-16.04 {
-   Dockerfile.in
    install-deps.sh
+   Dockerfile.in
    debian=debian {
-    ceph-base.dirs
-    ceph-base.docs
-    ceph-base.install
-    ceph-base.lintian-overrides
-    ceph-base.maintscript
-    ceph-base.postinst
-    ceph-base.prerm
-    ceph-common.dirs
-    ceph-common.install
-    ceph-common.postinst
-    ceph-common.postrm
-    ceph-fuse.install
-    ceph-mds.dirs
-    ceph-mds.install
-    ceph-mds.postinst
-    ceph-mds.prerm
-    ceph-mgr.dirs
-    ceph-mgr.install
-    ceph-mgr.postinst
-    ceph-mgr.prerm
-    ceph-mon.dirs
-    ceph-mon.install
-    ceph-mon.postinst
-    ceph-mon.prerm
-    ceph-osd.dirs
-    ceph-osd.install
-    ceph-osd.postinst
-    ceph-osd.prerm
-    ceph-resource-agents.install
-    ceph-test.install
-    changelog
-    compat
-    control
-    copyright
-    libcephfs-dev.install
-    libcephfs-java.jlibs
-    libcephfs-jni.install
-    libcephfs2.install
-    librados-dev.install
-    librados2.install
-    libradosstriper-dev.install
-    libradosstriper1.install
-    librbd-dev.install
-    librbd1.install
-    librgw-dev.install
-    librgw2.install
-    python-ceph-argparse.install
-    python-cephfs.install
-    python-rados.install
-    python-rbd.install
-    python-rgw.install
-    python3-ceph-argparse.install
-    python3-cephfs.install
-    python3-rados.install
-    python3-rbd.install
-    python3-rgw.install
-    rados-objclass-dev.install
-    radosgw.dirs
-    radosgw.install
-    radosgw.postinst
-    radosgw.prerm
-    rbd-fuse.install
-    rbd-mirror.install
-    rbd-nbd.install
-    rules
-    watch
     source=source {
-     format
     }
    }
   }
   ubuntu-17.04=ubuntu-17.04 {
-   Dockerfile.in
    install-deps.sh
+   Dockerfile.in
    debian=debian {
-    ceph-base.dirs
-    ceph-base.docs
-    ceph-base.install
-    ceph-base.lintian-overrides
-    ceph-base.maintscript
-    ceph-base.postinst
-    ceph-base.prerm
-    ceph-common.dirs
-    ceph-common.install
-    ceph-common.postinst
-    ceph-common.postrm
-    ceph-fuse.install
-    ceph-mds.dirs
-    ceph-mds.install
-    ceph-mds.postinst
-    ceph-mds.prerm
-    ceph-mgr.dirs
-    ceph-mgr.install
-    ceph-mgr.postinst
-    ceph-mgr.prerm
-    ceph-mon.dirs
-    ceph-mon.install
-    ceph-mon.postinst
-    ceph-mon.prerm
-    ceph-osd.dirs
-    ceph-osd.install
-    ceph-osd.postinst
-    ceph-osd.prerm
-    ceph-resource-agents.install
-    ceph-test.install
-    changelog
-    compat
-    control
-    copyright
-    libcephfs-dev.install
-    libcephfs-java.jlibs
-    libcephfs-jni.install
-    libcephfs2.install
-    librados-dev.install
-    librados2.install
-    libradosstriper-dev.install
-    libradosstriper1.install
-    librbd-dev.install
-    librbd1.install
-    librgw-dev.install
-    librgw2.install
-    python-ceph-argparse.install
-    python-cephfs.install
-    python-rados.install
-    python-rbd.install
-    python-rgw.install
-    python3-ceph-argparse.install
-    python3-cephfs.install
-    python3-rados.install
-    python3-rbd.install
-    python3-rgw.install
-    rados-objclass-dev.install
-    radosgw.dirs
-    radosgw.install
-    radosgw.postinst
-    radosgw.prerm
-    rbd-fuse.install
-    rbd-mirror.install
-    rbd-nbd.install
-    rules
-    watch
     source=source {
-     format
     }
    }
   }
  }
  tools=tools {
-  CMakeLists.txt
+  RadosDump.h
+  ceph_objectstore_tool.h
+  rebuild_mondb.h
+  scratchtool.c
   RadosDump.cc
   ceph-client-debug.cc
-  ceph-monstore-update-crush.sh
   ceph_authtool.cc
   ceph_conf.cc
   ceph_kvstore_tool.cc
@@ -5956,26 +3945,31 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   ceph_objectstore_tool.cc
   ceph_osdomap_tool.cc
   crushtool.cc
-  histogram_dump.py
   monmaptool.cc
   osdmaptool.cc
   psim.cc
   radosacl.cc
   rebuild_mondb.cc
-  scratchtool.c
   scratchtoolpp.cc
+  ceph-monstore-update-crush.sh
   setup-virtualenv.sh
-  RadosDump.h
-  ceph_objectstore_tool.h
-  rebuild_mondb.h
+  histogram_dump.py
   ceph-lazy=ceph-lazy {
-   ceph-lazy
    bash_completion.d=bash_completion.d {
-    ceph-lazy
    }
   }
   cephfs=cephfs {
-   CMakeLists.txt
+   DataScan.h
+   Dumper.h
+   EventOutput.h
+   JournalFilter.h
+   JournalScanner.h
+   JournalTool.h
+   MDSUtility.h
+   PgFiles.h
+   Resetter.h
+   RoleSelector.h
+   TableTool.h
    DataScan.cc
    Dumper.cc
    EventOutput.cc
@@ -5990,38 +3984,26 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    cephfs-data-scan.cc
    cephfs-journal-tool.cc
    cephfs-table-tool.cc
-   DataScan.h
-   Dumper.h
-   EventOutput.h
-   JournalFilter.h
-   JournalScanner.h
-   JournalTool.h
-   MDSUtility.h
-   PgFiles.h
-   Resetter.h
-   RoleSelector.h
-   TableTool.h
   }
   rados=rados {
+   PoolDump.h
+   RadosImport.h
    PoolDump.cc
    RadosImport.cc
    rados.cc
-   PoolDump.h
-   RadosImport.h
   }
   rbd=rbd {
-   ArgumentTypes.cc
-   CMakeLists.txt
-   IndentStream.cc
-   OptionPrinter.cc
-   Shell.cc
-   Utils.cc
-   rbd.cc
    ArgumentTypes.h
    IndentStream.h
    OptionPrinter.h
    Shell.h
    Utils.h
+   ArgumentTypes.cc
+   IndentStream.cc
+   OptionPrinter.cc
+   Shell.cc
+   Utils.cc
+   rbd.cc
    action=action {
     Bench.cc
     Children.cc
@@ -6059,40 +4041,20 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    }
   }
   rbd_ggate=rbd_ggate {
-   CMakeLists.txt
-   Driver.cc
-   Server.cc
-   Watcher.cc
-   debug.cc
-   ggate_drv.c
-   main.cc
    Driver.h
    Request.h
    Server.h
    Watcher.h
    debug.h
    ggate_drv.h
+   ggate_drv.c
+   Driver.cc
+   Server.cc
+   Watcher.cc
+   debug.cc
+   main.cc
   }
   rbd_mirror=rbd_mirror {
-   CMakeLists.txt
-   ClusterWatcher.cc
-   ImageDeleter.cc
-   ImageMap.cc
-   ImageReplayer.cc
-   ImageSync.cc
-   ImageSyncThrottler.cc
-   InstanceReplayer.cc
-   InstanceWatcher.cc
-   Instances.cc
-   LeaderWatcher.cc
-   Mirror.cc
-   MirrorStatusWatcher.cc
-   PoolReplayer.cc
-   PoolWatcher.cc
-   ServiceDaemon.cc
-   Threads.cc
-   main.cc
-   types.cc
    BaseRequest.h
    ClusterWatcher.h
    ImageDeleter.h
@@ -6112,43 +4074,50 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
    ServiceDaemon.h
    Threads.h
    types.h
+   ClusterWatcher.cc
+   ImageDeleter.cc
+   ImageMap.cc
+   ImageReplayer.cc
+   ImageSync.cc
+   ImageSyncThrottler.cc
+   InstanceReplayer.cc
+   InstanceWatcher.cc
+   Instances.cc
+   LeaderWatcher.cc
+   Mirror.cc
+   MirrorStatusWatcher.cc
+   PoolReplayer.cc
+   PoolWatcher.cc
+   ServiceDaemon.cc
+   Threads.cc
+   main.cc
+   types.cc
    image_deleter=image_deleter {
-    SnapshotPurgeRequest.cc
-    TrashMoveRequest.cc
-    TrashRemoveRequest.cc
-    TrashWatcher.cc
     SnapshotPurgeRequest.h
     TrashMoveRequest.h
     TrashRemoveRequest.h
     TrashWatcher.h
     Types.h
+    SnapshotPurgeRequest.cc
+    TrashMoveRequest.cc
+    TrashRemoveRequest.cc
+    TrashWatcher.cc
    }
    image_map=image_map {
-    LoadRequest.cc
-    Policy.cc
-    SimplePolicy.cc
-    StateTransition.cc
-    Types.cc
-    UpdateRequest.cc
     LoadRequest.h
     Policy.h
     SimplePolicy.h
     StateTransition.h
     Types.h
     UpdateRequest.h
+    LoadRequest.cc
+    Policy.cc
+    SimplePolicy.cc
+    StateTransition.cc
+    Types.cc
+    UpdateRequest.cc
    }
    image_replayer=image_replayer {
-    BootstrapRequest.cc
-    CloseImageRequest.cc
-    CreateImageRequest.cc
-    EventPreprocessor.cc
-    GetMirrorImageIdRequest.cc
-    IsPrimaryRequest.cc
-    OpenImageRequest.cc
-    OpenLocalImageRequest.cc
-    PrepareLocalImageRequest.cc
-    PrepareRemoteImageRequest.cc
-    ReplayStatusFormatter.cc
     BootstrapRequest.h
     CloseImageRequest.h
     CreateImageRequest.h
@@ -6161,53 +4130,51 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
     PrepareRemoteImageRequest.h
     ReplayStatusFormatter.h
     Types.h
+    BootstrapRequest.cc
+    CloseImageRequest.cc
+    CreateImageRequest.cc
+    EventPreprocessor.cc
+    GetMirrorImageIdRequest.cc
+    IsPrimaryRequest.cc
+    OpenImageRequest.cc
+    OpenLocalImageRequest.cc
+    PrepareLocalImageRequest.cc
+    PrepareRemoteImageRequest.cc
+    ReplayStatusFormatter.cc
    }
    image_sync=image_sync {
-    SyncPointCreateRequest.cc
-    SyncPointPruneRequest.cc
     SyncPointCreateRequest.h
     SyncPointPruneRequest.h
+    SyncPointCreateRequest.cc
+    SyncPointPruneRequest.cc
    }
    instance_watcher=instance_watcher {
-    Types.cc
     Types.h
+    Types.cc
    }
    instances=instances {
     Types.h
    }
    leader_watcher=leader_watcher {
-    Types.cc
     Types.h
+    Types.cc
    }
    pool_watcher=pool_watcher {
-    RefreshImagesRequest.cc
     RefreshImagesRequest.h
     Types.h
+    RefreshImagesRequest.cc
    }
    service_daemon=service_daemon {
-    Types.cc
     Types.h
+    Types.cc
    }
   }
   rbd_nbd=rbd_nbd {
-   CMakeLists.txt
    rbd-nbd.cc
   }
   rbd_recover_tool=rbd_recover_tool {
-   FAQ
-   README
-   TODO
-   common_h
-   database_h
-   epoch_h
-   metadata_h
-   osd_job
-   rbd-recover-tool
    test_rbd_recover_tool.sh
    config=config {
-    mds_host
-    mon_host
-    osd_host_path
    }
   }
   rgw=rgw {
@@ -6215,30 +4182,19 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
   }
  }
  tracing=tracing {
-  CMakeLists.txt
-  README.md
+  tracing-common.h
   cyg_profile.c
-  cyg_profile.tp
   cyg_profile_functions.c
   eventtrace.c
-  eventtrace.tp
   librados.c
-  librados.tp
   librbd.c
-  librbd.tp
   objectstore.c
-  objectstore.tp
   oprequest.c
-  oprequest.tp
   osd.c
-  osd.tp
   pg.c
-  pg.tp
   rgw_op.c
-  rgw_op.tp
   rgw_rados.c
-  rgw_rados.tp
-  tracing-common.h
+  README.md
  }
  upstart=upstart {
   ceph-all.conf
@@ -6266,5 +4222,181 @@ ceph=/Users/deepliu/projects/ceph-13.2.8/src CD=. filter="*" {
  xxHash=xxHash {
  }
  zstd=zstd {
+ }
+}
+ceph-deploy=/root/projects/ceph-deploy/ceph_deploy CD=. filter="*" {
+ __init__.py
+ admin.py
+ calamari.py
+ cli.py
+ cliutil.py
+ config.py
+ connection.py
+ exc.py
+ forgetkeys.py
+ gatherkeys.py
+ install.py
+ mds.py
+ mgr.py
+ misc.py
+ mon.py
+ new.py
+ osd.py
+ pkg.py
+ repo.py
+ rgw.py
+ tags
+ validate.py
+ conf=conf {
+  __init__.py
+  ceph.py
+  cephdeploy.py
+ }
+ hosts=hosts {
+  __init__.py
+  common.py
+  remotes.py
+  util.py
+  arch=arch {
+   __init__.py
+   install.py
+   uninstall.py
+   mon=mon {
+    __init__.py
+   }
+  }
+  centos=centos {
+   __init__.py
+   install.py
+   uninstall.py
+   mon=mon {
+    __init__.py
+   }
+  }
+  debian=debian {
+   __init__.py
+   install.py
+   uninstall.py
+   mon=mon {
+    __init__.py
+   }
+  }
+  fedora=fedora {
+   __init__.py
+   install.py
+   uninstall.py
+   mon=mon {
+    __init__.py
+   }
+  }
+  rhel=rhel {
+   __init__.py
+   install.py
+   uninstall.py
+   mon=mon {
+    __init__.py
+   }
+  }
+  suse=suse {
+   __init__.py
+   install.py
+   uninstall.py
+   mon=mon {
+    __init__.py
+   }
+  }
+ }
+ lib=lib {
+  __init__.py
+  vendor=vendor {
+   __init__.py
+  }
+ }
+ tests=tests {
+  __init__.py
+  conftest.py
+  directory.py
+  fakes.py
+  test_cli_admin.py
+  test_cli_mon.py
+  test_cli_new.py
+  test_cli_rgw.py
+  test_conf.py
+  test_gather_keys.py
+  test_gather_keys_missing.py
+  test_gather_keys_with_mon.py
+  test_install.py
+  test_keys_equivalent.py
+  test_mon.py
+  test_remotes.py
+  util.py
+  parser=parser {
+   __init__.py
+   test_admin.py
+   test_calamari.py
+   test_config.py
+   test_disk.py
+   test_gatherkeys.py
+   test_install.py
+   test_main.py
+   test_mds.py
+   test_mon.py
+   test_new.py
+   test_osd.py
+   test_pkg.py
+   test_purge.py
+   test_purgedata.py
+   test_repo.py
+   test_rgw.py
+   test_uninstall.py
+  }
+  unit=unit {
+   test_calamari.py
+   test_cli.py
+   test_conf.py
+   test_exc.py
+   test_mon.py
+   test_new.py
+   hosts=hosts {
+    test_centos.py
+    test_common.py
+    test_hosts.py
+    test_remotes.py
+    test_suse.py
+    test_util.py
+   }
+   util=util {
+    test_arg_validators.py
+    test_constants.py
+    test_net.py
+    test_packages.py
+    test_paths.py
+    test_pkg_managers.py
+    test_system.py
+    test_templates.py
+   }
+  }
+ }
+ util=util {
+  __init__.py
+  arg_validators.py
+  constants.py
+  decorators.py
+  files.py
+  help_formatters.py
+  log.py
+  net.py
+  packages.py
+  pkg_managers.py
+  ssh.py
+  system.py
+  templates.py
+  versions.py
+  paths=paths {
+   __init__.py
+   gpg.py
+   mon.py
+   osd.py
+  }
  }
 }

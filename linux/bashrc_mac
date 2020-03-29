@@ -35,6 +35,7 @@ alias cloud_score="vim +'Project ~/vimprojects/cloud_score'"
 alias payment="vim +'Project ~/vimprojects/payment'"
 alias vscore="vim +'Project ~/vimprojects/vscore'"
 alias topic="vim +'Project ~/vimprojects/topic'"
+alias rwopensources="vim +'Project ~/vimprojects/opensources'"
 alias opensources="vim -M +'Project ~/vimprojects/opensources'"
 
 alias urldecode='python -c "import sys, urllib as ul; \

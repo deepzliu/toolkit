@@ -80,6 +80,34 @@ func! LineInfo()
 
 endfunc
 
+func! LineRight(n)
+	let s:line = line(".")
+	let s:col = col(".") + a:n
+	let s:maxcol = col("$")
+	if s:col > s:maxcol
+		let s:line += 1
+		let s:col = s:col - s:maxcol
+	end
+	let s:pos = [0, s:line, s:col, 0]
+	call setpos(".", s:pos)
+endfunc
+
+func! LineLeft(n)
+	let s:line = line(".")
+	let s:col = col(".") - a:n
+	echo "column: "s:col
+	if s:col < 0
+		let s:line -= 1
+		let s:pos = [0, s:line, 1, 0]
+		call setpos(".", s:pos)
+		let s:pos = [0, s:line, col("$") + s:col, 0]
+		call setpos(".", s:pos)
+	else
+		let s:pos = [0, s:line, s:col, 0]
+		call setpos(".", s:pos)
+	end
+endfunc
+
 func! LineDown(n)
 	let s:line = line(".") + a:n
 	let s:col = col(".")
@@ -192,6 +220,8 @@ nmap \l :call LineInfo()<CR>
 nmap \F :echo expand('%:p')<CR> 
 "nmap \s :sh<CR> " reserve for Conque-Shell
 nmap \e :qa<CR>
+nmap <silent> <C-L> :call LineRight(20)<CR>
+nmap <silent> <C-H> :call LineLeft(20)<CR>
 nmap <silent> <C-J> :call LineDown(5)<CR>
 nmap <silent> <C-K> :call LineUp(5)<CR>
 " vmap <silent> <C-J> :call LineDown(5)<CR>

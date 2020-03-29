@@ -1,7 +1,7 @@
 #! /bin/sh
 
-username='DonghuaLau'
-showname='Donghua.Lau'
+username='deepzliu'
+showname='Deepliu'
 useremail='me@liudonghua.net'
 
 git config --global user.name "${showname}"

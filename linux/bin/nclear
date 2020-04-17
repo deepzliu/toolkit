@@ -1,0 +1,7 @@
+#!/bin/sh
+
+lines=30
+for((i=0;i<$lines;i++))
+do
+	echo ""
+done

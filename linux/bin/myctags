@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# only C/C++
+# ctags --languages=-all --languages=+c,c++ -R .
+
 if [ -f tags.txt ]; then
 	ctags -L tags.txt -R .
 else

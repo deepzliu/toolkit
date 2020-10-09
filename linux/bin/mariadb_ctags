@@ -1,0 +1,14 @@
+#!/bin/sh
+
+EXCLUDE='--exclude=BUILD --exclude=Docs --exclude=man --exclude=win --exclude=tests --exclude=unittest'
+
+if [ -f tags.txt ]; then
+	ctags -L tags.txt -R . ${EXCLUDE}
+else
+	tagsfile=$(dirname $0)/tags.txt
+	if [ -f ${tagsfile} ]; then
+		ctags -L ${tagsfile} -R . ${EXCLUDE}
+	else
+		ctags -R . ${EXCLUDE}
+	fi
+fi

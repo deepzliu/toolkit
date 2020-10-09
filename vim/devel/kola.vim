@@ -35,7 +35,7 @@ func! OpenWithTag()
 	exec ":tab split"
 	exec ":tag ".expand("<cword>")
 	"exec ":TagbarToggle"
-	exec ":Project"
+	"exec ":Project"
 	exec "wincmd l"
 endfunc
 map <C-\> :call OpenWithTag()<CR>

@@ -13,6 +13,7 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias grep="grep --color"
 
+alias g++11="g++ --std=c++11"
 #alias cmake="/usr/bin/cmake"
 alias remake="make clean; make -j8"
 

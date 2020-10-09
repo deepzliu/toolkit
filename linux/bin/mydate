@@ -1,4 +1,4 @@
 #!/bin/sh
 
 
-date +'周%w %Y-%m-%d %H:%M:%S'
+date +'%Y-%m-%d %H:%M:%S 周%w'

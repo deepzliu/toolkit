@@ -1,12 +1,1 @@
-/usr/include/c++/4.4.6
-/usr/local/commlib/protocol/pay_all_proto
-/usr/local/commlib/outerlib/taf
-/usr/local/commlib/platformlib/json/json.v1.0.0/include/
-/usr/local/commlib/platformlib/spp_plugin/spp_plugin/data_model/include
-/usr/local/commlib/platformlib/spp_plugin/spp_plugin/log_plugin/include
-/usr/local/commlib/platformlib/spp_plugin/spp_plugin/video_frame/include
-/usr/local/commlib/platformlib/video_packet/video_packet.v4.0.0/include
-/usr/local/commlib/oldlib/itil_mcall/itil_mcall.v2.0.0/include/bossapi.h
-/data/home/deepliu/projects/magic_proj/activity_proj/comm
-/data/home/deepliu/projects/magic_proj/hollywood_proj/magic_activity_v2/comm
-/data/home/deepliu/projects/all_projects/hongji_proj/comm_jce
+/usr/include/c++/

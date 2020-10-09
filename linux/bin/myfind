@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ $# == 0 ]; then
+	cmd=$(basename $0)
+	echo "Usage: ${cmd} <string> [word match(0/1)]"
+	echo "Same as:"
+	echo '    find . -name <string>'
+    exit
+fi
+
+str=$1
+word_match=1
+if [ $# == 2 ]; then
+	word_match=$2
+fi
+
+if [ ${word_match} == 1 ]; then 
+	find . -name "${str}"
+else
+	find . -name "*${str}*"
+fi
+

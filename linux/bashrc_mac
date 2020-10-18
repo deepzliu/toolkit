@@ -31,7 +31,8 @@ alias remake="make clean; make -j8"
 alias vimp="vim +Project"
 #alias topic="vim +'Project ~/vimprojects/topic'"
 alias rwopensources="vim +'Project ~/vimprojects/opensources'"
-alias opensources="vim -M +'Project ~/vimprojects/opensources'"
+#alias opensources="vim -M +'Project ~/vimprojects/opensources'"
+alias opensources="vim +'Project ~/vimprojects/opensources'"
 
 alias urldecode='python -c "import sys, urllib as ul; \
     print ul.unquote_plus(sys.argv[1])"'
@@ -45,3 +46,6 @@ alias ctags='/usr/local/bin/ctags' # 默认的不是Exuberant版
 
 #export GTAGSLIBPATH=$GTAGSLIBPATH:/usr/include:/usr/local/commlib/outerlib/:~/projects/all_projects/inter_comm/ # seems not working
 #export TERM=xterm-256color # for vim
+
+export GOPROXY=https://goproxy.io
+

@@ -9,6 +9,7 @@ if [ "$1SS" == "SS" ]; then
 fi
 
 ts=$1
-date -d @${ts} +'%Y-%m-%d %H:%M:%S'
+#date -d @${ts} +'%Y-%m-%d %H:%M:%S'
+date -r ${ts} +'%Y-%m-%d %H:%M:%S'
 
 

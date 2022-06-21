@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $# != 1 ]; then
+	cmd=$(basename $0)
+	echo "Usage: ${cmd} <MAC-addr>"
+    exit
+fi
+
+mac=$1
+arp -a | grep "$mac" | awk -F '(' '{print $2}' | awk -F ')' '{print $1}'
+

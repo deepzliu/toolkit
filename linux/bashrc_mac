@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=$PATH:$HOME/projects/toolkit/linux/bin:~/opt/bin
+PATH=$PATH:$HOME/projects/toolkit/linux/bin:~/opt/bin:~/go/bin:~/bin
 export PATH
 
 #LD_LIBRARY_PATH="/usr/local/commlib/outerlib/nameapi/lib"
@@ -31,8 +31,8 @@ alias remake="make clean; make -j8"
 alias vimp="vim +Project"
 #alias topic="vim +'Project ~/vimprojects/topic'"
 alias rwopensources="vim +'Project ~/vimprojects/opensources'"
-#alias opensources="vim -M +'Project ~/vimprojects/opensources'"
-alias opensources="vim +'Project ~/vimprojects/opensources'"
+alias opensources="vim -M +'Project ~/vimprojects/opensources'"
+#alias opensources="vim +'Project ~/vimprojects/opensources'"
 
 alias urldecode='python -c "import sys, urllib as ul; \
     print ul.unquote_plus(sys.argv[1])"'

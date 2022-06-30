@@ -25,12 +25,6 @@ if [ "$VIMPATH" != "" ]; then
     alias vi="${VIMPATH}/bin/vim -u ${VIMPATH}/etc/vimrc"
     alias vimdiff="${VIMPATH}/bin/vimdiff -u ${VIMPATH}/etc/vimrc"
     alias xxd="${VIMPATH}/bin/xxd -u ${VIMPATH}/etc/vimrc"
-else
-    unalias vim
-    unalias view
-    unalias vi
-    unalias vimdiff
-    unalias xxd
 fi
 
 #alias git="~/opt/git/bin/git"

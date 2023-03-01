@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $# == 0 ]; then
+if [ $# -eq 0 ]; then
 	cmd=$(basename $0)
 	echo "Usage: ${cmd} <string> [word match(0/1)]"
 	echo "Same as:"
@@ -10,11 +10,11 @@ fi
 
 str=$1
 word_match=1
-if [ $# == 2 ]; then
+if [ $# -eq 2 ]; then
 	word_match=$2
 fi
 
-if [ ${word_match} == 1 ]; then 
+if [ ${word_match} -eq 1 ]; then 
 	grep "${str}" . -IRwn --color --exclude="tags" --exclude-dir=".svn"
 else
 	grep "${str}" . -IRn --color --exclude="tags" --exclude-dir=".svn"

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$1SS" == "SS" ]; then
+if [ $# -ne 1 ]; then
 	echo "Usage: calc <expr>"
 	echo "e.g.: calc \"3+5\""
 	exit

@@ -1,7 +1,7 @@
 
 
 #PATH=$PATH:$HOME/projects/deep-toolkit/linux/bin:~/opt/bin:~/opt/gtags/bin:~/bin:~/opt/lcov/bin:~/projects/git/video_pay_dev_tool/bin
-PATH=$PATH:$HOME/projects/toolkit/linux/bin:~/opt/bin:~/opt/gtags/bin:~/bin:~/opt/lcov/bin
+PATH=$PATH:$HOME/deepliu/projects/toolkit/linux/bin:~/opt/bin:~/opt/gtags/bin:~/bin:~/opt/lcov/bin
 export PATH
 
 #LD_LIBRARY_PATH="/usr/local/commlib/outerlib/nameapi/lib"
@@ -31,7 +31,8 @@ fi
 #alias ctags="~/opt/bin/ctags"
 #alias myproto="cd ~/projects/all_projects/inter_comm/pay_all_proto/"
 
-alias vimp="vim +Project"
+#alias vimp="vim +Project"
+alias vimp="vim +NERDTreeToggle"
 alias opensources="vim -M +'Project ~/vimprojects/opensources'"
 #alias opensources="vim +'Project ~/vimprojects/opensources'"
 

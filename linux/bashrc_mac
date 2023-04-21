@@ -28,10 +28,11 @@ alias remake="make clean; make -j8"
 
 #alias myproto="cd ~/projects/all_projects/inter_comm/pay_all_proto/"
 
-alias vimp="vim +Project"
+#alias vimp="vim +Project"
+alias vimp="vim +NERDTreeToggle"
 #alias topic="vim +'Project ~/vimprojects/topic'"
-alias rwopensources="vim +'Project ~/vimprojects/opensources'"
-alias opensources="vim -M +'Project ~/vimprojects/opensources'"
+#alias rwopensources="vim +'Project ~/vimprojects/opensources'"
+#alias opensources="vim -M +'Project ~/vimprojects/opensources'"
 #alias opensources="vim +'Project ~/vimprojects/opensources'"
 
 alias urldecode='python -c "import sys, urllib as ul; \

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 import sys
-import pycurl
 import json
 import io
+import pycurl
+import urllib.parse
 
 proxy = {"host": "web-proxy.oa.com", "port": 8080}
 key = "180CEA44747238EB38EDED2AB40D6AD3"
@@ -23,11 +24,13 @@ def List2Str(slist, sep = " "):
 def Query(word):
     
     buffer = io.BytesIO()
-    surl = url % (key, word.lower())
+
+    safe_string = urllib.parse.quote_plus(word.lower())
+    surl = url % (key, safe_string)
 
     c = pycurl.Curl()
 
-    c.setopt(c.URL, surl)
+    c.setopt(c.URL, surl.encode("utf-8"))
     c.setopt(c.WRITEDATA, buffer)
     c.setopt(pycurl.FOLLOWLOCATION, 1)
     #c.setopt(pycurl.PROXY, proxy['host'])
@@ -47,9 +50,10 @@ def Query(word):
     print("")
     print(info["word_name"])
 
+    flag = False
+    print("")
     for symbol in info["symbols"]:
 
-        print("")
         if bool(symbol.get("ph_en")):
             #print("EN: [%s]" % symbol["ph_en"].encode("utf-8"))
             print("EN: [%s]" % symbol["ph_en"])
@@ -60,15 +64,23 @@ def Query(word):
         if not bool(symbol.get("parts")):
             continue
 
-        print("")
+
         for part in symbol["parts"]:
             if bool(part.get("part") and bool(part.get("means"))):
-                ss = List2Str(part["means"])
+                if flag == False:
+                    print("")
+                    flag = True 
+                ss = List2Str(part["means"], ", ")
                 print("%s: " % part["part"]),
                 #print(ss.encode("utf-8"))
                 print(ss)
+                print("")
 
-        print("")
+            if bool(part.get("part_name") != None and bool(part.get("means"))):
+                for mean in part["means"]:
+                    print("* %s" % mean["word_mean"]),
+                print("")
+
 
 if len(sys.argv) == 2:
     Query(sys.argv[1])

@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 user=`whoami`
 sysname=`uname -s`
 
 tty
-if [ "${sysname}" == "Darwin" ]; then
+if [ "${sysname}" == "SSDarwin" ]; then
 	# mac os x
 	ps -ef | grep vim | grep -v grep | grep -v opened_vim |
 		awk '{
@@ -14,7 +14,7 @@ if [ "${sysname}" == "Darwin" ]; then
 				printf("\n"); 
 			}'
 
-elif [ ${sysname} == "Linux" ]; then
+elif [ "${sysname}" == "Linux" ]; then
 	# linux
 	ps auxf | grep vim | grep ${user} | grep -Ev '(grep|opened_vim)' | 
 		awk '{

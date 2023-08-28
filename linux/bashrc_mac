@@ -8,6 +8,12 @@ export PATH
 #LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/data/home/deepliu/opt/python-3.6.5/lib:/data/home/deepliu/opt/python-3.6.5/lib/python3.6/lib-dynload"
 #export LD_LIBRARY_PATH
 
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
+alias ll='ls -lh'
+
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv='mv -i'
@@ -24,8 +30,6 @@ alias remake="make clean; make -j8"
 #alias xxd="${VIMPATH}/bin/xxd -u ${VIMPATH}/etc/vimrc"
 #alias git="~/opt/git/bin/git"
 
-#alias ctags="~/opt/bin/ctags"
-
 #alias myproto="cd ~/projects/all_projects/inter_comm/pay_all_proto/"
 
 #alias vimp="vim +Project"
@@ -40,7 +44,7 @@ alias urldecode='python -c "import sys, urllib as ul; \
 alias urlencode='python -c "import sys, urllib as ul; \
     print ul.quote_plus(sys.argv[1])"'
 
-alias ctags='/usr/local/bin/ctags' # 默认的不是Exuberant版
+alias ctags='/Users/deepliu/opt/ctags-6.0.0/bin/ctags' # 默认的不是Exuberant版
 
 #export LANG="en_US.UTF-8"
 #export LC_CTYPE="en_US.UTF-8"
@@ -48,5 +52,5 @@ alias ctags='/usr/local/bin/ctags' # 默认的不是Exuberant版
 #export GTAGSLIBPATH=$GTAGSLIBPATH:/usr/include:/usr/local/commlib/outerlib/:~/projects/all_projects/inter_comm/ # seems not working
 #export TERM=xterm-256color # for vim
 
-export GOPROXY=https://goproxy.io
+#export GOPROXY=https://goproxy.io
 

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gpt4all_path='/home/deepliu/deepliu/AGI/gpt4all/gpt4all-ui'

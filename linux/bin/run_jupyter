@@ -4,5 +4,6 @@ DIR=/home/deepliu/deepliu/projects/code_samples/jupyter_workspace
 
 nohup jupyter notebook \
         --ip=0.0.0.0 \
+        --port=8888 \
         --notebook-dir=${DIR} \
         2>&1 > ${DIR}/jupyter.log &

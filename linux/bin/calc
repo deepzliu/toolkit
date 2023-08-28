@@ -8,5 +8,5 @@ fi
 
 epxr=$1
 
-echo "scale=4;$epxr" | bc
+echo "scale=6;$epxr" | bc
 

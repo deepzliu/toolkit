@@ -17,5 +17,5 @@ fi
 if [ ${word_match} -eq 1 ]; then 
 	grep "${str}" . -IRwn --color --exclude="tags" --exclude-dir=".svn"
 else
-	grep "${str}" . -IRn --color --exclude="tags" --exclude-dir=".svn"
+	grep "${str}" . -IRin --color --exclude="tags" --exclude-dir=".svn"
 fi
